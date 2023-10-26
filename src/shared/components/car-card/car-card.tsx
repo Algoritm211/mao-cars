@@ -1,10 +1,19 @@
 import React from 'react';
 import BidTimer from "@/shared/components/bid-timer/bid-timer";
+import {useRouter} from "next/router";
 
 const CarCard = () => {
+  const router = useRouter();
   const dayPlusOne = new Date().setDate(new Date().getDate() + 1);
+
+  const onCarDetails = () => {
+    void router.push('/cars/1')
+  }
   return (
-    <div className="card card-compact w-80 bg-base-100 shadow-xl cursor-pointer hover:scale-105 transition-all">
+    <div
+      className="card card-compact w-80 bg-base-100 shadow-xl cursor-pointer hover:scale-105 transition-all"
+      onClick={onCarDetails}
+    >
       <figure className='relative'>
         <img src="/rr-mock.jpeg" alt="Car"/>
         <div className='absolute bottom-1 left-1'>
