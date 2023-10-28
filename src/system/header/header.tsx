@@ -1,13 +1,16 @@
 import React from 'react';
 import Link from "next/link";
+import {Icon} from "@/shared/components/icon/icon";
+import {LoginModal} from "@/auth/components/login-modal/login-modal";
 
 export const Header = () => {
+  const isAuthenticated = true;
   return (
     <div className="navbar shadow bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            <Icon name={'menu-bars'} className='w-5 h-5'/>
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li><a>Auctions</a></li>
@@ -24,7 +27,31 @@ export const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Log in</a>
+        {isAuthenticated ? (
+          <>
+            <div className="dropdown dropdown-bottom dropdown-end">
+              <label tabIndex={0} className="btn m-1 bg-transparent border-none">
+                <span className='font-bold mr-2'>Alex</span>
+                <div className="avatar">
+                  <div className="w-10 rounded-full">
+                    <img src="/user/mock-user-photo.jpeg"  alt='The photo of the user'/>
+                  </div>
+                </div>
+              </label>
+              <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a>User profile</a></li>
+              </ul>
+            </div>
+          </>
+        ) : (
+          <LoginModal>
+            {(toggleModal) => {
+              return (
+                <button onClick={toggleModal} className="btn">Log in</button>
+              )
+            }}
+          </LoginModal>
+        )}
       </div>
     </div>
   );
