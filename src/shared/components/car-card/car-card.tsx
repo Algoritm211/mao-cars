@@ -1,10 +1,10 @@
 import React from 'react';
-import BidTimer from "@/shared/components/bid-timer/bid-timer";
+import CardBidLabel from "@/shared/components/card-bid-label/card-bid-label";
 import {useRouter} from "next/router";
 
 const CarCard = () => {
   const router = useRouter();
-  const dayPlusOne = new Date().setDate(new Date().getDate() + 1);
+  const dayPlusOne = new Date(new Date().setDate(new Date().getDate() + 1));
 
   const onCarDetails = () => {
     void router.push('/cars/1')
@@ -17,7 +17,7 @@ const CarCard = () => {
       <figure className='relative'>
         <img src="/rr-mock.jpeg" alt="Car"/>
         <div className='absolute bottom-1 left-1'>
-          <BidTimer price={150_000} endDate={new Date()} currency={'USD'} />
+          <CardBidLabel price={150_000} endDate={dayPlusOne} currency={'USD'} />
         </div>
       </figure>
       <div className="card-body">
