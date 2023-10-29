@@ -54,7 +54,7 @@ export const AuctionsFilter = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='my-5 flex gap-2 flex-col justify-around justify-items-end md:flex-row'>
+      className='mb-4 flex gap-2 flex-col justify-around justify-items-end md:flex-row'>
       <div className='flex gap-2 justify-center'>
         <div className="dropdown dropdown-bottom">
           <label tabIndex={0} className="select select-bordered flex place-items-center">Year</label>

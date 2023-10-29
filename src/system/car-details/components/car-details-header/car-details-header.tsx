@@ -12,7 +12,7 @@ export const CarDetailsHeader = () => {
   }
   return (
     <>
-      <div className='py-4 px-2 grid gap-2 md:grid-cols-[auto_40%] items-center'>
+      <div className='px-2 mb-4 grid gap-2 md:grid-cols-[auto_40%] items-center'>
         <div className='flex-grow-0'>
           <h1 className='text-2xl font-bold'>2010 Rolls-Royce Phantom Extended</h1>
           <h2 className='text-gray-600'>~34,000 Miles, V12 Power, Mostly Unmodified, Florida- and California-Owned</h2>

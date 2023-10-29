@@ -15,7 +15,7 @@ const CarCard = () => {
       onClick={onCarDetails}
     >
       <figure className='relative'>
-        <img src="/rr-mock.jpeg" alt="Car"/>
+        <img src="/rr-mock.jpeg" className='w-80 h-52 object-cover' alt="Car"/>
         <div className='absolute bottom-1 left-1'>
           <CardBidLabel price={150_000} endDate={dayPlusOne} currency={'USD'} />
         </div>
