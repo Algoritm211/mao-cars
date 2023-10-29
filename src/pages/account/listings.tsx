@@ -1,5 +1,5 @@
 import React from 'react';
-import AccountLayout from "@/system/account/layout/account-layout";
+import {AccountLayout} from "@/system/account/layout/account-layout";
 
 const Listings = () => {
   return (

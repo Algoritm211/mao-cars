@@ -31,7 +31,7 @@ export const Header = () => {
           <>
             <div className="dropdown dropdown-bottom dropdown-end">
               <label tabIndex={0} className="btn m-1 bg-transparent border-none">
-                <span className='font-bold mr-2'>Alex</span>
+                <span className='font-bold mr-2 hidden md:inline'>Alexey_Horbunov</span>
                 <div className="avatar">
                   <div className="w-10 rounded-full">
                     <img src="/user/mock-user-photo.jpeg"  alt='The photo of the user'/>
