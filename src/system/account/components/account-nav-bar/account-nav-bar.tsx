@@ -9,7 +9,7 @@ const AccountNavBar = () => {
   const router = useRouter();
 
   return (
-    <ul className="menu menu-horizontal md:menu-vertical max-w-xs bg-base-200 rounded-box">
+    <ul className="menu menu-horizontal max-w-xl bg-base-200 rounded-box">
       {ACCOUNTS_ROUTES_MAP.map(({href, icon, title}) =>
         <li key={href}>
           <Link href={href} className={clsx({'active': router.pathname === href})}>
