@@ -39,9 +39,7 @@ export const AuctionsFilter = () => {
   })
 
   const onSubmit = useCallback((data: Inputs) => {
-    console.log('FILTER SUBMIT', data)
-
-    router.push(`?${new URLSearchParams(data as Record<string, string>).toString()}`)
+    void router.push(`?${new URLSearchParams(data as Record<string, string>).toString()}`)
   }, [router])
 
 
