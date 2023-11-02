@@ -59,6 +59,15 @@ export const AccountProfileInfo = () => {
         </button>
       </div>
 
+      <div className='px-2 mt-2'>
+        <div className='font-bold'>
+          Bio
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequatur, corporis debitis deserunt dolor eius, hic, in itaque iure laudantium obcaecati porro quae quasi quidem quisquam suscipit voluptatum! Nobis, quia?
+        </p>
+      </div>
+
       <dialog ref={dialogRef} className='modal'>
         <div className="modal-box">
           <form method='dialog' onSubmit={onToggleEditProfileModal}>
