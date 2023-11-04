@@ -29,7 +29,7 @@ export const LoginModal: React.FC<Props> = ({children}) => {
           </form>
           <h3 className="font-bold text-lg text-center">Log in</h3>
           <p className='text-center text-gray-600 mb-4'>Login through suitable provider</p>
-          <button className='border rounded w-9/12 mx-auto flex items-center justify-center p-1 hover:bg-gray-200'>
+          <button className='border rounded w-9/12 mx-auto flex items-center justify-center p-1 hover:bg-gray-200 transition-all'>
             <img className='w-8 h-8 mr-4' src="/auth/sign-in-google.png" alt="Google login logo"/>
             <span>Continue with Google</span>
           </button>
