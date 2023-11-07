@@ -2,11 +2,12 @@ import React from 'react';
 import {FormTitle} from "@/shared/components/form/form-title/form-title";
 import {CAR_OWNER} from "@/system/submit-car/components/car-form/constants/constants";
 import {useFormContext} from "react-hook-form";
+import {Input} from "@/shared/components/form/input/input";
 
 export const UserInfoFormPart = () => {
   const {register} = useFormContext();
   return (
-    <div className='p-4 bg-gray-100 rounded-xl'>
+    <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
       <FormTitle title='Your Info'/>
       <fieldset className='my-2'>
         <label id='is_owner_private'>Dealer or private party?</label>
@@ -29,24 +30,22 @@ export const UserInfoFormPart = () => {
       </fieldset>
       <div className='flex flex-col w-full md:flex-row justify-between md:gap-6'>
         <div className="form-control flex-1">
-          <label className="label">
-            <span className="label-text">Full name</span>
-          </label>
-          <input
+          <Input
+            id='fullName'
+            label='Full name'
             type="text"
             placeholder="Please add your full name"
-            className="input input-bordered"
-            {...register('fullName')}/>
+            register={register}
+          />
         </div>
         <div className="form-control flex-1">
-          <label className="label">
-            <span className="label-text">Contact phone number</span>
-          </label>
-          <input
+          <Input
+            id='phone'
+            label='Contact phone number'
             type="tel"
             placeholder="+380980777779"
-            className="input input-bordered"
-            {...register('phone')}/>
+            register={register}
+          />
         </div>
       </div>
     </div>

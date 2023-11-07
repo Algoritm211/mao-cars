@@ -3,13 +3,12 @@ import {useForm} from 'react-hook-form';
 import {BodyType, TransmissionType} from "@/core/interfaces/car-components";
 import {
   AUCTION_SORT,
-  BODY_TYPES, END_YEAR, END_YEARS, START_YEAR,
-  START_YEARS,
-  TRANSMISSION_TYPES
+  BODY_TYPES,
 } from "@/system/cars/components/auctions-filter/constants/constants";
 import {useRouter} from "next/router";
 import {useSearchParams} from "next/navigation";
 import {clsx} from "clsx";
+import {END_YEAR, END_YEARS, START_YEAR, START_YEARS, TRANSMISSION_FILTER_TYPES} from "@/core/constants/form-constants";
 
 interface Inputs {
   startYear?: string;
@@ -77,8 +76,8 @@ export const AuctionsFilter = () => {
 
         <div>
           <select {...register('transmission')} className="select select-bordered w-xs inline-block">
-            <option value={TransmissionType.All} disabled hidden>Transmission</option>
-            {TRANSMISSION_TYPES.map(elem => {
+            <option value={TransmissionType.All} hidden>Transmission</option>
+            {TRANSMISSION_FILTER_TYPES.map(elem => {
               return <option key={elem} value={elem}>{elem}</option>
             })}
           </select>
@@ -86,7 +85,7 @@ export const AuctionsFilter = () => {
 
         <div>
           <select {...register('bodyStyle',)} className="select select-bordered w-xs inline-block">
-            <option value={BodyType.All} disabled hidden>Body style</option>
+            <option value={BodyType.All} hidden>Body style</option>
             {BODY_TYPES.map(elem => {
               return <option key={elem} value={elem}>{elem}</option>
             })}
