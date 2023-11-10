@@ -2,6 +2,7 @@ import React from 'react';
 import {Timer} from "@/shared/components/timer/timer";
 import {currencyFormatter} from "@/shared/utils/currency-formatter/currency-formatter";
 import {LoginModal} from "@/auth/components/login-modal/login-modal";
+import {purpleButton} from "@/shared/components/button/purple-button";
 
 interface Props {
   endDate: Date,
@@ -39,8 +40,7 @@ export const PlaceBid: React.FC<Props> = ({endDate, price}) => {
             return (
               <button
                 onClick={!isAuth ? toggleModal : onPlaceBid}
-                className='btn bg-purple-700 text-white
-                hover:bg-purple-600 w-full md:w-auto'
+                className={purpleButton({className: 'w-full md:w-auto'})}
               >Place bid</button>
             )
           }}

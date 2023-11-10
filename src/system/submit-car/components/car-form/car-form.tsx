@@ -14,6 +14,8 @@ import {
 import {
   CarPhotosFormPart
 } from "@/system/submit-car/components/car-form/components/car-photos-form-part/car-photos-form-part";
+import {Icon} from "@/shared/components/icon/icon";
+import {purpleButton} from "@/shared/components/button/purple-button";
 
 export const CarForm = () => {
   const methods = useForm<CarFormInputs>();
@@ -42,7 +44,12 @@ export const CarForm = () => {
         <TitleInfoFormPart />
         <ReservePriceFormPart/>
         <CarPhotosFormPart />
-        <button type='submit' className='btn'>Test submit</button>
+        <div className='mb-4 mt-8 flex justify-center'>
+          <button type='submit' className={purpleButton()}>
+            Submit application
+            <Icon name='arrow-right' className='w-4 h-4' />
+          </button>
+        </div>
       </form>
     </FormProvider>
   );
