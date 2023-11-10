@@ -5,6 +5,15 @@ import {
   CarInfoFormPart
 } from "@/system/submit-car/components/car-form/components/car-info-form-part/car-info-form-part";
 import {CarFormInputs} from "@/system/submit-car/components/car-form/models/models";
+import {
+  TitleInfoFormPart
+} from "@/system/submit-car/components/car-form/components/title-info-form-part/title-info-form-part";
+import {
+  ReservePriceFormPart
+} from "@/system/submit-car/components/car-form/components/reserve-price-form-part/reserve-price-form-part";
+import {
+  CarPhotosFormPart
+} from "@/system/submit-car/components/car-form/components/car-photos-form-part/car-photos-form-part";
 
 export const CarForm = () => {
   const methods = useForm<CarFormInputs>();
@@ -16,9 +25,23 @@ export const CarForm = () => {
 
   return (
     <FormProvider {...methods}>
+      <div className='mx-2 md:mx-4'>
+        <h1 className='text-4xl font-bold'>
+          Tell us about your car
+        </h1>
+        <p className='my-4'>
+          Please give us some basics about yourself and the car you’d like to sell. We’ll also need details about the car’s title status as well as 6 photos that highlight the car’s exterior and interior condition.
+          <br />
+          <br />
+          We’ll respond to your application within a business day. Once accepted, we’ll ask for more details and at least 50 high-res photos, then work with you to build a custom and professional listing and get the auction live.
+        </p>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-5'>
         <UserInfoFormPart />
         <CarInfoFormPart />
+        <TitleInfoFormPart />
+        <ReservePriceFormPart/>
+        <CarPhotosFormPart />
         <button type='submit' className='btn'>Test submit</button>
       </form>
     </FormProvider>

@@ -3,6 +3,7 @@ import {FormTitle} from "@/shared/components/form/form-title/form-title";
 import {CAR_OWNER} from "@/system/submit-car/components/car-form/constants/constants";
 import {useFormContext} from "react-hook-form";
 import {Input} from "@/shared/components/form/input/input";
+import {RadioButton} from "@/shared/components/form/radio-button/radio-button";
 
 export const UserInfoFormPart = () => {
   const {register} = useFormContext();
@@ -14,15 +15,13 @@ export const UserInfoFormPart = () => {
         <div className='flex gap-2 mt-2 mb-2'>
           {CAR_OWNER.map(elem => {
             return (
-              <input
+              <RadioButton
+                id='owner'
                 key={elem}
-                aria-labelledby='is_owner_private'
-                type='radio'
-                style={{'--p': 'var(--n)', '--pf': 'var(--nf)', '--pc': 'var(--nc)'} as React.CSSProperties}
-                className='btn btn-outline no-animation hover:bg-neutral'
+                label={elem}
                 value={elem}
-                aria-label={elem}
-                {...register('owner')}
+                register={register}
+                aria-labelledby='is_owner_private'
               />
             )
           })}

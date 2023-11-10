@@ -11,4 +11,15 @@ export interface CarFormInputs {
   transmission: TransmissionType,
   mileage: number;
   equipment: string;
+  isModified: boolean;
+  modifications: string;
+  hasFlaws: boolean;
+  flaws: string;
+
+  carTitle: string;
+  location: string;
+
+  reservePrice: string;
+
+  photos: FileList;
 }

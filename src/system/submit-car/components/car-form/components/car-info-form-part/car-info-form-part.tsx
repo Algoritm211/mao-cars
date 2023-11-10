@@ -1,12 +1,22 @@
 import React from 'react';
 import {FormTitle} from "@/shared/components/form/form-title/form-title";
-import {useFormContext} from "react-hook-form";
+import {Controller, useFormContext} from "react-hook-form";
 import {END_YEARS, TRANSMISSION_TYPES} from "@/core/constants/form-constants";
 import {CarFormInputs} from "@/system/submit-car/components/car-form/models/models";
 import {Input} from "@/shared/components/form/input/input";
+import {RadioButton, radioStyles} from "@/shared/components/form/radio-button/radio-button";
+import {TextArea} from "@/shared/components/form/textarea/textarea";
 
 export const CarInfoFormPart = () => {
-  const {register} = useFormContext<CarFormInputs>();
+  const {
+    register,
+    setValue,
+    watch,
+    control,
+  } = useFormContext<CarFormInputs>();
+
+  const isModified = watch('isModified');
+  const hasFlaws = watch('hasFlaws');
   return (
     <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
       <FormTitle title='Car Details'/>
@@ -78,24 +88,107 @@ export const CarInfoFormPart = () => {
             type="number"
             placeholder="Please enter mileage"
             register={register}
-            registerOptions={{valueAsNumber: true}}
+            registerOptions={{valueAsNumber: true, value: 0}}
           />
         </div>
       </div>
 
-      <div className='flex gap-2 mb-4'>
+      <div className='flex mb-4'>
         <div className="form-control w-full">
-          <label htmlFor='carOptions' className="label">
-            <span className="label-text">Special options/equipment</span>
-          </label>
-          <textarea
-            id='carOptions'
-            className="textarea textarea-bordered h-36"
+          <TextArea
+            id='equipment'
+            label='Special options/equipment'
             placeholder="For example: sport package, long-range battery, FSD or other important factory-installed features"
-            {...register('equipment')}
-          ></textarea>
+            register={register}/>
         </div>
       </div>
+
+      <div className='form-control'>
+        <label id='is_car_modified'>Has the car been modified?</label>
+        <div className='flex gap-2 mt-2 mb-2'>
+          <Controller
+            name='isModified'
+            control={control}
+            render={({field: {onChange, onBlur, value, ref}}) => (
+              <>
+                <input
+                  type="radio"
+                  {...radioStyles}
+                  aria-label='Stock'
+                  onBlur={onBlur}
+                  onChange={() => onChange(false)}
+                  checked={value === false}
+                  ref={ref}
+                />
+                <input
+                  type="radio"
+                  {...radioStyles}
+                  aria-label='Modified'
+                  onBlur={onBlur}
+                  onChange={() => onChange(true)}
+                  checked={value === true}
+                  ref={ref}
+                />
+              </>
+            )}/>
+        </div>
+      </div>
+
+      {isModified && (
+        <div className='flex mb-4'>
+          <div className="form-control w-full">
+            <TextArea
+              id='modifications'
+              label='List any modifications, including modification or removal of the catalytic converters.'
+              placeholder="For example: modified exhaust, some features in car's interior"
+              register={register}/>
+          </div>
+        </div>
+      )}
+
+      <div className='form-control'>
+        <label id='is_car_has_flaws'>Are there any significant mechanical or cosmetic flaws that we should know
+          about?</label>
+        <div className='flex gap-2 mt-2 mb-2'>
+          <Controller
+            name='hasFlaws'
+            control={control}
+            render={({field: {onChange, onBlur, value, ref}}) => (
+              <>
+                <input
+                  type="radio"
+                  {...radioStyles}
+                  aria-label='Yes'
+                  onBlur={onBlur}
+                  onChange={() => onChange(true)}
+                  checked={value === true}
+                  ref={ref}
+                />
+                <input
+                  type="radio"
+                  {...radioStyles}
+                  aria-label='No'
+                  onBlur={onBlur}
+                  onChange={() => onChange(false)}
+                  checked={value === false}
+                  ref={ref}
+                />
+              </>
+            )}/>
+        </div>
+      </div>
+
+      {hasFlaws && (
+        <div className='flex mb-4'>
+          <div className="form-control w-full">
+            <TextArea
+              id='flaws'
+              label='Please give details.'
+              placeholder="For example: scratch on the right door"
+              register={register}/>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
