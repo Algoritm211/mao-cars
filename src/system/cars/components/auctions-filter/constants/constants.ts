@@ -1,5 +1,5 @@
-import {BodyType, TransmissionType} from "@/core/interfaces/car-components";
-import {AuctionsSort} from "@/core/interfaces/auctions";
+import {BodyType} from "@/core/interfaces";
+import {AuctionsSort} from "@/core/interfaces";
 
 export const BODY_TYPES: BodyType[] = [
   BodyType.All,

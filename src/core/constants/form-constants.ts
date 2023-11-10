@@ -1,4 +1,4 @@
-import {TransmissionType} from "@/core/interfaces/car-components";
+import {TransmissionType} from "@/core/interfaces";
 
 export const START_YEAR = 1980;
 export const END_YEAR = new Date().getFullYear() + 1;

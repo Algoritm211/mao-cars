@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
-import {BodyType, TransmissionType} from "@/core/interfaces/car-components";
+import {BodyType, TransmissionType} from "@/core/interfaces";
 import {
   AUCTION_SORT,
   BODY_TYPES,
@@ -8,7 +8,7 @@ import {
 import {useRouter} from "next/router";
 import {useSearchParams} from "next/navigation";
 import {clsx} from "clsx";
-import {END_YEAR, END_YEARS, START_YEAR, START_YEARS, TRANSMISSION_FILTER_TYPES} from "@/core/constants/form-constants";
+import {END_YEAR, END_YEARS, START_YEAR, START_YEARS, TRANSMISSION_FILTER_TYPES} from "@/core/constants";
 
 interface Inputs {
   startYear?: string;

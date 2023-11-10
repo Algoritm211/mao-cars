@@ -1,4 +1,4 @@
-import {TransmissionType} from "@/core/interfaces/car-components";
+import {TransmissionType} from "@/core/interfaces";
 
 export interface CarFormInputs {
   owner: 'private' | 'dealer'
