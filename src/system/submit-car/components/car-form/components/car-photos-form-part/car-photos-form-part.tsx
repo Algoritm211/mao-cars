@@ -13,7 +13,7 @@ export const CarPhotosFormPart = () => {
     formState: {errors}
   } = useFormContext();
   const [isDraggingOver, setIsDraggingOver] = useState(false);
-  const carPhotos = watch('photos') as FileList;
+  const carPhotos: FileList = watch('photos');
 
   const handlePhotoDrop = (event: React.DragEvent<HTMLLabelElement>) => {
     event.preventDefault();
@@ -65,14 +65,14 @@ export const CarPhotosFormPart = () => {
       </div>
 
       {carPhotos?.length > 0 && (
-        <div className='my-2 flex gap-2'>
+        <div className='my-2 flex gap-2 flex-wrap justify-center'>
           {Array.from(carPhotos).map((elem, index) => {
             return (
               <img
                 key={index}
                 src={URL.createObjectURL(elem)}
                 alt={elem.name}
-                className='w-36 aspect-video rounded'
+                className='w-36 aspect-video rounded-xl object-contain'
               />
             )
           })}
