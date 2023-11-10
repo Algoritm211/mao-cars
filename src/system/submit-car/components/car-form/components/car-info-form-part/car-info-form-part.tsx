@@ -1,23 +1,21 @@
 import React from 'react';
-import {FormTitle} from "@/shared/components/form/form-title/form-title";
 import {Controller, useFormContext} from "react-hook-form";
 import {END_YEARS, TRANSMISSION_TYPES} from "@/core/constants/form-constants";
 import {CarFormInputs} from "@/system/submit-car/components/car-form/models/models";
-import {Input} from "@/shared/components/form/input/input";
-import {RadioButton, radioStyles} from "@/shared/components/form/radio-button/radio-button";
-import {TextArea} from "@/shared/components/form/textarea/textarea";
-import {FormErrors} from "@/shared/components/form/form-errors/form-errors";
+import {requiredRadioValidator} from "@/shared/utils/validators/required-radio-validator";
+import {FormErrors, radioStyles, TextArea, Input, FormTitle} from "@/shared/components/form";
 
 export const CarInfoFormPart = () => {
   const {
     register,
     watch,
     control,
-    formState: {errors}
+    formState: {errors},
   } = useFormContext<CarFormInputs>();
 
   const isModified = watch('isModified');
   const hasFlaws = watch('hasFlaws');
+
   return (
     <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
       <FormTitle title='Car Details'/>
@@ -117,7 +115,7 @@ export const CarInfoFormPart = () => {
           <Controller
             name='isModified'
             control={control}
-            rules={{required: true}}
+            rules={{validate: requiredRadioValidator}}
             render={({field: {onChange, onBlur, value, ref}}) => (
               <>
                 <input
@@ -163,7 +161,7 @@ export const CarInfoFormPart = () => {
           <Controller
             name='hasFlaws'
             control={control}
-            rules={{required: true}}
+            rules={{validate: requiredRadioValidator}}
             render={({field: {onChange, onBlur, value, ref}}) => (
               <>
                 <input
@@ -187,7 +185,7 @@ export const CarInfoFormPart = () => {
               </>
             )}/>
         </div>
-        <FormErrors fieldId='isModified' errors={errors}/>
+        <FormErrors fieldId='hasFlaws' errors={errors}/>
       </div>
 
       {hasFlaws && (
