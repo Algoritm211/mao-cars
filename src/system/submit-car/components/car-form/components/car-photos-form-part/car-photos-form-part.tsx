@@ -3,9 +3,15 @@ import {FormTitle} from "@/shared/components/form/form-title/form-title";
 import {useFormContext} from "react-hook-form";
 import {Icon} from "@/shared/components/icon/icon";
 import {clsx} from "clsx";
+import {FormErrors} from "@/shared/components/form/form-errors/form-errors";
 
 export const CarPhotosFormPart = () => {
-  const {register, watch, setValue} = useFormContext();
+  const {
+    register,
+    watch,
+    setValue,
+    formState: {errors}
+  } = useFormContext();
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const carPhotos = watch('photos') as FileList;
 
@@ -55,7 +61,7 @@ export const CarPhotosFormPart = () => {
             className="hidden"
             multiple={true}
             accept="image/png, image/jpeg"
-            {...register('photos')}
+            {...register('photos', {required: true})}
           />
         </label>
       </div>
@@ -74,6 +80,8 @@ export const CarPhotosFormPart = () => {
           })}
         </div>
       )}
+
+      <FormErrors fieldId='photos' errors={errors}/>
     </div>
   );
 };

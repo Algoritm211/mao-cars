@@ -6,13 +6,14 @@ import {CarFormInputs} from "@/system/submit-car/components/car-form/models/mode
 import {Input} from "@/shared/components/form/input/input";
 import {RadioButton, radioStyles} from "@/shared/components/form/radio-button/radio-button";
 import {TextArea} from "@/shared/components/form/textarea/textarea";
+import {FormErrors} from "@/shared/components/form/form-errors/form-errors";
 
 export const CarInfoFormPart = () => {
   const {
     register,
-    setValue,
     watch,
     control,
+    formState: {errors}
   } = useFormContext<CarFormInputs>();
 
   const isModified = watch('isModified');
@@ -27,6 +28,8 @@ export const CarInfoFormPart = () => {
           type="text"
           placeholder="Please ented VIN of your car"
           register={register}
+          errors={errors}
+          registerOptions={{required: true}}
         />
       </div>
 
@@ -52,6 +55,8 @@ export const CarInfoFormPart = () => {
             type="text"
             placeholder="Please enter make"
             register={register}
+            errors={errors}
+            registerOptions={{required: true}}
           />
         </div>
         <div className="form-control flex-1">
@@ -61,6 +66,8 @@ export const CarInfoFormPart = () => {
             type="text"
             placeholder="Please enter model"
             register={register}
+            errors={errors}
+            registerOptions={{required: true}}
           />
         </div>
       </div>
@@ -88,7 +95,8 @@ export const CarInfoFormPart = () => {
             type="number"
             placeholder="Please enter mileage"
             register={register}
-            registerOptions={{valueAsNumber: true, value: 0}}
+            errors={errors}
+            registerOptions={{valueAsNumber: true, value: 0, required: true}}
           />
         </div>
       </div>
@@ -109,6 +117,7 @@ export const CarInfoFormPart = () => {
           <Controller
             name='isModified'
             control={control}
+            rules={{required: true}}
             render={({field: {onChange, onBlur, value, ref}}) => (
               <>
                 <input
@@ -132,6 +141,7 @@ export const CarInfoFormPart = () => {
               </>
             )}/>
         </div>
+        <FormErrors fieldId='isModified' errors={errors}/>
       </div>
 
       {isModified && (
@@ -153,6 +163,7 @@ export const CarInfoFormPart = () => {
           <Controller
             name='hasFlaws'
             control={control}
+            rules={{required: true}}
             render={({field: {onChange, onBlur, value, ref}}) => (
               <>
                 <input
@@ -176,6 +187,7 @@ export const CarInfoFormPart = () => {
               </>
             )}/>
         </div>
+        <FormErrors fieldId='isModified' errors={errors}/>
       </div>
 
       {hasFlaws && (

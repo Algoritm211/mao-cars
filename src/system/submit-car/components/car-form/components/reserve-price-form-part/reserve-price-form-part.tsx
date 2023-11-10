@@ -4,7 +4,10 @@ import {useFormContext} from "react-hook-form";
 import {Input} from "@/shared/components/form/input/input";
 
 export const ReservePriceFormPart = () => {
-  const {register} = useFormContext();
+  const {
+    register,
+    formState: {errors}
+  } = useFormContext();
 
   return (
     <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
@@ -18,8 +21,9 @@ export const ReservePriceFormPart = () => {
           label='What reserve price would you like (USD)?'
           type="number"
           placeholder="Please enter your reserve price"
-          registerOptions={{valueAsNumber: true, value: 0}}
           register={register}
+          errors={errors}
+          registerOptions={{valueAsNumber: true, value: 0, required: true}}
         />
       </div>
     </div>

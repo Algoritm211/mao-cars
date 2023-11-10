@@ -3,9 +3,13 @@ import {useFormContext} from "react-hook-form";
 import {FormTitle} from "@/shared/components/form/form-title/form-title";
 import {RadioButton} from "@/shared/components/form/radio-button/radio-button";
 import {Input} from "@/shared/components/form/input/input";
+import {FormErrors} from "@/shared/components/form/form-errors/form-errors";
 
 export const TitleInfoFormPart = () => {
-  const {register} = useFormContext();
+  const {
+    register,
+    formState: {errors}
+  } = useFormContext();
   return (
     <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
       <FormTitle title='Title info'/>
@@ -26,6 +30,7 @@ export const TitleInfoFormPart = () => {
             )
           })}
         </div>
+        <FormErrors fieldId='carTitle' errors={errors} />
       </fieldset>
 
       <div className='form-control max-w-xl'>
@@ -35,9 +40,10 @@ export const TitleInfoFormPart = () => {
           type="text"
           placeholder="Please add the location"
           register={register}
+          errors={errors}
+          registerOptions={{required: true}}
         />
       </div>
-
     </div>
   );
 };
