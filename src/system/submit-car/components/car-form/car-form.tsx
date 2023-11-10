@@ -1,22 +1,15 @@
 import React from 'react';
 import {FormProvider, useForm} from "react-hook-form";
-import {UserInfoFormPart} from "@/system/submit-car/components/car-form/components/user-info-form-part/user-info-form-part";
-import {
-  CarInfoFormPart
-} from "@/system/submit-car/components/car-form/components/car-info-form-part/car-info-form-part";
 import {CarFormInputs} from "@/system/submit-car/components/car-form/models/models";
-import {
-  TitleInfoFormPart
-} from "@/system/submit-car/components/car-form/components/title-info-form-part/title-info-form-part";
-import {
-  ReservePriceFormPart
-} from "@/system/submit-car/components/car-form/components/reserve-price-form-part/reserve-price-form-part";
-import {
-  CarPhotosFormPart
-} from "@/system/submit-car/components/car-form/components/car-photos-form-part/car-photos-form-part";
 import {Icon} from "@/shared/components/icon/icon";
 import {purpleButton} from "@/shared/components/button/purple-button";
-
+import {
+  CarInfoFormPart,
+  CarPhotosFormPart,
+  TitleInfoFormPart,
+  ReservePriceFormPart,
+  UserInfoFormPart,
+} from "@/system/submit-car/components/car-form/components";
 export const CarForm = () => {
   const methods = useForm<CarFormInputs>();
   const {handleSubmit} = methods;

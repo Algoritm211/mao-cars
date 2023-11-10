@@ -3,7 +3,7 @@ import {Controller, useFormContext} from "react-hook-form";
 import {END_YEARS, TRANSMISSION_TYPES} from "@/core/constants/form-constants";
 import {CarFormInputs} from "@/system/submit-car/components/car-form/models/models";
 import {requiredRadioValidator} from "@/shared/utils/validators/required-radio-validator";
-import {FormErrors, radioStyles, TextArea, Input, FormTitle} from "@/shared/components/form";
+import {FormErrors, radioStyles, TextArea, Input, FormBlockWrapper} from "@/shared/components/form";
 
 export const CarInfoFormPart = () => {
   const {
@@ -17,8 +17,7 @@ export const CarInfoFormPart = () => {
   const hasFlaws = watch('hasFlaws');
 
   return (
-    <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
-      <FormTitle title='Car Details'/>
+    <FormBlockWrapper title='Car Details'>
       <div className="form-control max-w-lg mb-4">
         <Input
           id='vin'
@@ -199,6 +198,6 @@ export const CarInfoFormPart = () => {
           </div>
         </div>
       )}
-    </div>
+    </FormBlockWrapper>
   );
 };

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {FormTitle} from "@/shared/components/form/form-title/form-title";
 import {useFormContext} from "react-hook-form";
 import {Icon} from "@/shared/components/icon/icon";
 import {clsx} from "clsx";
-import {FormErrors} from "@/shared/components/form/form-errors/form-errors";
+import {FormBlockWrapper, FormErrors} from "@/shared/components/form";
+
 
 export const CarPhotosFormPart = () => {
   const {
@@ -26,9 +26,7 @@ export const CarPhotosFormPart = () => {
   };
 
   return (
-    <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
-      <FormTitle title='Photos'/>
-
+    <FormBlockWrapper title='Photos'>
       <p className='my-2'>
         Please upload at least 6 photos of the <b>exterior</b> and <b>interior</b> of the car.
       </p>
@@ -82,6 +80,6 @@ export const CarPhotosFormPart = () => {
       )}
 
       <FormErrors fieldId='photos' errors={errors}/>
-    </div>
+    </FormBlockWrapper>
   );
 };

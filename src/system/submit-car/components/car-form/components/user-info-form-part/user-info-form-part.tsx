@@ -1,10 +1,7 @@
 import React from 'react';
-import {FormTitle} from "@/shared/components/form/form-title/form-title";
 import {CAR_OWNER} from "@/system/submit-car/components/car-form/constants/constants";
 import {useFormContext} from "react-hook-form";
-import {Input} from "@/shared/components/form/input/input";
-import {RadioButton} from "@/shared/components/form/radio-button/radio-button";
-import {FormErrors} from "@/shared/components/form/form-errors/form-errors";
+import {FormBlockWrapper, FormErrors, Input, RadioButton} from "@/shared/components/form";
 
 export const UserInfoFormPart = () => {
   const {
@@ -13,8 +10,7 @@ export const UserInfoFormPart = () => {
   } = useFormContext();
 
   return (
-    <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
-      <FormTitle title='Your Info'/>
+    <FormBlockWrapper title='Your Info'>
       <fieldset className='my-2'>
         <label id='is_owner_private'>Dealer or private party?</label>
         <div className='flex gap-2 mt-2 mb-2'>
@@ -56,7 +52,7 @@ export const UserInfoFormPart = () => {
           />
         </div>
       </div>
-    </div>
+    </FormBlockWrapper>
   );
 };
 

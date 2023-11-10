@@ -1,9 +1,6 @@
 import React from 'react';
 import {useFormContext} from "react-hook-form";
-import {FormTitle} from "@/shared/components/form/form-title/form-title";
-import {RadioButton} from "@/shared/components/form/radio-button/radio-button";
-import {Input} from "@/shared/components/form/input/input";
-import {FormErrors} from "@/shared/components/form/form-errors/form-errors";
+import {FormBlockWrapper, FormErrors, Input, RadioButton} from "@/shared/components/form";
 
 export const TitleInfoFormPart = () => {
   const {
@@ -11,9 +8,7 @@ export const TitleInfoFormPart = () => {
     formState: {errors}
   } = useFormContext();
   return (
-    <div className='mx-0 md:mx-4 p-4 bg-gray-100 rounded-xl'>
-      <FormTitle title='Title info'/>
-
+    <FormBlockWrapper title='Title Info'>
       <fieldset className='my-2'>
         <label id='where_is_car_titled'>Where is the car titled?</label>
         <div className='flex gap-2 mt-2 mb-2'>
@@ -44,6 +39,6 @@ export const TitleInfoFormPart = () => {
           registerOptions={{required: true}}
         />
       </div>
-    </div>
+    </FormBlockWrapper>
   );
 };
