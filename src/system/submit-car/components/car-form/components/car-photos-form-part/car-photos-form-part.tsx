@@ -10,7 +10,8 @@ export const CarPhotosFormPart = () => {
     register,
     watch,
     setValue,
-    formState: {errors}
+    formState: {errors},
+    clearErrors,
   } = useFormContext();
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const carPhotos: FileList = watch('photos');
@@ -22,6 +23,7 @@ export const CarPhotosFormPart = () => {
 
     if (droppedFiles) {
       setValue('photos', droppedFiles);
+      clearErrors('photos')
     }
   };
 
