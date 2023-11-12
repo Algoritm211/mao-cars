@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {BodyType, TransmissionType} from "@/core/interfaces";
 import {
@@ -9,18 +9,15 @@ import {useRouter} from "next/router";
 import {useSearchParams} from "next/navigation";
 import {clsx} from "clsx";
 import {END_YEAR, END_YEARS, START_YEAR, START_YEARS, TRANSMISSION_FILTER_TYPES} from "@/core/constants";
-
-interface Inputs {
-  startYear?: string;
-  endYear?: string;
-  transmission?: TransmissionType;
-  bodyStyle?: BodyType;
-  sort?: string,
-}
+import {useAuctions} from "@/data-access";
+import {AuctionsFilterInputs} from "@/system/cars/components/auctions-filter/models/auctions-filter";
 
 export const AuctionsFilter = () => {
   const router = useRouter()
   const params = useSearchParams();
+  const [filter, setFilter] = useState<AuctionsFilterInputs>({});
+  const { isFetching} = useAuctions(filter)
+
   const valuesFromParams = {
     startYear: params.get('startYear') || undefined,
     endYear: params.get('endYear') || undefined,
@@ -33,15 +30,14 @@ export const AuctionsFilter = () => {
     watch,
     handleSubmit,
     getValues
-  } = useForm<Inputs>({
+  } = useForm<AuctionsFilterInputs>({
     values: valuesFromParams,
   })
 
-  const onSubmit = useCallback((data: Inputs) => {
+  const onSubmit = useCallback((data: AuctionsFilterInputs) => {
+    setFilter(data)
     void router.push(`?${new URLSearchParams(data as Record<string, string>).toString()}`)
   }, [router])
-
-
 
   useEffect(() => {
     const subscription = watch(() => handleSubmit(onSubmit)())
@@ -51,7 +47,10 @@ export const AuctionsFilter = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='mb-4 flex gap-2 flex-col justify-around justify-items-end md:flex-row'>
+      className={clsx(`mb-4 flex gap-2 flex-col justify-around 
+        justify-items-end md:flex-row`,
+        {'pointer-events-none opacity-50': isFetching}
+      )}>
       <div className='flex gap-2 justify-center'>
         <div className="dropdown dropdown-bottom">
           <label tabIndex={0} className="select select-bordered flex place-items-center">Year</label>

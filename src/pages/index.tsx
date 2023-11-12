@@ -1,20 +1,22 @@
 import {Cars} from "@/system/cars/cars";
 import {dehydrate, QueryClient} from "@tanstack/react-query";
-import {auctionsAPI, EntitiesKeys, useAuctions} from "@/data-access";
+import {auctionsAPI, EntitiesKeys} from "@/data-access";
+import { GetServerSidePropsContext} from "next";
+import {AuctionsFilterInputs} from "@/system/cars/components/auctions-filter/models/auctions-filter";
 
 export default function Home() {
-  const {data} = useAuctions();
   return (
     <Cars/>
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const query = ctx.query;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: [EntitiesKeys.auctions],
-    queryFn: () => auctionsAPI.fetchAuctions(),
+    queryKey: [EntitiesKeys.auctions, query],
+    queryFn: () => auctionsAPI.fetchAuctions(query),
   })
 
   return {
