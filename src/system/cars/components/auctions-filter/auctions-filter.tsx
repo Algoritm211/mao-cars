@@ -9,35 +9,29 @@ import {useRouter} from "next/router";
 import {useSearchParams} from "next/navigation";
 import {clsx} from "clsx";
 import {END_YEAR, END_YEARS, START_YEAR, START_YEARS, TRANSMISSION_FILTER_TYPES} from "@/core/constants";
-import {useAuctions} from "@/data-access";
 import {AuctionsFilterInputs} from "@/system/cars/components/auctions-filter/models/auctions-filter";
 
-export const AuctionsFilter = () => {
-  const router = useRouter()
-  const params = useSearchParams();
-  const [filter, setFilter] = useState<AuctionsFilterInputs>({});
-  const { isFetching} = useAuctions(filter)
+interface Props {
+  setFilter: (filter: AuctionsFilterInputs) => void;
+  isLoading: boolean
+  initialFilterValues: AuctionsFilterInputs;
+}
 
-  const valuesFromParams = {
-    startYear: params.get('startYear') || undefined,
-    endYear: params.get('endYear') || undefined,
-    bodyStyle: params.get('bodyStyle') as BodyType || undefined,
-    transmission: params.get('transmission') as TransmissionType || undefined,
-    sort: params.get('sort') || undefined,
-  }
+export const AuctionsFilter: React.FC<Props> = ({setFilter, isLoading, initialFilterValues}) => {
+  const router = useRouter()
   const {
     register,
     watch,
     handleSubmit,
     getValues
   } = useForm<AuctionsFilterInputs>({
-    values: valuesFromParams,
+    values: initialFilterValues,
   })
 
   const onSubmit = useCallback((data: AuctionsFilterInputs) => {
     setFilter(data)
     void router.push(`?${new URLSearchParams(data as Record<string, string>).toString()}`)
-  }, [router])
+  }, [router, setFilter])
 
   useEffect(() => {
     const subscription = watch(() => handleSubmit(onSubmit)())
@@ -49,7 +43,7 @@ export const AuctionsFilter = () => {
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(`mb-4 flex gap-2 flex-col justify-around 
         justify-items-end md:flex-row`,
-        {'pointer-events-none opacity-50': isFetching}
+        {'pointer-events-none opacity-50': isLoading}
       )}>
       <div className='flex gap-2 justify-center'>
         <div className="dropdown dropdown-bottom">
