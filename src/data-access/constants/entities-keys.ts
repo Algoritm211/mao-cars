@@ -1,3 +1,4 @@
 export enum EntitiesKeys {
-  auctions = 'auctions'
+  auctions = 'auctions',
+  auction = 'auction',
 }

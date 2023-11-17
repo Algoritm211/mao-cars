@@ -2,14 +2,18 @@ import React, {useRef, useState} from 'react';
 import {Icon} from "@/shared/components/icon/icon";
 
 const MOCK_IMAGES = [
-  '/carousel/carousel-1.jpeg',
-  '/carousel/carousel-2.jpeg',
-  '/carousel/carousel-3.jpeg',
-  '/carousel/carousel-4.jpeg',
-  '/carousel/carousel-5.jpeg',
+  '/carousel/set-1-1.jpeg',
+  '/carousel/set-1-2.jpeg',
+  '/carousel/set-1-3.jpeg',
+  '/carousel/set-1-4.jpeg',
+  '/carousel/set-1-5.jpeg',
 ];
 
-export const CarGallery = () => {
+interface Props {
+  photos: string[] | undefined
+}
+
+export const CarGallery: React.FC<Props> = ({photos = []}) => {
   const TRANSITION_DURATION = 0.3;
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,11 +21,11 @@ export const CarGallery = () => {
   const touchEndX = useRef<number | null>(null);
 
   const nextSlide = () => {
-    setCurrentSlide((currentSlide + 1) % MOCK_IMAGES.length);
+    setCurrentSlide((currentSlide + 1) % photos.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((currentSlide - 1 + MOCK_IMAGES.length) % MOCK_IMAGES.length);
+    setCurrentSlide((currentSlide - 1 + photos.length) % photos.length);
   };
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
@@ -46,7 +50,7 @@ export const CarGallery = () => {
   };
 
   const imagePosition = {
-    transform: `translateX(-${currentSlide * (100 / MOCK_IMAGES.length)}%)`,
+    transform: `translateX(-${currentSlide * (100 / photos.length)}%)`,
     transition: `transform ${TRANSITION_DURATION}s ease-in-out`,
   };
 
@@ -57,10 +61,10 @@ export const CarGallery = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}>
       <div className="overflow-hidden rounded md:rounded-xl">
-        <div className="flex" style={{width: `${MOCK_IMAGES.length * 100}%`, ...imagePosition}}>
-          {MOCK_IMAGES.map((image, index) => (
+        <div className="flex" style={{width: `${photos.length * 100}%`, ...imagePosition}}>
+          {photos.map((image, index) => (
             <div key={index} className="w-full">
-              <img src={image} alt={`Slide ${index}`} className="w-full aspect-auto"/>
+              <img src={image} alt={`Slide ${index}`} className="w-full h-auto object-cover"/>
             </div>
           ))}
         </div>

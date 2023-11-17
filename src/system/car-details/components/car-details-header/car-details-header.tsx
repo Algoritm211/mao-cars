@@ -3,7 +3,12 @@ import {usePathname,} from "next/navigation";
 import {Icon} from "@/shared/components/icon/icon";
 import {LoginModal} from "@/auth/components/login-modal/login-modal";
 
-export const CarDetailsHeader = () => {
+interface Props {
+  title: string | undefined;
+  subTitle: string | undefined;
+}
+
+export const CarDetailsHeader: React.FC<Props> = ({title, subTitle}) => {
   const pathname = usePathname();
 
   const onCopyLink = () => {
@@ -14,8 +19,8 @@ export const CarDetailsHeader = () => {
     <>
       <div className='px-2 mb-4 grid gap-2 md:grid-cols-[auto_40%] items-center'>
         <div className='flex-grow-0'>
-          <h1 className='text-2xl font-bold'>2010 Rolls-Royce Phantom Extended</h1>
-          <h2 className='text-gray-600'>~34,000 Miles, V12 Power, Mostly Unmodified, Florida- and California-Owned</h2>
+          <h1 className='text-2xl font-bold'>{title}</h1>
+          <h2 className='text-gray-600'>{subTitle}</h2>
         </div>
         <div className='flex justify-around md:justify-end'>
           <LoginModal>

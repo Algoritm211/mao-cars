@@ -1,13 +1,26 @@
 import React from 'react';
 import CardBidLabel from "@/shared/components/card-bid-label/card-bid-label";
 import {useRouter} from "next/router";
+import {Auction} from "@/core/interfaces/api/auctions";
 
-const CarCard = () => {
+interface Props {
+  auction: Auction
+}
+
+const AuctionCard: React.FC<Props> = ({auction}) => {
+  const {
+    current_bid,
+    auction_end,
+    title,
+    sub_title,
+    location,
+    main_photo: {url},
+    has_inspection,
+  } = auction;
   const router = useRouter();
-  const dayPlusOne = new Date(new Date().setDate(new Date().getDate() + 1));
 
   const onCarDetails = () => {
-    void router.push('/cars/1')
+    void router.push(`/auctions/${auction.id}`)
   }
   return (
     <div
@@ -15,25 +28,28 @@ const CarCard = () => {
       onClick={onCarDetails}
     >
       <figure className='relative'>
-        <img src="/rr-mock.jpeg" className='w-80 h-52 object-cover' alt="Car"/>
+        <img src={url} className='w-80 h-52 object-cover' alt={title}/>
         <div className='absolute bottom-1 left-1'>
-          <CardBidLabel price={150_000} endDate={dayPlusOne} currency={'USD'} />
+          <CardBidLabel
+            price={current_bid}
+            endDate={new Date(auction_end)}
+            currency={'USD'} />
         </div>
       </figure>
       <div className="card-body">
-        <h2 className="card-title">2010 Rolls-Royce Phantom Extended </h2>
+        <h2 className="card-title">{title}</h2>
         {/* Car specs */}
-        <p>~34,000 Miles, V12 Power, Mostly Unmodified, Florida- and California-Owned</p>
+        <p>{sub_title}</p>
         {/* Address */}
-        <p className='text-gray-500'>Kyiv, Klovsky descent 18/34</p>
+        <p className='text-gray-500'>{location}</p>
         <div className="card-actions">
           <div className="badge badge-primary badge-outline">No Reserve</div>
           <div className="badge badge-secondary badge-outline">Reserved</div>
-          <div className="badge badge-accent badge-outline">Inspected</div>
+          {has_inspection && <div className="badge badge-accent badge-outline">Inspected</div> }
         </div>
       </div>
     </div>
   );
 };
 
-export default CarCard;
+export default AuctionCard;

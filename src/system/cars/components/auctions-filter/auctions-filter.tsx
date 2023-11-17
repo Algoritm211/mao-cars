@@ -6,7 +6,6 @@ import {
   BODY_TYPES,
 } from "@/system/cars/components/auctions-filter/constants/constants";
 import {useRouter} from "next/router";
-import {useSearchParams} from "next/navigation";
 import {clsx} from "clsx";
 import {END_YEAR, END_YEARS, START_YEAR, START_YEARS, TRANSMISSION_FILTER_TYPES} from "@/core/constants";
 import {AuctionsFilterInputs} from "@/system/cars/components/auctions-filter/models/auctions-filter";

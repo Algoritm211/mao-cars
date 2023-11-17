@@ -21,3 +21,9 @@ export const TRANSMISSION_TYPES: TransmissionType[] = [
   TransmissionType.Automatic,
   TransmissionType.Manual,
 ]
+
+export enum AuctionsSort {
+  NewlyListed = 'Newly Listed',
+  LowestMileage = 'Lowest mileage',
+  NoReserve = 'No Reserve'
+}

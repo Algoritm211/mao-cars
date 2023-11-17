@@ -2,7 +2,7 @@ import React from 'react';
 import {FormProvider, useForm} from "react-hook-form";
 import {CarFormInputs} from "@/system/submit-car/components/car-form/models/models";
 import {Icon} from "@/shared/components/icon/icon";
-import {purpleButton} from "@/shared/components/button/purple-button";
+import {button} from "@/shared/components/button/button";
 import {
   CarInfoFormPart,
   CarPhotosFormPart,
@@ -38,7 +38,7 @@ export const CarForm = () => {
         <ReservePriceFormPart/>
         <CarPhotosFormPart />
         <div className='mb-4 mt-8 flex justify-center'>
-          <button type='submit' className={purpleButton()}>
+          <button type='submit' className={button()}>
             Submit application
             <Icon name='arrow-right' className='w-4 h-4' />
           </button>

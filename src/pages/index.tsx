@@ -1,12 +1,11 @@
-import {Cars} from "@/system/cars/cars";
+import {Auctions} from "@/system/cars/auctions";
 import {dehydrate, QueryClient} from "@tanstack/react-query";
 import {auctionsAPI, EntitiesKeys} from "@/data-access";
 import { GetServerSidePropsContext} from "next";
-import {AuctionsFilterInputs} from "@/system/cars/components/auctions-filter/models/auctions-filter";
 
 export default function Home() {
   return (
-    <Cars/>
+    <Auctions/>
   )
 }
 

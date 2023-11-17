@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
-import {CarsAuctions} from "@/system/cars/components/cars-auctions/cars-auctions";
 import {AuctionsFilter} from "@/system/cars/components/auctions-filter/auctions-filter";
 import {AuctionsFilterInputs} from "@/system/cars/components/auctions-filter/models/auctions-filter";
 import {useAuctions} from "@/data-access";
-import {useRouter} from "next/router";
 import {useSearchParams} from "next/navigation";
 import {BodyType, TransmissionType} from "@/core/interfaces";
+import {maoLoader} from "@/shared/components";
+import {AuctionContainer} from "@/shared/components/auction/auction-container";
+import AuctionCard from "@/shared/components/auction/auction-card";
 
-export const Cars = () => {
+export const Auctions = () => {
   const params = useSearchParams();
 
   const initialFilterParams = {
@@ -18,22 +19,28 @@ export const Cars = () => {
     sort: params.get('sort') || undefined,
   }
   const [filter, setFilter] = useState<AuctionsFilterInputs>(initialFilterParams);
-  const { isFetching} = useAuctions(filter);
+  const { data, isLoading} = useAuctions(filter);
 
   return (
     <React.Fragment>
       <AuctionsFilter
         setFilter={setFilter}
-        isLoading={isFetching}
+        isLoading={isLoading}
         initialFilterValues={initialFilterParams}
       />
       <hr className='block mx-2'/>
 
-      {isFetching ? (
+      {isLoading ? (
         <div className='flex justify-center my-20'>
-          <div className='loading loading-lg' />
+          <span className={maoLoader({size: 'lg'})} />
         </div>
-      ) : <CarsAuctions />}
+      ) : (
+        <AuctionContainer>
+          {data?.auctions?.map(auction =>
+            <AuctionCard key={auction.id} auction={auction} />
+          )}
+        </AuctionContainer>
+      )}
     </React.Fragment>
   );
 };

@@ -1,14 +1,10 @@
 import React from 'react';
-import CarCard from "@/shared/components/car-card/car-card";
+import {AuctionContainer} from "@/shared/components/auction/auction-container";
 
 export const AccountListingsCars = () => {
   return (
-    <div className='my-5 grid gap-3 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
-      <CarCard/>
-      <CarCard/>
-      <CarCard/>
-      <CarCard/>
-      <CarCard/>
-    </div>
+    <AuctionContainer>
+
+    </AuctionContainer>
   )
 };
