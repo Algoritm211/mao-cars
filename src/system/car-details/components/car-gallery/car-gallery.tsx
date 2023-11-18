@@ -1,14 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {Icon} from "@/shared/components/icon/icon";
 
-const MOCK_IMAGES = [
-  '/carousel/set-1-1.jpeg',
-  '/carousel/set-1-2.jpeg',
-  '/carousel/set-1-3.jpeg',
-  '/carousel/set-1-4.jpeg',
-  '/carousel/set-1-5.jpeg',
-];
-
 interface Props {
   photos: string[] | undefined
 }

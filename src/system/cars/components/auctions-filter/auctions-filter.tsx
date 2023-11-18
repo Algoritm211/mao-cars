@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 import {BodyType, TransmissionType} from "@/core/interfaces";
 import {
