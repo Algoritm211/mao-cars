@@ -1,4 +1,4 @@
 export interface Seller {
-  url?:      string;
+  photo?:      string;
   username?: string;
 }
