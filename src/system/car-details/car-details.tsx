@@ -7,10 +7,11 @@ import {useAuction} from "@/data-access";
 import {useRouter} from "next/router";
 import {maoLoader} from "@/shared/components";
 import {CarInfoSections} from "@/system/car-details/components/car-info-sections/car-info-sections";
+import {AuctionStatistics} from "@/system/car-details/components/auction-statistics/auction-statistics";
 
 export const CarDetails = () => {
   const router = useRouter();
-  const {data, isLoading} = useAuction(router.query?.id as string)
+  const {data: auction, isLoading} = useAuction(router.query?.id as string)
 
   if (isLoading) {
    return <div className='flex justify-center my-20 bg-pu'>
@@ -21,13 +22,14 @@ export const CarDetails = () => {
   return (
     <div>
       <CarDetailsHeader
-        title={data?.listing?.title}
-        subTitle={data?.listing?.sub_title}
+        title={auction?.listing?.title}
+        subTitle={auction?.listing?.sub_title}
       />
-      <CarGallery photos={data?.listing?.photos} />
-      <PlaceBid endDate={data?.stats.auction_end!} price={data?.stats.current_bid?.amount!} />
-      <CarDetailsList auction={data!} />
-      <CarInfoSections sections={data?.listing?.sections!} />
+      <CarGallery photos={auction?.listing?.photos} />
+      <PlaceBid endDate={auction?.stats.auction_end!} price={auction?.stats.current_bid?.amount!} />
+      <CarDetailsList auction={auction!} />
+      <CarInfoSections sections={auction?.listing?.sections!} />
+      <AuctionStatistics auction={auction!} />
     </div>
   );
 };
