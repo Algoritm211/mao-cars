@@ -11,7 +11,7 @@ export const TextSection: React.FC<Props> = ({title, content}) => {
       <h4 className='text-2xl font-bold'>
         {title}
       </h4>
-      <div className='py-2'>
+      <div className='my-2'>
         {content}
       </div>
     </div>

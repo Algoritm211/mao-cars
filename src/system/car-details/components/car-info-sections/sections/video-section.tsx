@@ -11,7 +11,7 @@ export const VideoSection: React.FC<Props> = ({content, title}) => {
       <h4 className='text-2xl font-bold'>
         {title}
       </h4>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-2 my-2'>
         {content.map(elem => {
           return (
             <iframe
