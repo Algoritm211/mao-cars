@@ -8,6 +8,7 @@ import {useRouter} from "next/router";
 import {maoLoader} from "@/shared/components";
 import {CarInfoSections} from "@/system/car-details/components/car-info-sections/car-info-sections";
 import {AuctionStatistics} from "@/system/car-details/components/auction-statistics/auction-statistics";
+import {AuctionComments} from "@/system/car-details/components/auction-comments-section/auction-comments";
 
 export const CarDetails = () => {
   const router = useRouter();
@@ -30,6 +31,7 @@ export const CarDetails = () => {
       <CarDetailsList auction={auction!} />
       <CarInfoSections sections={auction?.listing?.sections!} />
       <AuctionStatistics auction={auction!} />
+      <AuctionComments />
     </div>
   );
 };
