@@ -8,7 +8,7 @@ interface Props {
 
 export const CarInfoSections: React.FC<Props> = ({sections}) => {
   return (
-    <div>
+    <div className='mx-2 md:mx-0'>
       {(Object.entries(sections)).map(([section, value]) => {
         const {name, type} = SECTION_NAMES[section as keyof Sections];
         const SectionComponent = SECTION_COMPONENTS[type]
