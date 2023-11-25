@@ -1,4 +1,3 @@
-
 export const defaultDateFormatter = (date: Date) => {
   return new Intl.DateTimeFormat('en-EN', {
     weekday: 'short',
@@ -8,5 +7,5 @@ export const defaultDateFormatter = (date: Date) => {
     minute: 'numeric',
     year: 'numeric',
     hour12: true,
-  }).format(date)
-}
+  }).format(date);
+};

@@ -1,4 +1,4 @@
-import {cva} from "class-variance-authority";
+import { cva } from 'class-variance-authority';
 
 export const maoLoader = cva('loading loading-spinner text-purple-900', {
   variants: {
@@ -11,5 +11,5 @@ export const maoLoader = cva('loading loading-spinner text-purple-900', {
   },
   defaultVariants: {
     size: 'md',
-  }
-})
+  },
+});

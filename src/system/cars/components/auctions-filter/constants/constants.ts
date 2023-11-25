@@ -1,5 +1,5 @@
-import {BodyType} from "@/core/interfaces";
-import {AuctionsSort} from "@/core/constants";
+import { BodyType } from '@/core/interfaces';
+import { AuctionsSort } from '@/core/constants';
 
 export const BODY_TYPES: BodyType[] = [
   BodyType.All,
@@ -11,10 +11,10 @@ export const BODY_TYPES: BodyType[] = [
   BodyType.Truck,
   BodyType.Van,
   BodyType.Wagon,
-]
+];
 
 export const AUCTION_SORT = [
   AuctionsSort.LowestMileage,
   AuctionsSort.NewlyListed,
   AuctionsSort.NoReserve,
-]
+];

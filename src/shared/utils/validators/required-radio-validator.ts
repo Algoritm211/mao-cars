@@ -1,3 +1,3 @@
 export const requiredRadioValidator = {
-  required: (val: boolean | undefined) => val !== undefined
-}
+  required: (val: boolean | undefined) => val !== undefined,
+};

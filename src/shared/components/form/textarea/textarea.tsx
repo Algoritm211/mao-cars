@@ -1,14 +1,14 @@
-import React, {InputHTMLAttributes} from 'react';
-import {FieldValues, RegisterOptions, UseFormRegister} from "react-hook-form";
+import React, { InputHTMLAttributes } from 'react';
+import { FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
 
 interface Props extends InputHTMLAttributes<HTMLTextAreaElement> {
   id: string;
   label: string;
   register: UseFormRegister<FieldValues | any>;
-  registerOptions?: RegisterOptions
+  registerOptions?: RegisterOptions;
 }
 
-export const TextArea: React.FC<Props> = ({id, label, register, registerOptions, ...rest}) => {
+export const TextArea: React.FC<Props> = ({ id, label, register, registerOptions, ...rest }) => {
   return (
     <React.Fragment>
       <label htmlFor={id} className="label">
@@ -18,8 +18,8 @@ export const TextArea: React.FC<Props> = ({id, label, register, registerOptions,
         id={id}
         className="textarea textarea-bordered h-36"
         {...register(id, registerOptions)}
-        {...rest}>
-      </textarea>
+        {...rest}
+      ></textarea>
     </React.Fragment>
   );
 };

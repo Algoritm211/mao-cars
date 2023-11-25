@@ -1,5 +1,5 @@
 import React from 'react';
-import {SubmitCar} from "@/system/submit-car/submit-car";
+import { SubmitCar } from '@/system/submit-car/submit-car';
 
 const Submit = () => {
   return (

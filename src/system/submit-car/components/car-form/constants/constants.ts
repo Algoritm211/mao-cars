@@ -1,6 +1,1 @@
-
-export const CAR_OWNER = [
-  'dealer',
-  'private'
-]
-
+export const CAR_OWNER = ['dealer', 'private'];

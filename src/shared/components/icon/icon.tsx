@@ -1,4 +1,4 @@
-import {clsx} from 'clsx';
+import { clsx } from 'clsx';
 import type { SVGProps } from 'react';
 import type { SpritesMap } from './sprite.gen';
 
@@ -20,4 +20,4 @@ export const Icon = ({ name, className, viewBox, ...props }: IconProps) => {
       <use href={`/sprite.svg#${name}`} />
     </svg>
   );
-}
+};

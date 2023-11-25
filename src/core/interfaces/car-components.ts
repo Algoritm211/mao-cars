@@ -1,8 +1,7 @@
-
 export enum TransmissionType {
   All = 'All',
   Automatic = 'Automatic',
-  Manual = 'Manual'
+  Manual = 'Manual',
 }
 
 export enum BodyType {
@@ -14,5 +13,5 @@ export enum BodyType {
   SUV = 'SUV',
   Truck = 'Truck',
   Van = 'Van',
-  Wagon = 'Wagon'
+  Wagon = 'Wagon',
 }

@@ -1,14 +1,14 @@
-import {TransmissionType} from "@/core/interfaces";
+import { TransmissionType } from '@/core/interfaces';
 
 export interface CarFormInputs {
-  owner: 'private' | 'dealer'
+  owner: 'private' | 'dealer';
   fullName: string;
   phone: string;
   vin: string;
   year: number;
   make: string;
   model: string;
-  transmission: TransmissionType,
+  transmission: TransmissionType;
   mileage: number;
   equipment: string;
   isModified: boolean;

@@ -1,16 +1,23 @@
-import React, {InputHTMLAttributes} from 'react';
-import {FieldErrors, FieldValues, RegisterOptions, UseFormRegister} from "react-hook-form";
-import {FormErrors} from "@/shared/components/form/form-errors/form-errors";
+import React, { InputHTMLAttributes } from 'react';
+import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
+import { FormErrors } from '@/shared/components/form/form-errors/form-errors';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
   label: string;
-  errors?: FieldErrors<FieldValues>
+  errors?: FieldErrors<FieldValues>;
   register: UseFormRegister<FieldValues | any>;
-  registerOptions?: RegisterOptions
+  registerOptions?: RegisterOptions;
 }
 
-export const Input: React.FC<Props> = ({ id, label, errors, register, registerOptions, ...rest }) => {
+export const Input: React.FC<Props> = ({
+  id,
+  label,
+  errors,
+  register,
+  registerOptions,
+  ...rest
+}) => {
   return (
     <React.Fragment>
       <label htmlFor={id} className="label">

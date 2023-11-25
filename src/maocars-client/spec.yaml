@@ -1,0 +1,505 @@
+openapi: 3.1.0
+x-stoplight:
+  id: b5rp4lp4aqw4v
+info:
+  title: mao-cars-api
+  version: '1.0'
+paths:
+  /autos/auctions:
+    get:
+      summary: Get all auctions
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: number
+                    x-stoplight:
+                      id: le0j4hif4o8wm
+                  total:
+                    type: number
+                    x-stoplight:
+                      id: x7ousiot1xcdd
+                  auctions:
+                    type: array
+                    x-stoplight:
+                      id: bmiha323k7gg0
+                    items:
+                      $ref: '#/components/schemas/Auction'
+                      x-stoplight:
+                        id: eri4oqd4roxvw
+                required:
+                  - count
+                  - total
+                  - auctions
+      operationId: get-auctions
+      x-stoplight:
+        id: t0x9nb686q0hv
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      parameters: []
+  '/autos/auctions/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Get auction by id
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  listing:
+                    $ref: '#/components/schemas/Car'
+                    x-stoplight:
+                      id: dyh8xt20gwdzo
+                  no_reserve:
+                    type: boolean
+                    x-stoplight:
+                      id: 4pok9emem2nn0
+                  seller:
+                    $ref: '#/components/schemas/UserShort'
+                    x-stoplight:
+                      id: 92mvgyd6on685
+                  shipping_quote_eligible:
+                    type: boolean
+                    x-stoplight:
+                      id: vpmwqnz9toki0
+                  stats:
+                    type: object
+                    x-stoplight:
+                      id: t6wfxe1o39yhw
+                    properties:
+                      auction_end:
+                        type: string
+                        x-stoplight:
+                          id: 4jfrf5k1kt6p2
+                        format: date-time
+                      bids:
+                        type: number
+                        x-stoplight:
+                          id: 4xfk2q0b9h7co
+                      comments:
+                        type: number
+                        x-stoplight:
+                          id: md7u8se3sv6ss
+                      questions:
+                        type: number
+                        x-stoplight:
+                          id: cqqthqkg7ttgo
+                      watchers:
+                        type: number
+                        x-stoplight:
+                          id: 8uxms9i9k2cpx
+                      current_bid:
+                        type: object
+                        x-stoplight:
+                          id: fau5satgz9peq
+                        required:
+                          - amount
+                          - bidder
+                        properties:
+                          amount:
+                            type: number
+                            x-stoplight:
+                              id: ui0p8ejhzkmao
+                          bidder:
+                            $ref: '#/components/schemas/UserShort'
+                            x-stoplight:
+                              id: 6v6c1xz69cglk
+                    required:
+                      - auction_end
+                      - bids
+                      - comments
+                      - questions
+                      - watchers
+                      - current_bid
+                  status:
+                    x-stoplight:
+                      id: nou7ic085ilhv
+                    enum:
+                      - live
+                      - end
+                  submission_id:
+                    type: string
+                    x-stoplight:
+                      id: 2c6of7klao871
+                  views:
+                    type: number
+                    x-stoplight:
+                      id: eimsufigcfr5x
+                  watching:
+                    type: boolean
+                    x-stoplight:
+                      id: evbzx310g1zn3
+                required:
+                  - listing
+                  - no_reserve
+                  - seller
+                  - shipping_quote_eligible
+                  - status
+                  - submission_id
+                  - views
+                  - watching
+      operationId: get-auction-by-id
+      x-stoplight:
+        id: 68x6e4ebcr1x8
+components:
+  schemas:
+    Car:
+      title: Car
+      x-stoplight:
+        id: tkpfqjo6ubcww
+      type: object
+      properties:
+        title:
+          type: string
+          x-stoplight:
+            id: 63n7wyezuxwow
+        sub_title:
+          type: string
+          x-stoplight:
+            id: z9x922ije6p96
+        title_status:
+          type: string
+          x-stoplight:
+            id: la3aqpwpxkecj
+        make:
+          type: string
+          x-stoplight:
+            id: uqh4x93xnf0l9
+        model:
+          type: string
+          x-stoplight:
+            id: j91ygjsdls2cm
+        id:
+          type: string
+          x-stoplight:
+            id: 4cr00lxhglajt
+        mileage:
+          type: number
+          x-stoplight:
+            id: g1px65it929xw
+        vin:
+          type: string
+          x-stoplight:
+            id: dwbk5jy9scnx4
+        seller_type:
+          x-stoplight:
+            id: y7ijoviseyg8o
+          enum:
+            - private
+            - dealer
+        year:
+          type: number
+          x-stoplight:
+            id: w35ctf8ib2fe2
+        transmission:
+          x-stoplight:
+            id: 250legycfn0th
+          enum:
+            - automatic
+            - manual
+        transmisson_details:
+          type: string
+          x-stoplight:
+            id: toqhr9caemw8d
+        location:
+          type: string
+          x-stoplight:
+            id: 9ut1dk26o4zye
+        interior_color:
+          type: string
+          x-stoplight:
+            id: 77anj0emka78v
+        sections:
+          type: object
+          x-stoplight:
+            id: kivbv29xwoanv
+          required:
+            - equipment
+            - highlights
+            - known_flaws
+            - ownership_history
+            - recent_service_history
+          properties:
+            equipment:
+              type: string
+              x-stoplight:
+                id: cxpwhpj394z9o
+            highlights:
+              type: string
+              x-stoplight:
+                id: n05qk4z9mb92t
+            known_flaws:
+              type: string
+              x-stoplight:
+                id: wyxu57mjthzbi
+            other_items:
+              type: string
+              x-stoplight:
+                id: 611bmb0q5o6lb
+            ownership_history:
+              type: string
+              x-stoplight:
+                id: j88lwb1zh29vz
+            recent_service_history:
+              type: string
+              x-stoplight:
+                id: svjaucqabra4i
+            videos:
+              type: array
+              x-stoplight:
+                id: o753mvor3j25j
+              items:
+                x-stoplight:
+                  id: 9xytx7p2um3hk
+                type: string
+        photos:
+          type: array
+          x-stoplight:
+            id: wdhclhyopvb0x
+          items:
+            x-stoplight:
+              id: xfj3ps03sh0o0
+            type: string
+        exterior_color:
+          type: string
+          x-stoplight:
+            id: 5m34u7x8dm7jw
+        body_style:
+          x-stoplight:
+            id: i3zmtgbshumcm
+          enum:
+            - coupe
+            - convertible
+            - hatchback
+            - sedan
+            - suv
+            - truck
+            - van
+            - wagon
+        engine:
+          type: string
+          x-stoplight:
+            id: jgbjrrootox1u
+        drive_train:
+          x-stoplight:
+            id: v0z6lwe8q2c9d
+          enum:
+            - front
+            - rear
+            - all-drive
+        history_report:
+          type: object
+          x-stoplight:
+            id: e29h4de4fh5xc
+          properties:
+            url:
+              type: string
+              x-stoplight:
+                id: q1fwze0u4l4pa
+            expiry:
+              type: string
+              x-stoplight:
+                id: 21hkqlrdvumtv
+              format: date-time
+            vendor:
+              type: string
+              x-stoplight:
+                id: 62zh3xd8wkza6
+      required:
+        - title
+        - sub_title
+        - title_status
+        - make
+        - model
+        - mileage
+        - vin
+        - seller_type
+        - year
+        - transmission
+        - location
+        - sections
+        - photos
+        - exterior_color
+        - body_style
+        - engine
+        - drive_train
+    User:
+      title: User
+      x-stoplight:
+        id: opwog8fklbt5z
+      type: object
+      properties:
+        id:
+          type: string
+          x-stoplight:
+            id: vg48tzervmo9q
+        profile-info:
+          type: object
+          x-stoplight:
+            id: 4vg8to0ussjx2
+          required:
+            - bio
+            - username
+            - created_at
+            - reputation
+          properties:
+            bio:
+              type: string
+              x-stoplight:
+                id: uv7946myn48ow
+            username:
+              type: string
+              x-stoplight:
+                id: s89gpuhw3qo6m
+            created_at:
+              type: string
+              x-stoplight:
+                id: 2rxpzlby0omdc
+              format: date-time
+            reputation:
+              type: number
+              x-stoplight:
+                id: 471056s7y5aak
+            photo:
+              type: string
+              x-stoplight:
+                id: yyxh56q494j52
+              format: uri
+        cars_auctioned:
+          type: array
+          x-stoplight:
+            id: tz290gorce10m
+          items:
+            $ref: '#/components/schemas/Car'
+            x-stoplight:
+              id: g60tncx2g2av4
+      required:
+        - id
+        - profile-info
+        - cars_auctioned
+    Auction:
+      title: Auction
+      x-stoplight:
+        id: 1v4zrvsrd35gq
+      type: object
+      properties:
+        id:
+          type: string
+          x-stoplight:
+            id: t4bkbar3h5blu
+        auction_end:
+          type: string
+          x-stoplight:
+            id: qqz55qvnxbh51
+          format: date-time
+        current_bid:
+          type: number
+          x-stoplight:
+            id: vlcij1ikh4bcj
+        has_inspection:
+          type: boolean
+          x-stoplight:
+            id: hp6k2ibhoptiz
+        location:
+          type: string
+          x-stoplight:
+            id: gokuouhqvx7gc
+        main_photo:
+          type: object
+          x-stoplight:
+            id: uiz9es40wakin
+          required:
+            - url
+          properties:
+            url:
+              type: string
+              x-stoplight:
+                id: xb8ua69odagld
+              format: uri
+        seller:
+          type: object
+          x-stoplight:
+            id: ev5plxp87l28t
+          required:
+            - url
+            - username
+          properties:
+            url:
+              type: string
+              x-stoplight:
+                id: 3geyvgebyrxcm
+              format: uri
+            username:
+              type: string
+              x-stoplight:
+                id: 22hq4rmvdgwa5
+        mileage:
+          type: number
+          x-stoplight:
+            id: 5on40f68l5xqh
+        status:
+          x-stoplight:
+            id: nvufroiin6byk
+          enum:
+            - live
+            - ended
+        sub_title:
+          type: string
+          x-stoplight:
+            id: 8x7vjvswv23dq
+        title:
+          type: string
+          x-stoplight:
+            id: 5y1r8vub6cazm
+        watching:
+          type: boolean
+          x-stoplight:
+            id: r2jg8jn7o9bi7
+      required:
+        - id
+        - auction_end
+        - current_bid
+        - has_inspection
+        - location
+        - main_photo
+        - seller
+        - mileage
+        - status
+        - sub_title
+        - title
+        - watching
+    UserShort:
+      title: UserShort
+      x-stoplight:
+        id: 7np5l2f8u83m9
+      type: object
+      properties:
+        photo:
+          type: string
+          x-stoplight:
+            id: 3p6uwame35fuj
+          format: uri
+        username:
+          type: string
+          x-stoplight:
+            id: wa4akv58fc9ey
+      required:
+        - username

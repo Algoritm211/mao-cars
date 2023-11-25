@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface Props {
-  endDate: Date
+  endDate: Date;
 }
 
-export const Timer: React.FC<Props> = ({endDate}) => {
+export const Timer: React.FC<Props> = ({ endDate }) => {
   const [time, setTime] = useState(new Date(endDate).getTime());
 
   useEffect(() => {
@@ -19,7 +19,6 @@ export const Timer: React.FC<Props> = ({endDate}) => {
       }, 1000);
     }
 
-
     if (time === 0) {
       clearInterval(countdown);
     }
@@ -29,7 +28,5 @@ export const Timer: React.FC<Props> = ({endDate}) => {
     };
   }, [time]);
 
-  return (
-    <time suppressHydrationWarning>{new Date(time).toLocaleTimeString()}</time>
-  );
+  return <time suppressHydrationWarning>{new Date(time).toLocaleTimeString()}</time>;
 };

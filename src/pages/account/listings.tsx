@@ -1,6 +1,6 @@
 import React from 'react';
-import {AccountLayout} from "@/system/account/layout/account-layout";
-import {AccountListings} from "@/system/account/account-listings";
+import { AccountLayout } from '@/system/account/layout/account-layout';
+import { AccountListings } from '@/system/account/account-listings';
 
 const Listings = () => {
   return (

@@ -1,11 +1,11 @@
-import React, {useRef, useState} from 'react';
-import {Icon} from "@/shared/components/icon/icon";
+import React, { useRef, useState } from 'react';
+import { Icon } from '@/shared/components/icon/icon';
 
 interface Props {
-  photos: string[] | undefined
+  photos: string[] | undefined;
 }
 
-export const CarGallery: React.FC<Props> = ({photos = []}) => {
+export const CarGallery: React.FC<Props> = ({ photos = [] }) => {
   const TRANSITION_DURATION = 0.3;
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -51,12 +51,13 @@ export const CarGallery: React.FC<Props> = ({photos = []}) => {
       className="relative py-2"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}>
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="overflow-hidden rounded md:rounded-xl">
-        <div className="flex" style={{width: `${photos.length * 100}%`, ...imagePosition}}>
+        <div className="flex" style={{ width: `${photos.length * 100}%`, ...imagePosition }}>
           {photos.map((image, index) => (
             <div key={index} className="w-full">
-              <img src={image} alt={`Slide ${index}`} className="w-full h-auto object-cover"/>
+              <img src={image} alt={`Slide ${index}`} className="w-full h-auto object-cover" />
             </div>
           ))}
         </div>
@@ -68,7 +69,10 @@ export const CarGallery: React.FC<Props> = ({photos = []}) => {
         top-1/2 left-0 transform
         -translate-y-1/2 pl-8 h-full w-5/12 bg-transparent rounded-lg"
       >
-        <Icon name={'arrow-left'} className="w-6 h-6 md:w-10 md:h-10 md:hover:scale-150 transition-all" />
+        <Icon
+          name={'arrow-left'}
+          className="w-6 h-6 md:w-10 md:h-10 md:hover:scale-150 transition-all"
+        />
       </button>
       <button
         onClick={nextSlide}
@@ -77,7 +81,10 @@ export const CarGallery: React.FC<Props> = ({photos = []}) => {
         top-1/2 right-0 transform
         -translate-y-1/2 pr-8 h-full w-5/12 bg-transparent rounded-lg"
       >
-        <Icon name={'arrow-right'} className="w-6 h-6 md:w-10 md:h-10 md:hover:scale-150 transition-all" />
+        <Icon
+          name={'arrow-right'}
+          className="w-6 h-6 md:w-10 md:h-10 md:hover:scale-150 transition-all"
+        />
       </button>
     </div>
   );
