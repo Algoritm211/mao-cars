@@ -1,11 +1,11 @@
-import { Sections } from '@/core/interfaces/api/auction';
 import React from 'react';
 import { TextSection } from '@/system/car-details/components/car-info-sections/sections/text-section';
 import { VideoSection } from '@/system/car-details/components/car-info-sections/sections/video-section';
+import { CarSections } from '@/maocars-client/schemas';
 
 type SectionTypes = 'text' | 'video';
 
-export const SECTION_NAMES: Record<keyof Sections, { type: SectionTypes; name: string }> = {
+export const SECTION_NAMES: Record<keyof CarSections, { type: SectionTypes; name: string }> = {
   equipment: { name: 'Equipment', type: 'text' },
   known_flaws: { name: 'Known Flaws', type: 'text' },
   recent_service_history: { name: 'Recent Service History', type: 'text' },

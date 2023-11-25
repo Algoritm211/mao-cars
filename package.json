@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen:spec": "orval --config ./orval.config.js",
+    "gen:spec": "orval --config ./orval.config.ts",
     "format": "npx prettier ./src --write",
     "format:check": "npx prettier ./src --check"
   },

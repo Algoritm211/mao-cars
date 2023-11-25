@@ -5,7 +5,7 @@ import { LoginModal } from '@/auth/components/login-modal/login-modal';
 import { button } from '@/shared/components/button/button';
 
 interface Props {
-  endDate: Date;
+  endDate: string;
   price: number;
 }
 
@@ -20,7 +20,7 @@ export const PlaceBid: React.FC<Props> = ({ endDate, price }) => {
         <li className="flex justify-center basis-1/2 md:basis-1/4">
           <span className="text-gray-400 mr-2">Time Left</span>
           <span>
-            <Timer endDate={endDate} />
+            <Timer endDate={new Date(endDate)} />
           </span>
         </li>
         <li className="flex justify-center basis-1/2 md:basis-1/4">

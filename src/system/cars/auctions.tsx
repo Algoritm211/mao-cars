@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { AuctionsFilter } from '@/system/cars/components/auctions-filter/auctions-filter';
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
-import { useAuctions } from '@/data-access';
 import { useSearchParams } from 'next/navigation';
 import { BodyType, TransmissionType } from '@/core/interfaces';
 import { maoLoader } from '@/shared/components';
 import { AuctionContainer } from '@/shared/components/auction/auction-container';
 import AuctionCard from '@/shared/components/auction/auction-card';
+import { useGetAuctions } from '@/maocars-client/maocars';
 
 export const Auctions = () => {
   const params = useSearchParams();
@@ -19,7 +19,7 @@ export const Auctions = () => {
     sort: params.get('sort') || undefined,
   };
   const [filter, setFilter] = useState<AuctionsFilterInputs>(initialFilterParams);
-  const { data, isLoading } = useAuctions(filter);
+  const { data, isLoading } = useGetAuctions(filter);
 
   return (
     <React.Fragment>

@@ -2,6 +2,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { AuctionExtended, Listing } from '@/core/interfaces/api/auction';
 import { SECTION_COMPONENTS, SECTION_NAMES } from './models/models';
+import { GetAuctionById200 } from '@/maocars-client/schemas';
 
 const MOCK_CAR = {
   Make: 'Rolls-Royce',
@@ -21,7 +22,7 @@ const MOCK_CAR = {
 };
 
 interface Props {
-  auction: AuctionExtended;
+  auction: GetAuctionById200;
 }
 
 export const CarDetailsList: React.FC<Props> = ({ auction }) => {

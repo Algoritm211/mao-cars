@@ -41,11 +41,28 @@ paths:
       x-stoplight:
         id: t0x9nb686q0hv
       requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-      parameters: []
+        content: {}
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: startYear
+        - schema:
+            type: string
+          in: query
+          name: endYear
+        - schema:
+            type: string
+          in: query
+          name: bodyStyle
+        - schema:
+            type: string
+          in: query
+          name: transmission
+        - schema:
+            type: string
+          in: query
+          name: sort
   '/autos/auctions/{id}':
     parameters:
       - schema:
@@ -84,6 +101,13 @@ paths:
                     type: object
                     x-stoplight:
                       id: t6wfxe1o39yhw
+                    required:
+                      - auction_end
+                      - bids
+                      - comments
+                      - questions
+                      - watchers
+                      - current_bid
                     properties:
                       auction_end:
                         type: string
@@ -122,13 +146,6 @@ paths:
                             $ref: '#/components/schemas/UserShort'
                             x-stoplight:
                               id: 6v6c1xz69cglk
-                    required:
-                      - auction_end
-                      - bids
-                      - comments
-                      - questions
-                      - watchers
-                      - current_bid
                   status:
                     x-stoplight:
                       id: nou7ic085ilhv
@@ -152,6 +169,7 @@ paths:
                   - no_reserve
                   - seller
                   - shipping_quote_eligible
+                  - stats
                   - status
                   - submission_id
                   - views
@@ -270,6 +288,10 @@ components:
                 x-stoplight:
                   id: 9xytx7p2um3hk
                 type: string
+            modifications:
+              type: string
+              x-stoplight:
+                id: 4wejd7cosep82
         photos:
           type: array
           x-stoplight:

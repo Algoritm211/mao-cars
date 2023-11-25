@@ -1,7 +1,7 @@
 import React from 'react';
 import CardBidLabel from '@/shared/components/card-bid-label/card-bid-label';
 import { useRouter } from 'next/router';
-import { Auction } from '@/core/interfaces/api/auctions';
+import { Auction } from '@/maocars-client/schemas';
 
 interface Props {
   auction: Auction;

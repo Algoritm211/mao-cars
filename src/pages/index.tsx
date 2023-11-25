@@ -1,7 +1,7 @@
 import { Auctions } from '@/system/cars/auctions';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { auctionsAPI, EntitiesKeys } from '@/data-access';
 import { GetServerSidePropsContext } from 'next';
+import { getAuctions, getGetAuctionsQueryKey } from '@/maocars-client/maocars';
 
 export default function Home() {
   return <Auctions />;
@@ -12,8 +12,8 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: [EntitiesKeys.auctions, query],
-    queryFn: () => auctionsAPI.fetchAuctions(query),
+    queryKey: getGetAuctionsQueryKey(query),
+    queryFn: () => getAuctions(query),
   });
 
   return {
