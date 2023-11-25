@@ -1,4 +1,4 @@
-const baseURL = process.env.NEXT_PUBLIC_BACKEND_BASE; // use your own URL here or environment variable
+const baseURL = process.env.NEXT_PUBLIC_BACKEND_BASE;
 
 export const customInstance = async <T>({
   url,
@@ -16,7 +16,7 @@ export const customInstance = async <T>({
   headers?: HeadersInit | undefined;
   signal?: AbortSignal | undefined;
 }): Promise<T> => {
-  const response = await fetch(`${baseURL}${url}` + new URLSearchParams(params), {
+  const response = await fetch(`${baseURL}${url}?` + new URLSearchParams(params).toString(), {
     method,
     ...(data ? { body: JSON.stringify(data) } : {}),
     headers,
