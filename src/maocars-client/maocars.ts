@@ -18,7 +18,11 @@ import { customInstance } from './fetch-instance';
  * @summary Get all auctions
  */
 export const getAuctions = (params?: GetAuctionsParams) => {
-  return customInstance<GetAuctions200>({ url: `/autos/auctions`, method: 'get', params });
+  return customInstance<GetAuctions200>({
+    url: `/autos/auctions`,
+    method: 'get',
+    params,
+  });
 };
 
 export const getGetAuctionsQueryKey = (params?: GetAuctionsParams) => {
@@ -40,11 +44,14 @@ export const getGetAuctionsQueryOptions = <
 
   const queryFn: QueryFunction<Awaited<ReturnType<typeof getAuctions>>> = () => getAuctions(params);
 
-  return { queryKey, queryFn, refetchOnMount: false, ...queryOptions } as UseQueryOptions<
-    Awaited<ReturnType<typeof getAuctions>>,
-    TError,
-    TData
-  > & { queryKey: QueryKey };
+  return {
+    queryKey,
+    queryFn,
+    refetchOnMount: false,
+    ...queryOptions,
+  } as UseQueryOptions<Awaited<ReturnType<typeof getAuctions>>, TError, TData> & {
+    queryKey: QueryKey;
+  };
 };
 
 export type GetAuctionsQueryResult = NonNullable<Awaited<ReturnType<typeof getAuctions>>>;
@@ -61,7 +68,9 @@ export const useGetAuctions = <TData = Awaited<ReturnType<typeof getAuctions>>, 
 ): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
   const queryOptions = getGetAuctionsQueryOptions(params, options);
 
-  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
 
   query.queryKey = queryOptions.queryKey;
 
@@ -72,7 +81,10 @@ export const useGetAuctions = <TData = Awaited<ReturnType<typeof getAuctions>>, 
  * @summary Get auction by id
  */
 export const getAuctionById = (id: string) => {
-  return customInstance<GetAuctionById200>({ url: `/autos/auctions/${id}`, method: 'get' });
+  return customInstance<GetAuctionById200>({
+    url: `/autos/auctions/${id}`,
+    method: 'get',
+  });
 };
 
 export const getGetAuctionByIdQueryKey = (id: string) => {
@@ -123,7 +135,9 @@ export const useGetAuctionById = <
 ): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
   const queryOptions = getGetAuctionByIdQueryOptions(id, options);
 
-  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
 
   query.queryKey = queryOptions.queryKey;
 

@@ -43,7 +43,9 @@ export const CommentForm = () => {
           {COMMENT_FILTER.map((elem) => {
             return (
               <button
-                className={clsx(`btn join-item`, { 'bg-base-300': elem.key === commentFilter.key })}
+                className={clsx(`btn join-item`, {
+                  'bg-base-300': elem.key === commentFilter.key,
+                })}
                 key={elem.key}
                 onClick={() => setCommentFilter(elem)}
               >

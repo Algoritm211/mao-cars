@@ -9,7 +9,11 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const radioStyles = {
-  style: { '--p': 'var(--n)', '--pf': 'var(--nf)', '--pc': 'var(--nc)' } as React.CSSProperties,
+  style: {
+    '--p': 'var(--n)',
+    '--pf': 'var(--nf)',
+    '--pc': 'var(--nc)',
+  } as React.CSSProperties,
   className: 'btn btn-outline no-animation hover:bg-neutral',
 };
 

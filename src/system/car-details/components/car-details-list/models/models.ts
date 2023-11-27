@@ -9,7 +9,10 @@ enum SectionTypes {
 }
 
 type SectionNames = {
-  [key in keyof AuctionExtended | keyof Listing]?: { type: SectionTypes; name: string };
+  [key in keyof AuctionExtended | keyof Listing]?: {
+    type: SectionTypes;
+    name: string;
+  };
 };
 
 export const SECTION_NAMES: SectionNames = {
