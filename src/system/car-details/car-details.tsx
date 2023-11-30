@@ -24,11 +24,11 @@ export const CarDetails = () => {
 
   return (
     <div>
-      <CarDetailsHeader title={auction?.listing?.title} subTitle={auction?.listing?.sub_title} />
-      <CarGallery photos={auction?.listing?.photos} />
-      <PlaceBid endDate={auction?.stats.auction_end!} price={auction?.stats.current_bid?.amount!} />
-      <CarDetailsList auction={auction!} />
-      <CarInfoSections sections={auction?.listing?.sections!} />
+      {/*<CarDetailsHeader title={auction?.listing?.title} subTitle={auction?.listing?.sub_title} />*/}
+      {/*<CarGallery photos={auction?.listing?.photos} />*/}
+      {/*<PlaceBid endDate={auction?.stats.auction_end!} price={auction?.stats.current_bid?.amount!} />*/}
+      {/*<CarDetailsList auction={auction!} />*/}
+      {/*<CarInfoSections sections={auction?.listing?.sections!} />*/}
       <AuctionStatistics auction={auction!} />
       <AuctionComments />
     </div>

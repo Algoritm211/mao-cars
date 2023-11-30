@@ -1,10 +1,14 @@
 import React from 'react';
-import { CommentForm } from '@/system/car-details/components/auction-comments-section/components/comment-form/comment-form';
+import { CommentForm } from './components/comment-form/comment-form';
+import {Comment} from "./components/comment/comment";
 
 export const AuctionComments = () => {
   return (
     <div>
       <CommentForm />
+      <Comment />
+      <Comment />
+      <Comment />
     </div>
   );
 };
