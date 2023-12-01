@@ -8,13 +8,18 @@ import { maoLoader } from '@/shared/components';
 import { CarInfoSections } from '@/system/car-details/components/car-info-sections/car-info-sections';
 import { AuctionStatistics } from '@/system/car-details/components/auction-statistics/auction-statistics';
 import { AuctionComments } from '@/system/car-details/components/auction-comments-section/auction-comments';
-import { useGetAuctionById } from '@/maocars-client/maocars';
+import { useGetAuctionById, useGetCommentsByAuctionId } from '@/maocars-client/maocars';
 
 export const CarDetails = () => {
   const router = useRouter();
-  const { data: auction, isLoading } = useGetAuctionById(router.query?.id as string);
+  const { data: auction, isLoading: isLoadingAuction } = useGetAuctionById(
+    router.query?.id as string
+  );
+  const { data: comments, isLoading: isLoadingComments } = useGetCommentsByAuctionId(
+    router.query?.id as string
+  );
 
-  if (isLoading) {
+  if (isLoadingAuction) {
     return (
       <div className="flex justify-center my-20">
         <span className={maoLoader({ size: 'lg' })} />
@@ -24,13 +29,20 @@ export const CarDetails = () => {
 
   return (
     <div>
-      {/*<CarDetailsHeader title={auction?.listing?.title} subTitle={auction?.listing?.sub_title} />*/}
-      {/*<CarGallery photos={auction?.listing?.photos} />*/}
-      {/*<PlaceBid endDate={auction?.stats.auction_end!} price={auction?.stats.current_bid?.amount!} />*/}
-      {/*<CarDetailsList auction={auction!} />*/}
-      {/*<CarInfoSections sections={auction?.listing?.sections!} />*/}
+      <CarDetailsHeader title={auction?.listing?.title} subTitle={auction?.listing?.sub_title} />
+      <CarGallery photos={auction?.listing?.photos} />
+      <PlaceBid endDate={auction?.stats.auction_end!} price={auction?.stats.current_bid?.amount!} />
+      <CarDetailsList auction={auction!} />
+      <CarInfoSections sections={auction?.listing?.sections!} />
       <AuctionStatistics auction={auction!} />
-      <AuctionComments />
+      {isLoadingComments ? (
+        <div className="flex flex-col items-center my-20">
+          <span className={maoLoader({ size: 'lg' })} />
+          <span>Loading Comments...</span>
+        </div>
+      ) : (
+        <AuctionComments comments={comments!.comments_and_bids} seller_id={auction!.seller.id} />
+      )}
     </div>
   );
 };
