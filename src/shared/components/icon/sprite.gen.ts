@@ -10,11 +10,14 @@ export interface SpritesMap {
     | 'footer-stub'
     | 'google-icon-logo'
     | 'hashtag'
+    | 'heart'
     | 'list'
     | 'menu-bars'
     | 'paper-airplane'
+    | 'reply'
     | 'share'
     | 'star'
+    | 'three-dots'
     | 'twitter'
     | 'upload-file'
     | 'user'
@@ -32,11 +35,14 @@ export const SPRITES_META: {
     | 'footer-stub'
     | 'google-icon-logo'
     | 'hashtag'
+    | 'heart'
     | 'list'
     | 'menu-bars'
     | 'paper-airplane'
+    | 'reply'
     | 'share'
     | 'star'
+    | 'three-dots'
     | 'twitter'
     | 'upload-file'
     | 'user'
@@ -54,11 +60,14 @@ export const SPRITES_META: {
     'footer-stub',
     'google-icon-logo',
     'hashtag',
+    'heart',
     'list',
     'menu-bars',
     'paper-airplane',
+    'reply',
     'share',
     'star',
+    'three-dots',
     'twitter',
     'upload-file',
     'user',

@@ -6,6 +6,7 @@
  */
 
 export interface UserShort {
+  id: string;
   photo?: string;
   username: string;
 }

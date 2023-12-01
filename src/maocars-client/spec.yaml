@@ -178,6 +178,42 @@ paths:
       operationId: get-auction-by-id
       x-stoplight:
         id: 68x6e4ebcr1x8
+  '/autos/auctions/{id}/comments':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  comments_and_bids:
+                    type: array
+                    x-stoplight:
+                      id: ltlq7em97zort
+                    items:
+                      $ref: '#/components/schemas/Comment'
+                      x-stoplight:
+                        id: blrht3g2pl50n
+                  count:
+                    type: number
+                    x-stoplight:
+                      id: za8hnb8xmbbcd
+                required:
+                  - comments_and_bids
+                  - count
+      operationId: get-comments-by-auction-id
+      x-stoplight:
+        id: kawww02u17cya
 components:
   schemas:
     Car:
@@ -524,5 +560,60 @@ components:
           type: string
           x-stoplight:
             id: wa4akv58fc9ey
+        id:
+          type: string
+          x-stoplight:
+            id: vdagx4eh9vq9a
       required:
         - username
+        - id
+    Comment:
+      title: Comment
+      x-stoplight:
+        id: kzdweyg2sd2l7
+      type: object
+      properties:
+        id:
+          type: string
+          x-stoplight:
+            id: auegkmxk8ugo0
+        amount:
+          type: number
+          x-stoplight:
+            id: 1u3qq8d5k3l90
+        deleted_at:
+          type: string
+          x-stoplight:
+            id: gl1svkpky1q0f
+        created_at:
+          type: string
+          x-stoplight:
+            id: 1m4lz3cpib7on
+        updated_at:
+          type: string
+          x-stoplight:
+            id: vmeq6jw3o5rpe
+        upvotes:
+          type: number
+          x-stoplight:
+            id: e80szo4ss2qt2
+        user:
+          $ref: '#/components/schemas/UserShort'
+          x-stoplight:
+            id: skyj3vr7df8vc
+        type:
+          x-stoplight:
+            id: n4beojrdtr2r7
+          enum:
+            - text
+            - bid
+        text:
+          type: string
+          x-stoplight:
+            id: 7t9azcxghtfs2
+      required:
+        - id
+        - created_at
+        - upvotes
+        - user
+        - type
