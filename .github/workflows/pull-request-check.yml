@@ -1,4 +1,6 @@
-name: Build Next.js App
+# .github/workflows/pull-request-check.yml
+
+name: Build and Deploy Next.js App
 
 on:
   pull_request:
@@ -6,20 +8,22 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
+    env:
+      NEXT_PUBLIC_BACKEND_BASE: ${{ secrets.NEXT_PUBLIC_BACKEND_BASE }}
+      CLOUDINARY_KEY: ${{ secrets.CLOUDINARY_KEY }}
+      PR_INITIATOR: ${{ github.actor }}
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Show GitHub Action Runner
-        run: echo "GitHub Action is running on ${GITHUB_ACTOR}'s runner."
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -33,12 +37,23 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Next.js App
+      - name: Build Docker Image
         run: |
-          npm run build
+          COMMIT_SHA=$(git rev-parse --short=8 HEAD)
+          docker build \
+            --build-arg NEXT_PUBLIC_BACKEND_BASE_ARG=${NEXT_PUBLIC_BACKEND_BASE} \
+            --build-arg CLOUDINARY_KEY_ARG=${CLOUDINARY_KEY} \
+            -t demo-registry/oleksii-demo-image:${PR_INITIATOR}-${COMMIT_SHA} \
+            -t demo-registry/oleksii-demo-image:latest .
 
-      - name: Archive Artifacts
+      - name: Save Docker Image as Tarball
+        run: |
+          COMMIT_SHA=$(git rev-parse --short=8 HEAD)
+          docker save -o oleksii-demo-image.tar \
+          demo-registry/oleksii-demo-image:${PR_INITIATOR}-${COMMIT_SHA}
+
+      - name: Upload Docker Image Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: nextjs-artifact
-          path: ./.next
+          name: docker-image-artifact
+          path: oleksii-demo-image.tar
