@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { Icon } from '@/shared/components/icon/icon';
 import { LoginModal } from '@/auth/components/login-modal/login-modal';
 import {LocaleToggle} from "@/system/header/components/locale-toggle/locale-toggle";
+import {useTranslations} from "next-intl";
 
 export const Header = () => {
   const isAuthenticated = true;
+  const t = useTranslations('Layout.header.menu');
   return (
     <div className="navbar shadow bg-base-100">
       <div className="navbar-start">
@@ -34,13 +36,13 @@ export const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Auctions</a>
+            <a>{t('auctions')}</a>
           </li>
           <li className="border rounded-xl bg-accent font-bold">
-            <Link href="/sell-car/submit">Sell your car</Link>
+            <Link href="/sell-car/submit">{t('sell_car')}</Link>
           </li>
           <li>
-            <a>About us</a>
+            <a>{t('about_us')}</a>
           </li>
         </ul>
       </div>

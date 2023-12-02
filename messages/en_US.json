@@ -1,0 +1,11 @@
+{
+  "Layout": {
+    "header": {
+      "menu": {
+        "auctions": "Auctions",
+        "sell_car": "Sell your car",
+        "about_us": "About us"
+      }
+    }
+  }
+}

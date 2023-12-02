@@ -19,6 +19,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
+      messages: (await import(`../../messages/${ctx.locale}.json`)).default
     },
   };
 };
