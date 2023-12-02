@@ -1,7 +1,7 @@
 import React from 'react';
 import { AccountLayout } from '@/system/account/layout/account-layout';
 import { AccountProfile } from '@/system/account/account-profile';
-import {GetStaticPropsContext} from "next";
+import { GetStaticPropsContext } from 'next';
 
 const Account = () => {
   return (
@@ -14,8 +14,8 @@ const Account = () => {
 export async function getStaticProps(context: GetStaticPropsContext) {
   return {
     props: {
-      messages: (await import(`../../../messages/${context.locale}.json`)).default
-    }
+      messages: (await import(`../../../messages/${context.locale}.json`)).default,
+    },
   };
 }
 export default Account;

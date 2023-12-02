@@ -1,6 +1,6 @@
 import React from 'react';
 import { SubmitCar } from '@/system/submit-car/submit-car';
-import {GetStaticPropsContext} from "next";
+import { GetStaticPropsContext } from 'next';
 
 const Submit = () => {
   return (
@@ -13,8 +13,8 @@ const Submit = () => {
 export async function getStaticProps(context: GetStaticPropsContext) {
   return {
     props: {
-      messages: (await import(`../../../messages/${context.locale}.json`)).default
-    }
+      messages: (await import(`../../../messages/${context.locale}.json`)).default,
+    },
   };
 }
 
