@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Icon } from '@/shared/components/icon/icon';
 import { LoginModal } from '@/auth/components/login-modal/login-modal';
+import {LocaleToggle} from "@/system/header/components/locale-toggle/locale-toggle";
 
 export const Header = () => {
   const isAuthenticated = true;
@@ -44,6 +45,7 @@ export const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        <LocaleToggle />
         {isAuthenticated ? (
           <>
             <div className="dropdown dropdown-bottom dropdown-end">

@@ -3,6 +3,7 @@ export interface SpritesMap {
     | 'arrow-left'
     | 'arrow-right'
     | 'calendar'
+    | 'chevron-down'
     | 'clock'
     | 'currency-dollar'
     | 'eye'
@@ -28,6 +29,7 @@ export const SPRITES_META: {
     | 'arrow-left'
     | 'arrow-right'
     | 'calendar'
+    | 'chevron-down'
     | 'clock'
     | 'currency-dollar'
     | 'eye'
@@ -53,6 +55,7 @@ export const SPRITES_META: {
     'arrow-left',
     'arrow-right',
     'calendar',
+    'chevron-down',
     'clock',
     'currency-dollar',
     'eye',
