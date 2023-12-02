@@ -20,12 +20,15 @@ export const Header = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Auctions</a>
+              <a>{t('auctions')}</a>
             </li>
             <li>
               <Link className="border rounded-xl bg-accent" href="/sell-car/submit">
-                Sell your car
+                {t('sell_car')}
               </Link>
+            </li>
+            <li>
+              <a>{t('about_us')}</a>
             </li>
           </ul>
         </div>
