@@ -11,11 +11,11 @@ export const defaultDateFormatter = (date: Date) => {
 };
 
 export const commentDateFormatter = (date: Date) => {
-  return new Intl.DateTimeFormat('en-EN',{
+  return new Intl.DateTimeFormat('en-EN', {
     month: 'short',
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
     hour12: false,
   }).format(date);
-}
+};

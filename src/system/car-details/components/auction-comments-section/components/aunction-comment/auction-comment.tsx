@@ -1,7 +1,10 @@
 import React from 'react';
 import { Icon } from '@/shared/components';
 import { Comment } from '@/maocars-client/schemas';
-import {commentDateFormatter, defaultDateFormatter} from '@/shared/utils/date-formatter/date-formatter';
+import {
+  commentDateFormatter,
+  defaultDateFormatter,
+} from '@/shared/utils/date-formatter/date-formatter';
 import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
 
 interface Props {
