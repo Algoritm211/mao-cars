@@ -4,7 +4,7 @@ import { CarDetailsHeader } from '@/system/car-details/components/car-details-he
 import { CarGallery } from '@/system/car-details/components/car-gallery/car-gallery';
 import { PlaceBid } from '@/system/car-details/components/place-bid/place-bid';
 import { useRouter } from 'next/router';
-import { maoLoader } from '@/shared/components';
+import { Loader } from '@/shared/components';
 import { CarInfoSections } from '@/system/car-details/components/car-info-sections/car-info-sections';
 import { AuctionStatistics } from '@/system/car-details/components/auction-statistics/auction-statistics';
 import { AuctionComments } from '@/system/car-details/components/auction-comments-section/auction-comments';
@@ -20,11 +20,7 @@ export const CarDetails = () => {
   );
 
   if (isLoadingAuction) {
-    return (
-      <div className="flex justify-center my-20">
-        <span className={maoLoader({ size: 'lg' })} />
-      </div>
-    );
+    return <Loader size="lg" />;
   }
 
   return (
@@ -36,10 +32,7 @@ export const CarDetails = () => {
       <CarInfoSections sections={auction?.listing?.sections!} />
       <AuctionStatistics auction={auction!} />
       {isLoadingComments ? (
-        <div className="flex flex-col items-center my-20">
-          <span className={maoLoader({ size: 'lg' })} />
-          <span>Loading Comments...</span>
-        </div>
+        <Loader loaderTitle="Loading Comments..." size="lg" />
       ) : (
         <AuctionComments comments={comments!.comments_and_bids} seller_id={auction!.seller.id} />
       )}

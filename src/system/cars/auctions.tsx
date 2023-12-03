@@ -3,7 +3,7 @@ import { AuctionsFilter } from '@/system/cars/components/auctions-filter/auction
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
 import { useSearchParams } from 'next/navigation';
 import { BodyType, TransmissionType } from '@/core/interfaces';
-import { maoLoader } from '@/shared/components';
+import { Loader } from '@/shared/components';
 import { AuctionContainer } from '@/shared/components/auction/auction-container';
 import AuctionCard from '@/shared/components/auction/auction-card';
 import { useGetAuctions } from '@/maocars-client/maocars';
@@ -31,9 +31,7 @@ export const Auctions = () => {
       <hr className="block mx-2" />
 
       {isLoading ? (
-        <div className="flex justify-center my-20">
-          <span className={maoLoader({ size: 'lg' })} />
-        </div>
+        <Loader size="lg" />
       ) : (
         <AuctionContainer>
           {data?.auctions?.map((auction) => <AuctionCard key={auction.id} auction={auction} />)}
