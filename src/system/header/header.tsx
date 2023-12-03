@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import {Icon} from '@/shared/components/icon/icon';
-import {LoginModal} from '@/auth/components/login-modal/login-modal';
-import {LocaleToggle} from '@/system/header/components/locale-toggle/locale-toggle';
-import {useTranslations} from 'next-intl';
+import { Icon } from '@/shared/components/icon/icon';
+import { LoginModal } from '@/auth/components/login-modal/login-modal';
+import { LocaleToggle } from '@/system/header/components/locale-toggle/locale-toggle';
+import { useTranslations } from 'next-intl';
 
 export const Header = () => {
   const isAuthenticated = true;
@@ -12,12 +12,12 @@ export const Header = () => {
     <div className="navbar shadow bg-base-100">
       <div className="navbar-start">
         <label tabIndex={0} htmlFor="menu-drawer" className="btn btn-ghost lg:hidden">
-          <Icon name='menu-bars' className="w-5 h-5"/>
+          <Icon name="menu-bars" className="w-5 h-5" />
         </label>
         <Link className="btn btn-ghost normal-case text-xl" href="/">
           Mao Cars
         </Link>
-        <LocaleToggle/>
+        <LocaleToggle />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -40,7 +40,7 @@ export const Header = () => {
                 <span className="font-bold mr-2 hidden md:inline">Alexey_Horbunov</span>
                 <div className="avatar">
                   <div className="w-10 rounded-full">
-                    <img src="/user/mock-user-photo.jpeg" alt="The photo of the user"/>
+                    <img src="/user/mock-user-photo.jpeg" alt="The photo of the user" />
                   </div>
                 </div>
               </label>
