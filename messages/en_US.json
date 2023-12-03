@@ -5,7 +5,10 @@
         "auctions": "Auctions",
         "sell_car": "Sell your car",
         "about_us": "About us"
-      }
+      },
+      "profile": "User profile",
+      "listings": "Listings",
+      "login": "Log in"
     }
   }
 }

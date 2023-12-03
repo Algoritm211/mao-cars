@@ -12,7 +12,7 @@ export const LocaleToggle = () => {
   const { locale, asPath } = useRouter();
 
   return (
-    <div className="dropdown dropdown-end">
+    <div className="dropdown dropdown-end min-w-fit">
       <div tabIndex={0} role="button" className="btn btn-ghost m-1">
         {locales[locale || 'en_US']}
         <Icon name="chevron-down" className="w-4 h-4" />
