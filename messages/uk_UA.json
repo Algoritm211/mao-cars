@@ -10,6 +10,39 @@
       "listings": "Ваші пропозиції",
       "login": "Увійти"
     }
+  },
+  "Main_Page": {
+    "filter": {
+      "years": {
+        "year": "Рік випуску",
+        "startYear": "Старт",
+        "endYear": "Кінець",
+        "to": "ДО"
+      },
+      "transmission": {
+        "transmission": "Трансмісія",
+        "all": "Усі",
+        "automatic": "Автоматична",
+        "manual": "Механічна"
+      },
+      "body_style": {
+        "body_style": "Тип кузова",
+        "all": "Усі",
+        "coupe": "Купе",
+        "convertible": "Кабріолет",
+        "hatchback": "Хетчбек",
+        "sedan": "Седан",
+        "suv": "SUV",
+        "truck": "Вантажівка",
+        "van": "Фургон",
+        "wagon": "Універсал"
+      },
+      "auction_sort": {
+        "lowest_mileage": "Менший пробіг",
+        "newly_listed": "Нові",
+        "no_reserve": "Без резерву"
+      }
+    }
   }
 }
 

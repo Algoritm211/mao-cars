@@ -15,6 +15,7 @@ import {
   TRANSMISSION_FILTER_TYPES,
 } from '@/core/constants';
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   setFilter: (filter: AuctionsFilterInputs) => void;
@@ -24,6 +25,7 @@ interface Props {
 
 export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialFilterValues }) => {
   const router = useRouter();
+  const t = useTranslations('Main_Page.filter');
   const { register, watch, handleSubmit, getValues } = useForm<AuctionsFilterInputs>({
     values: initialFilterValues,
   });
@@ -51,9 +53,9 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
       )}
     >
       <div className="flex gap-2 justify-center">
-        <div className="dropdown dropdown-bottom">
+        <div className="dropdown dropdown-bottom w-36">
           <label tabIndex={0} className="select select-bordered flex place-items-center">
-            Year
+            {t('years.year')}
           </label>
           <ul
             tabIndex={0}
@@ -62,7 +64,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
             <li className="flex flex-row justify-center place-items-center">
               <select {...register('startYear')} className="select select-bordered w-1/3 max-w-xs">
                 <option value={START_YEAR} hidden>
-                  Start
+                  {t('years.startYear')}
                 </option>
                 {START_YEARS.map((elem) => {
                   return (
@@ -72,10 +74,10 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
                   );
                 })}
               </select>
-              <div className="pointer-events-none">TO</div>
+              <div className="pointer-events-none">{t('years.to')}</div>
               <select {...register('endYear')} className="select select-bordered w-1/3 max-w-xs">
                 <option value={END_YEAR} hidden>
-                  End
+                  {t('years.endYear')}
                 </option>
                 {END_YEARS.map((elem) => {
                   return (
@@ -95,12 +97,12 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
             className="select select-bordered w-xs inline-block"
           >
             <option value={TransmissionType.All} hidden>
-              Transmission
+              {t('transmission.transmission')}
             </option>
             {TRANSMISSION_FILTER_TYPES.map((elem) => {
               return (
-                <option key={elem} value={elem}>
-                  {elem}
+                <option key={elem.key} value={elem.key}>
+                  {t(elem.label)}
                 </option>
               );
             })}
@@ -110,12 +112,12 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
         <div>
           <select {...register('bodyStyle')} className="select select-bordered w-xs inline-block">
             <option value={BodyType.All} hidden>
-              Body style
+              {t('body_style.body_style')}
             </option>
             {BODY_TYPES.map((elem) => {
               return (
-                <option key={elem} value={elem}>
-                  {elem}
+                <option key={elem.key} value={elem.key}>
+                  {t(elem.label)}
                 </option>
               );
             })}
@@ -126,21 +128,21 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
         <div className="tabs">
           {AUCTION_SORT.map((elem) => {
             return (
-              <React.Fragment key={elem}>
+              <React.Fragment key={elem.key}>
                 <input
                   {...register('sort')}
-                  value={elem}
+                  value={elem.key}
                   type="radio"
-                  id={`field-${elem}`}
+                  id={`field-${elem.key}`}
                   className={`hidden`}
                 />
                 <label
-                  htmlFor={`field-${elem}`}
+                  htmlFor={`field-${elem.key}`}
                   className={clsx('tab', {
-                    'tab-active': getValues('sort') === elem,
+                    'tab-active': getValues('sort') === elem.key,
                   })}
                 >
-                  {elem}
+                  {t(elem.label)}
                 </label>
               </React.Fragment>
             );

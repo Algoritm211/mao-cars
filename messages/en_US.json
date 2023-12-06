@@ -10,5 +10,38 @@
       "listings": "Listings",
       "login": "Log in"
     }
+  },
+  "Main_Page": {
+    "filter": {
+      "years": {
+        "year": "Year",
+        "startYear": "Start",
+        "endYear": "End",
+        "to": "TO"
+      },
+      "transmission": {
+        "transmission": "Transmission",
+        "all": "All",
+        "automatic": "Automatic",
+        "manual": "Manual"
+      },
+      "body_style": {
+        "body_style": "Body style",
+        "all": "All",
+        "coupe": "Coupe",
+        "convertible": "Convertible",
+        "hatchback": "Hatchback",
+        "sedan": "Sedan",
+        "suv": "SUV",
+        "truck": "Truck",
+        "van": "Van",
+        "wagon": "Wagon"
+      },
+      "auction_sort": {
+        "lowest_mileage": "Lowest Mileage",
+        "newly_listed": "Newly Listed",
+        "no_reserve": "No Reserve"
+      }
+    }
   }
 }
