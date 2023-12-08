@@ -43,5 +43,32 @@
         "no_reserve": "No Reserve"
       }
     }
+  },
+  "Auction_Page": {
+    "auction_details": {
+      "place_bid_panel": {
+        "time_left": "Time Left",
+        "high_bid": "High Bid",
+        "bids_count": "Bids",
+        "comments": "Comments",
+        "place_bid": "Place Bid"
+      },
+      "car_details_list": {
+        "make": "Make",
+        "model": "Model",
+        "mileage": "Mileage",
+        "vin": "VIN",
+        "title_status": "Title Status",
+        "location": "Location",
+        "seller": "Seller",
+        "engine": "Engine",
+        "drive_train": "Drivetrain",
+        "transmission": "Transmission",
+        "body_style": "Body Style",
+        "exterior_color": "Exterior Color",
+        "interior_color": "Interior Color",
+        "seller_type": "Seller type"
+      }
+    }
   }
 }

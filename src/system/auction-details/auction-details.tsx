@@ -1,16 +1,16 @@
 import React from 'react';
-import { CarDetailsList } from '@/system/car-details/components/car-details-list/car-details-list';
-import { CarDetailsHeader } from '@/system/car-details/components/car-details-header/car-details-header';
-import { CarGallery } from '@/system/car-details/components/car-gallery/car-gallery';
-import { PlaceBid } from '@/system/car-details/components/place-bid/place-bid';
+import { CarDetailsList } from '@/system/auction-details/components/car-details-list/car-details-list';
+import { CarDetailsHeader } from '@/system/auction-details/components/car-details-header/car-details-header';
+import { CarGallery } from '@/system/auction-details/components/car-gallery/car-gallery';
+import { PlaceBid } from '@/system/auction-details/components/place-bid/place-bid';
 import { useRouter } from 'next/router';
 import { Loader } from '@/shared/components';
-import { CarInfoSections } from '@/system/car-details/components/car-info-sections/car-info-sections';
-import { AuctionStatistics } from '@/system/car-details/components/auction-statistics/auction-statistics';
-import { AuctionComments } from '@/system/car-details/components/auction-comments-section/auction-comments';
+import { CarInfoSections } from '@/system/auction-details/components/car-info-sections/car-info-sections';
+import { AuctionStatistics } from '@/system/auction-details/components/auction-statistics/auction-statistics';
+import { AuctionComments } from '@/system/auction-details/components/auction-comments-section/auction-comments';
 import { useGetAuctionById, useGetCommentsByAuctionId } from '@/maocars-client/maocars';
 
-export const CarDetails = () => {
+export const AuctionDetails = () => {
   const router = useRouter();
   const { data: auction, isLoading: isLoadingAuction } = useGetAuctionById(
     router.query?.id as string

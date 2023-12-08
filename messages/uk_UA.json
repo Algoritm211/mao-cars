@@ -43,6 +43,33 @@
         "no_reserve": "Без резерву"
       }
     }
+  },
+  "Auction_Page": {
+    "auction_details": {
+      "place_bid_panel": {
+        "time_left": "Часу залишилось",
+        "high_bid": "Остання ставка",
+        "bids_count": "Усього ставок",
+        "comments": "Коментарів",
+        "place_bid": "Зробити ставку"
+      },
+      "car_details_list": {
+        "make": "Марка",
+        "model": "Модель",
+        "mileage": "Пробіг",
+        "vin": "VIN",
+        "title_status": "Статус",
+        "location": "Місце знаходження",
+        "seller": "Продавець",
+        "engine": "Двигун",
+        "drive_train": "Привід",
+        "transmission": "Трансмісія",
+        "body_style": "Тип кузова",
+        "exterior_color": "Колір екстерʼєра",
+        "interior_color": "Колір інтерʼєра",
+        "seller_type": "Тип власника"
+      }
+    }
   }
 }
 

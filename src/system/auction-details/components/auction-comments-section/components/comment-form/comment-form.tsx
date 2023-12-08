@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { button, Icon } from '@/shared/components';
-import { COMMENT_FILTER } from '@/system/car-details/components/auction-comments-section/components/comment-form/models/form-constants';
+import { COMMENT_FILTER } from '@/system/auction-details/components/auction-comments-section/components/comment-form/models/form-constants';
 import { clsx } from 'clsx';
 import { useForm } from 'react-hook-form';
 

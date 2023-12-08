@@ -3,29 +3,15 @@ import { clsx } from 'clsx';
 import { AuctionExtended, Listing } from '@/core/interfaces/api/auction';
 import { SECTION_COMPONENTS, SECTION_NAMES } from './models/models';
 import { GetAuctionById200 } from '@/maocars-client/schemas';
-
-const MOCK_CAR = {
-  Make: 'Rolls-Royce',
-  Model: 'Phantom',
-  Mileage: 34000,
-  VIN: 'SCA1S68588UX08753',
-  'Title Status': 'Clean (CA)',
-  Location: 'Cerritos, CA 90703',
-  Seller: 'centinela1',
-  Engine: '6.75L V12',
-  Drivetrain: 'Rear-wheel drive',
-  Transmission: 'Automatic (6-Speed)',
-  'Body Style': 'Sedan',
-  'Exterior Color': 'Black',
-  'Interior Color': 'Tan',
-  'Seller Type': 'Private Party',
-};
+import { useTranslations } from 'next-intl';
 
 interface Props {
   auction: GetAuctionById200;
 }
 
 export const CarDetailsList: React.FC<Props> = ({ auction }) => {
+  const t = useTranslations('Auction_Page.auction_details.car_details_list');
+
   const generateDataList = (start: number, end?: number) => {
     return Object.entries(SECTION_NAMES)
       .slice(start, end)
@@ -34,10 +20,11 @@ export const CarDetailsList: React.FC<Props> = ({ auction }) => {
           auction?.[key as keyof AuctionExtended] || auction?.listing?.[key as keyof Listing];
         const { type, name } = value;
         const Component = SECTION_COMPONENTS[type];
+
         return (
           <Component
             key={name}
-            title={name}
+            title={t(name)}
             content={content as string}
             isCorner={index !== arr.length - 1}
           />

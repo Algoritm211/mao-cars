@@ -1,7 +1,7 @@
 import React from 'react';
 import { CommentForm } from './components/comment-form/comment-form';
 import { Comment } from '@/maocars-client/schemas';
-import { AuctionComment } from '@/system/car-details/components/auction-comments-section/components/aunction-comment/auction-comment';
+import { AuctionComment } from '@/system/auction-details/components/auction-comments-section/components/aunction-comment/auction-comment';
 
 interface Props {
   comments: Comment[];

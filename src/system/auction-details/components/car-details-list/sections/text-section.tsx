@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ddStyles,
   dtStyles,
-} from '@/system/car-details/components/car-details-list/sections/sections-styles';
+} from '@/system/auction-details/components/car-details-list/sections/sections-styles';
 
 interface Props {
   title: string;

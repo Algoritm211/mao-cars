@@ -2,7 +2,7 @@ import React from 'react';
 import {
   SECTION_COMPONENTS,
   SECTION_NAMES,
-} from '@/system/car-details/components/car-info-sections/models/models';
+} from '@/system/auction-details/components/car-info-sections/models/models';
 import { CarSections } from '@/maocars-client/schemas';
 
 interface Props {

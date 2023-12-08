@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarDetails } from '@/system/car-details/car-details';
+import { AuctionDetails } from '@/system/auction-details/auction-details';
 import { GetServerSidePropsContext } from 'next';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import {
@@ -10,7 +10,7 @@ import {
 } from '@/maocars-client/maocars';
 
 const AuctionCarDetails = () => {
-  return <CarDetails />;
+  return <AuctionDetails />;
 };
 
 export default AuctionCarDetails;
