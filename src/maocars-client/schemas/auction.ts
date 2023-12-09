@@ -5,7 +5,7 @@
  * mao-cars-api
  */
 import type { AuctionMainPhoto } from './auctionMainPhoto';
-import type { AuctionSeller } from './auctionSeller';
+import type { UserShort } from './userShort';
 import type { AuctionStatus } from './auctionStatus';
 
 export interface Auction {
@@ -16,7 +16,7 @@ export interface Auction {
   location: string;
   main_photo: AuctionMainPhoto;
   mileage: number;
-  seller: AuctionSeller;
+  seller: UserShort;
   status: AuctionStatus;
   sub_title: string;
   title: string;

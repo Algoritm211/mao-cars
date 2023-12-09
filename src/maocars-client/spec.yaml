@@ -494,22 +494,9 @@ components:
                 id: xb8ua69odagld
               format: uri
         seller:
-          type: object
+          $ref: '#/components/schemas/UserShort'
           x-stoplight:
             id: ev5plxp87l28t
-          required:
-            - url
-            - username
-          properties:
-            url:
-              type: string
-              x-stoplight:
-                id: 3geyvgebyrxcm
-              format: uri
-            username:
-              type: string
-              x-stoplight:
-                id: 22hq4rmvdgwa5
         mileage:
           type: number
           x-stoplight:
