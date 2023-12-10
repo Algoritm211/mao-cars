@@ -30,7 +30,7 @@ export interface Car {
   title: string;
   title_status: string;
   transmission: CarTransmission;
-  transmisson_details?: string;
+  transmission_details?: string;
   vin: string;
   year: number;
 }

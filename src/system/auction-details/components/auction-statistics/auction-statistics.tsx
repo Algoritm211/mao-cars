@@ -1,7 +1,6 @@
 import React from 'react';
 import { Icon } from '@/shared/components';
 import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
-import { AuctionExtended } from '@/core/interfaces/api/auction';
 import { defaultDateFormatter } from '@/shared/utils/date-formatter/date-formatter';
 import { GetAuctionById200 } from '@/maocars-client/schemas';
 

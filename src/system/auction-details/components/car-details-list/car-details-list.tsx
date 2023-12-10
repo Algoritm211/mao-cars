@@ -1,8 +1,6 @@
 import React from 'react';
-import { clsx } from 'clsx';
-import { AuctionExtended, Listing } from '@/core/interfaces/api/auction';
 import { SECTION_COMPONENTS, SECTION_NAMES } from './models/models';
-import { GetAuctionById200 } from '@/maocars-client/schemas';
+import { Car, CarSellerType, GetAuctionById200, UserShort } from '@/maocars-client/schemas';
 import { useTranslations } from 'next-intl';
 
 interface Props {
@@ -17,7 +15,7 @@ export const CarDetailsList: React.FC<Props> = ({ auction }) => {
       .slice(start, end)
       .map(([key, value], index, arr) => {
         const content =
-          auction?.[key as keyof AuctionExtended] || auction?.listing?.[key as keyof Listing];
+          auction?.[key as keyof GetAuctionById200] || auction?.listing?.[key as keyof Car];
         const { type, name } = value;
         const Component = SECTION_COMPONENTS[type];
 
@@ -25,7 +23,7 @@ export const CarDetailsList: React.FC<Props> = ({ auction }) => {
           <Component
             key={name}
             title={t(name)}
-            content={content as string}
+            content={content as UserShort & string}
             isCorner={index !== arr.length - 1}
           />
         );

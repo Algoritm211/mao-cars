@@ -270,7 +270,7 @@ components:
           enum:
             - automatic
             - manual
-        transmisson_details:
+        transmission_details:
           type: string
           x-stoplight:
             id: toqhr9caemw8d

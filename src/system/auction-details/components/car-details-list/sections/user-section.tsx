@@ -1,13 +1,13 @@
 import React from 'react';
-import { Seller } from '@/core/interfaces/api/seller';
 import {
   ddStyles,
   dtStyles,
 } from '@/system/auction-details/components/car-details-list/sections/sections-styles';
+import { UserShort } from '@/maocars-client/schemas';
 
 interface Props {
   title: string;
-  content: Seller;
+  content: UserShort;
   isCorner: boolean;
 }
 export const UserSection: React.FC<Props> = ({ title, content: seller, isCorner }) => {
