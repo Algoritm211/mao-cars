@@ -24,7 +24,7 @@ const generateCars = (count: number): Car[] => {
   const sellerTypes: CarSellerType[] = ['private', 'dealer'];
   const transmissionTypes: CarTransmission[] = ['manual', 'automatic'];
 
-  const cars = new Array(count).fill(null).map(() => {
+  return new Array(count).fill(null).map(() => {
     return {
       id: faker.string.uuid(),
       title: faker.helpers.arrayElement(auctionTitles),
@@ -69,8 +69,6 @@ const generateCars = (count: number): Car[] => {
       transmission_details: faker.lorem.sentence({ min: 5, max: 7 }),
     };
   });
-
-  return cars;
 };
 
 export const cars = generateCars(100);

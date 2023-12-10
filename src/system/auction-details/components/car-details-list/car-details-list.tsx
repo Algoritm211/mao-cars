@@ -1,6 +1,6 @@
 import React from 'react';
 import { SECTION_COMPONENTS, SECTION_NAMES } from './models/models';
-import { Car, CarSellerType, GetAuctionById200, UserShort } from '@/maocars-client/schemas';
+import { Car, GetAuctionById200, UserShort } from '@/maocars-client/schemas';
 import { useTranslations } from 'next-intl';
 
 interface Props {

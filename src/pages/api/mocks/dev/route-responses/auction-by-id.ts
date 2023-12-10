@@ -5,7 +5,7 @@ import { cars } from '@/pages/api/mocks/dev/data-buckets/cars';
 
 const generateAuction = (count: number): GetAuctionById200[] => {
   const statuses: GetAuctionById200Status[] = ['live', 'end'];
-  const auctions = new Array(count).fill(null).map(() => {
+  return new Array(count).fill(null).map(() => {
     return {
       submission_id: faker.string.uuid(),
       seller: faker.helpers.arrayElement(usersShort),
@@ -28,8 +28,6 @@ const generateAuction = (count: number): GetAuctionById200[] => {
       listing: faker.helpers.arrayElement(cars),
     };
   });
-
-  return auctions;
 };
 
 export const auctionsById = generateAuction(20);
