@@ -1,4 +1,4 @@
-const baseURL = process.env.NEXT_PUBLIC_BACKEND_BASE;
+const baseURL = `${process.env.NEXT_PUBLIC_BACKEND_BASE}/api`;
 
 export const customInstance = async <T>({
   url,
