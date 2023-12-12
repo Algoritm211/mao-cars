@@ -57,7 +57,12 @@ export const CarGallery: React.FC<Props> = ({ photos = [] }) => {
         <div className="flex" style={{ width: `${photos.length * 100}%`, ...imagePosition }}>
           {photos.map((image, index) => (
             <div key={index} className="w-full">
-              <img loading='lazy' src={image} alt={`Slide ${index}`} className="w-full h-auto object-cover" />
+              <img
+                loading="lazy"
+                src={image}
+                alt={`Slide ${index}`}
+                className="w-full h-auto object-cover"
+              />
             </div>
           ))}
         </div>
