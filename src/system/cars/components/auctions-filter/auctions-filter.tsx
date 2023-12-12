@@ -47,13 +47,13 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(
-        `mb-4 flex gap-2 flex-col justify-around 
+        `mb-4 flex gap-2 flex-col justify-around flex-wrap
         justify-items-end md:flex-row`,
         { 'pointer-events-none opacity-50': isLoading }
       )}
     >
-      <div className="flex gap-2 justify-center">
-        <div className="dropdown dropdown-bottom w-36">
+      <div className="flex gap-2 justify-center w-full lg:w-1/2">
+        <div className="dropdown dropdown-bottom w-36 sm:w-full sm:flex-1">
           <label tabIndex={0} className="select select-bordered flex place-items-center">
             {t('years.year')}
           </label>
@@ -91,10 +91,10 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
           </ul>
         </div>
 
-        <div>
+        <div className="flex-1 min-w-[9rem]">
           <select
             {...register('transmission')}
-            className="select select-bordered w-xs inline-block"
+            className="select select-bordered w-full lg:w-xs inline-block"
           >
             <option value={TransmissionType.All} hidden>
               {t('transmission.transmission')}
@@ -109,8 +109,11 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
           </select>
         </div>
 
-        <div>
-          <select {...register('bodyStyle')} className="select select-bordered w-xs inline-block">
+        <div className="flex-1 min-w-[9rem]">
+          <select
+            {...register('bodyStyle')}
+            className="select select-bordered w-full lg:w-xs inline-block"
+          >
             <option value={BodyType.All} hidden>
               {t('body_style.body_style')}
             </option>
@@ -138,7 +141,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
                 />
                 <label
                   htmlFor={`field-${elem.key}`}
-                  className={clsx('tab', {
+                  className={clsx('tab md:px-14 lg:px-[var(--tab-padding)]', {
                     'tab-active': getValues('sort') === elem.key,
                   })}
                 >
