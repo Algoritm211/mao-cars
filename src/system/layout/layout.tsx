@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
-import { Footer } from '@/system/footer/footer';
-import { Header } from '@/system/header/header';
+import { Footer } from './footer/footer';
+import { Header } from './header/header';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
@@ -16,7 +16,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
       </div>
       <div className="drawer-side">
         <label htmlFor="menu-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-        <ul tabIndex={0} className="menu p-4 w-52 min-h-full bg-base-200">
+        <ul tabIndex={0} className="menu p-4 w-72 min-h-full bg-base-200">
           <li>
             <Link href="/">{t('menu.auctions')}</Link>
           </li>

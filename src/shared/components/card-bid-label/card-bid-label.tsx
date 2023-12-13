@@ -9,7 +9,7 @@ interface Props {
   endDate: Date;
 }
 
-const CardBidLabel: React.FC<Props> = ({ price, endDate, currency }) => {
+export const CardBidLabel: React.FC<Props> = ({ price, endDate, currency }) => {
   return (
     <div className="opacity-90 bg-gray-950 text-md px-2 py-1 rounded-xl text-white">
       <span className="mr-2">
@@ -23,5 +23,3 @@ const CardBidLabel: React.FC<Props> = ({ price, endDate, currency }) => {
     </div>
   );
 };
-
-export default CardBidLabel;

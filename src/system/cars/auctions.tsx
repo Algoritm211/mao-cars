@@ -5,8 +5,9 @@ import { useSearchParams } from 'next/navigation';
 import { BodyType, TransmissionType } from '@/core/interfaces';
 import { Loader } from '@/shared/components';
 import { AuctionContainer } from '@/shared/components/auction/auction-container';
-import AuctionCard from '@/shared/components/auction/auction-card';
+import { AuctionCard } from '@/shared/components/auction/auction-card';
 import { useGetAuctions } from '@/maocars-client/maocars';
+import { useRouter } from 'next/router';
 
 export const Auctions = () => {
   const params = useSearchParams();
@@ -18,9 +19,13 @@ export const Auctions = () => {
     transmission: (params.get('transmission') as TransmissionType) || undefined,
     sort: params.get('sort') || undefined,
   };
+  const router = useRouter();
   const [filter, setFilter] = useState<AuctionsFilterInputs>(initialFilterParams);
   const { data, isLoading } = useGetAuctions(filter);
 
+  const onCarDetails = (auctionId: string) => {
+    void router.push(`/auctions/${auctionId}`);
+  };
   return (
     <React.Fragment>
       <AuctionsFilter
@@ -34,7 +39,13 @@ export const Auctions = () => {
         <Loader size="lg" />
       ) : (
         <AuctionContainer>
-          {data?.auctions?.map((auction) => <AuctionCard key={auction.id} auction={auction} />)}
+          {data?.auctions?.map((auction) => (
+            <AuctionCard
+              key={auction.id}
+              auction={auction}
+              onCarDetailsClick={() => onCarDetails(auction.id)}
+            />
+          ))}
         </AuctionContainer>
       )}
     </React.Fragment>

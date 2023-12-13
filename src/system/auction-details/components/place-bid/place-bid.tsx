@@ -4,14 +4,20 @@ import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-fo
 import { LoginModal } from '@/auth/components/login-modal/login-modal';
 import { button } from '@/shared/components/button/button';
 import { useTranslations } from 'next-intl';
+import { GetAuctionById200Stats } from '@/maocars-client/schemas';
 
 interface Props {
-  endDate: string;
-  price: number;
+  stats: GetAuctionById200Stats;
 }
 
-export const PlaceBid: React.FC<Props> = ({ endDate, price }) => {
+export const PlaceBid: React.FC<Props> = ({ stats }) => {
   const t = useTranslations('Auction_Page.auction_details.place_bid_panel');
+  const {
+    auction_end,
+    current_bid: { amount },
+    bids,
+    comments,
+  } = stats;
   const onPlaceBid = () => {
     console.log('BID PLACED');
   };
@@ -22,20 +28,20 @@ export const PlaceBid: React.FC<Props> = ({ endDate, price }) => {
         <li className="flex flex-col items-center basis-1/2 md:basis-1/4">
           <span className="text-gray-400">{t('time_left')}</span>
           <span>
-            <Timer endDate={new Date(endDate)} />
+            <Timer endDate={new Date(auction_end)} />
           </span>
         </li>
         <li className="flex flex-col items-center basis-1/2 md:basis-1/4">
           <span className="text-gray-400">{t('high_bid')}</span>
-          <span>{currencyFormatter(price)}</span>
+          <span>{currencyFormatter(amount)}</span>
         </li>
         <li className="hidden md:flex flex-col items-center basis-1/4">
           <span className="text-gray-400">{t('bids_count')}</span>
-          <span>34</span>
+          <span>{bids}</span>
         </li>
         <li className="hidden md:flex flex-col items-center basis-1/4">
           <span className="text-gray-400">{t('comments')}</span>
-          <span>9</span>
+          <span>{comments}</span>
         </li>
       </ul>
       <div>

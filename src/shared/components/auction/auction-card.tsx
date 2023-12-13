@@ -1,13 +1,13 @@
 import React from 'react';
-import CardBidLabel from '@/shared/components/card-bid-label/card-bid-label';
-import { useRouter } from 'next/router';
+import { CardBidLabel } from '@/shared/components/card-bid-label/card-bid-label';
 import { Auction } from '@/maocars-client/schemas';
 
 interface Props {
   auction: Auction;
+  onCarDetailsClick?: () => void;
 }
 
-const AuctionCard: React.FC<Props> = ({ auction }) => {
+export const AuctionCard: React.FC<Props> = ({ auction, onCarDetailsClick }) => {
   const {
     current_bid,
     auction_end,
@@ -17,15 +17,11 @@ const AuctionCard: React.FC<Props> = ({ auction }) => {
     main_photo: { url },
     has_inspection,
   } = auction;
-  const router = useRouter();
 
-  const onCarDetails = () => {
-    void router.push(`/auctions/${auction.id}`);
-  };
   return (
     <div
       className="card card-compact w-80 bg-base-100 shadow-xl cursor-pointer hover:scale-105 transition-all"
-      onClick={onCarDetails}
+      onClick={onCarDetailsClick}
     >
       <figure className="relative">
         <img src={url} className="w-80 h-52 object-cover" alt={title} />
@@ -48,5 +44,3 @@ const AuctionCard: React.FC<Props> = ({ auction }) => {
     </div>
   );
 };
-
-export default AuctionCard;

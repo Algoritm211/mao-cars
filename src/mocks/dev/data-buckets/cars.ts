@@ -6,8 +6,8 @@ import {
   CarTransmission,
 } from '@/maocars-client/schemas';
 import { faker } from '@faker-js/faker';
-import { auctionSubtitles, auctionTitles } from '@/pages/api/mocks/dev/data-buckets/auction-titles';
-import { galleryPhotosSets } from '@/pages/api/mocks/dev/data-buckets/gallery-photos-sets';
+import { auctionSubtitles, auctionTitles } from '@/mocks/dev/data-buckets/auction-titles';
+import { galleryPhotosSets } from '@/mocks/dev/data-buckets/gallery-photos-sets';
 
 const generateCars = (count: number): Car[] => {
   const bodyStyles: CarBodyStyle[] = [

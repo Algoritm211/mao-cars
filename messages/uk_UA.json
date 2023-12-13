@@ -46,6 +46,10 @@
   },
   "Auction_Page": {
     "auction_details": {
+      "auction_header": {
+        "watch": "Слідкувати",
+        "share": "Поділитись"
+      },
       "place_bid_panel": {
         "time_left": "Часу залишилось",
         "high_bid": "Остання ставка",
@@ -68,6 +72,16 @@
         "exterior_color": "Колір екстерʼєра",
         "interior_color": "Колір інтерʼєра",
         "seller_type": "Тип власника"
+      },
+      "car_info_sections": {
+        "equipment": "Обладнання",
+        "known_flaws": "Несправності",
+        "recent_service_history": "Історія обслуговування",
+        "highlights": "Основні переваги",
+        "other_items": "Інші деталі",
+        "videos": "Відео",
+        "modifications": "Модицікації/Tюнінг",
+        "ownership_history": "Історія володіння"
       }
     }
   }

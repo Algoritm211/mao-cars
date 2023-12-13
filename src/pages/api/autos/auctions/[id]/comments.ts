@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { GetCommentsByAuctionId200 } from '@/maocars-client/schemas';
 import { faker } from '@faker-js/faker';
-import { comments } from '@/pages/api/mocks/dev/route-responses/auction-comments-by-id';
+import { comments } from '@/mocks/dev/route-responses/auction-comments-by-id';
 
 export default function handler(
   req: NextApiRequest,

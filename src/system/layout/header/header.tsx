@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Icon } from '@/shared/components/icon/icon';
 import { LoginModal } from '@/auth/components/login-modal/login-modal';
-import { LocaleToggle } from '@/system/header/components/locale-toggle/locale-toggle';
+import { LocaleToggle } from './components/locale-toggle/locale-toggle';
 import { useTranslations } from 'next-intl';
 
 export const Header = () => {
