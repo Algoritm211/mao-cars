@@ -82,6 +82,13 @@
         "videos":"Videos",
         "modifications":"Modifications",
         "ownership_history":"'Ownership History"
+      },
+      "auction_statistics": {
+        "current_bid": "Current bid:",
+        "seller": "Seller",
+        "ending": "Ending",
+        "bids": "Bids",
+        "views": "Views"
       }
     }
   }

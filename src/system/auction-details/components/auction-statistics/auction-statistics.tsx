@@ -1,14 +1,15 @@
 import React from 'react';
 import { Icon } from '@/shared/components';
-import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
-import { defaultDateFormatter } from '@/shared/utils/date-formatter/date-formatter';
+import { defaultDateFormatter, currencyFormatter } from '@/shared/utils';
 import { GetAuctionById200 } from '@/maocars-client/schemas';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   auction: GetAuctionById200;
 }
 
 export const AuctionStatistics: React.FC<Props> = ({ auction }) => {
+  const t = useTranslations('Auction_Page.auction_details.auction_statistics');
   const {
     current_bid: { bidder: currentBidder, amount },
     auction_end,
@@ -29,7 +30,7 @@ export const AuctionStatistics: React.FC<Props> = ({ auction }) => {
       >
         <div className="hidden md:block">
           <div className="flex gap-2">
-            <div className="font-bold">Current bid:</div>
+            <div className="font-bold">{t('current_bid')}</div>
             <div className="flex items-center">
               <div className="avatar">
                 <div className="w-4 rounded-full">
@@ -44,8 +45,8 @@ export const AuctionStatistics: React.FC<Props> = ({ auction }) => {
         </div>
         <div>
           <ul>
-            <li className="grid grid-cols-[33%_67%] md:grid-cols-[20%_80%] md:hidden">
-              <div className="font-bold">Current bid:</div>
+            <li className="grid grid-cols-[33%_67%] md:hidden">
+              <div className="font-bold">{t('current_bid')}</div>
               <div className="flex gap-2">
                 <div className="flex items-center">
                   <span className="font-bold mr-2">{currencyFormatter(amount)}</span>
@@ -58,8 +59,8 @@ export const AuctionStatistics: React.FC<Props> = ({ auction }) => {
                 </div>
               </div>
             </li>
-            <li className="grid grid-cols-[33%_67%] md:grid-cols-[20%_80%]">
-              <div className="font-bold">Seller</div>
+            <li className="grid grid-cols-[33%_67%]">
+              <div className="font-bold">{t('seller')}</div>
               <div className="flex items-center">
                 <div className="avatar">
                   <div className="w-4 rounded-full">
@@ -69,22 +70,22 @@ export const AuctionStatistics: React.FC<Props> = ({ auction }) => {
                 <span className="ml-2">{auction.seller?.username}</span>
               </div>
             </li>
-            <li className="grid grid-cols-[33%_67%] md:grid-cols-[20%_80%]">
-              <div className="font-bold">Ending</div>
+            <li className="grid grid-cols-[33%_67%]">
+              <div className="font-bold">{t('ending')}</div>
               <div>
                 <Icon name="calendar" className="w-4 h-4 inline-block mr-2" />
                 <span suppressHydrationWarning>{defaultDateFormatter(new Date(auction_end!))}</span>
               </div>
             </li>
-            <li className="grid grid-cols-[33%_67%] md:grid-cols-[20%_80%]">
-              <div className="font-bold">Bids</div>
+            <li className="grid grid-cols-[33%_67%]">
+              <div className="font-bold">{t('bids')}</div>
               <div>
                 <Icon name="hashtag" className="w-4 h-4 inline-block mr-2" />
                 <span>{bids}</span>
               </div>
             </li>
-            <li className="grid grid-cols-[33%_67%] md:grid-cols-[20%_80%]">
-              <div className="font-bold">Views</div>
+            <li className="grid grid-cols-[33%_67%]">
+              <div className="font-bold">{t('views')}</div>
               <div>
                 <Icon name="eye" className="w-4 h-4 inline-block mr-2" />
                 <span>{new Intl.NumberFormat('en-EN').format(watchers!)}</span>

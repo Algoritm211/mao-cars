@@ -82,6 +82,13 @@
         "videos": "Відео",
         "modifications": "Модицікації/Tюнінг",
         "ownership_history": "Історія володіння"
+      },
+      "auction_statistics": {
+        "current_bid": "Поточна ставка:",
+        "seller": "Продавець",
+        "ending": "Кінець",
+        "bids": "Ставок",
+        "views": "Переглянуло"
       }
     }
   }
