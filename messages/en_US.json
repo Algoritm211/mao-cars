@@ -89,6 +89,25 @@
         "ending": "Ending",
         "bids": "Bids",
         "views": "Views"
+      },
+      "auction_comments": {
+        "comments_and_bids": "Comments & bids",
+        "your_comment": "Your comment",
+        "post_comment": "Post comment",
+        "post_comment_placeholder": "Please provide your comment",
+        "filter": {
+          "newest": "Newest",
+          "most_upvoted": "Most Upvoted",
+          "seller_comments": "Seller Comments",
+          "bid_history": "Bid History"
+        },
+        "comment": {
+          "seller": "seller",
+          "edit": "Edit",
+          "report": "Report",
+          "bid": "Bid:",
+          "reply": "Reply"
+        }
       }
     }
   },

@@ -3,6 +3,8 @@ import { Icon } from '@/shared/components';
 import { Comment } from '@/maocars-client/schemas';
 import { commentDateFormatter } from '@/shared/utils/date-formatter/date-formatter';
 import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
+import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/router';
 
 interface Props {
   comment: Comment;
@@ -10,6 +12,8 @@ interface Props {
 }
 
 export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
+  const { locale } = useRouter();
+  const t = useTranslations('Auction_Page.auction_details.auction_comments.comment');
   const { user } = comment;
   return (
     <div className="px-6 py-3 rounded-lg flex flex-col gap-2">
@@ -21,7 +25,7 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
             </div>
           </div>
           <span className="font-bold">{user.username}</span>
-          {isOwner && <div className="badge bg-purple-600 text-white">seller</div>}
+          {isOwner && <div className="badge bg-purple-600 text-white">{t('seller')}</div>}
           <p className="text-sm text-gray-600">
             <time dateTime={commentDateFormatter(new Date(comment.created_at))}>
               {commentDateFormatter(new Date(comment.created_at))}
@@ -34,10 +38,10 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
           </div>
           <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a>Edit</a>
+              <a>{t('edit')}</a>
             </li>
             <li>
-              <a>Report</a>
+              <a>{t('report')}</a>
             </li>
           </ul>
         </div>
@@ -45,7 +49,7 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
       {comment.type === 'text' && <p>{comment?.text}️</p>}
       {comment.type === 'bid' && (
         <div className="badge badge-lg bg-neutral text-white rounded">
-          Bid: {currencyFormatter(comment?.amount as number)}
+          {t('bid')} {currencyFormatter(comment?.amount as number)}
         </div>
       )}
       <div className="flex gap-2">
@@ -55,7 +59,7 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
         </button>
         <button className="btn btn-sm btn-outline">
           <Icon name="reply" className="w-4 h-4" />
-          Reply
+          {t('reply')}
         </button>
       </div>
     </div>

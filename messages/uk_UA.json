@@ -89,6 +89,25 @@
         "ending": "Кінець",
         "bids": "Ставок",
         "views": "Переглянуло"
+      },
+      "auction_comments": {
+        "comments_and_bids": "Коментарі",
+        "your_comment": "Ваш коментар",
+        "post_comment": "Відправити",
+        "post_comment_placeholder": "Будь-ласка, додайте свій коментар",
+        "filter": {
+          "newest": "Новіші",
+          "most_upvoted": "Найбільш уподобані",
+          "seller_comments": "Коментарі власника",
+          "bid_history": "Історія ставок"
+        },
+        "comment": {
+          "seller": "продавець",
+          "edit": "Редагувати",
+          "report": "Поскаржитися",
+          "bid": "Ставка:",
+          "reply": "Відповісти"
+        }
       }
     }
   },

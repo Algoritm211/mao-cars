@@ -16,7 +16,6 @@ import {
 } from '@/core/constants';
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
 import { useTranslations } from 'next-intl';
-import { QueryClient } from '@tanstack/react-query';
 
 interface Props {
   setFilter: (filter: AuctionsFilterInputs) => void;
