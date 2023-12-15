@@ -6,6 +6,7 @@ export interface SpritesMap {
     | 'chevron-down'
     | 'clock'
     | 'currency-dollar'
+    | 'error-label'
     | 'eye'
     | 'facebook'
     | 'footer-stub'
@@ -32,6 +33,7 @@ export const SPRITES_META: {
     | 'chevron-down'
     | 'clock'
     | 'currency-dollar'
+    | 'error-label'
     | 'eye'
     | 'facebook'
     | 'footer-stub'
@@ -58,6 +60,7 @@ export const SPRITES_META: {
     'chevron-down',
     'clock',
     'currency-dollar',
+    'error-label',
     'eye',
     'facebook',
     'footer-stub',

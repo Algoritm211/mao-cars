@@ -3,7 +3,7 @@ import { AuctionsFilter } from '@/system/cars/components/auctions-filter/auction
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
 import { useSearchParams } from 'next/navigation';
 import { BodyType, TransmissionType } from '@/core/interfaces';
-import { Loader } from '@/shared/components';
+import { EntityContainer, Loader } from '@/shared/components';
 import { AuctionContainer } from '@/shared/components/auction/auction-container';
 import { AuctionCard } from '@/shared/components/auction/auction-card';
 import { useGetAuctions } from '@/maocars-client/maocars';
@@ -21,33 +21,32 @@ export const Auctions = () => {
   };
   const router = useRouter();
   const [filter, setFilter] = useState<AuctionsFilterInputs>(initialFilterParams);
-  const { data, isLoading } = useGetAuctions(filter);
+  const auctionsQuery = useGetAuctions(filter);
 
   const onCarDetails = (auctionId: string) => {
     void router.push(`/auctions/${auctionId}`);
   };
   return (
-    <React.Fragment>
-      <AuctionsFilter
-        setFilter={setFilter}
-        isLoading={isLoading}
-        initialFilterValues={initialFilterParams}
-      />
-      <hr className="block mx-2" />
+    <EntityContainer query={auctionsQuery}>
+      {(data) => {
+        return (
+          <React.Fragment>
+            <AuctionsFilter setFilter={setFilter} initialFilterValues={initialFilterParams} />
 
-      {isLoading ? (
-        <Loader size="lg" />
-      ) : (
-        <AuctionContainer>
-          {data?.auctions?.map((auction) => (
-            <AuctionCard
-              key={auction.id}
-              auction={auction}
-              onCarDetailsClick={() => onCarDetails(auction.id)}
-            />
-          ))}
-        </AuctionContainer>
-      )}
-    </React.Fragment>
+            <hr className="block mx-2" />
+
+            <AuctionContainer>
+              {data?.auctions?.map((auction) => (
+                <AuctionCard
+                  key={auction.id}
+                  auction={auction}
+                  onCarDetailsClick={() => onCarDetails(auction.id)}
+                />
+              ))}
+            </AuctionContainer>
+          </React.Fragment>
+        );
+      }}
+    </EntityContainer>
   );
 };

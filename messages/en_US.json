@@ -91,5 +91,11 @@
         "views": "Views"
       }
     }
+  },
+  "Common": {
+    "states": {
+      "loading": "Loading...",
+      "error": "An error has occurred"
+    }
   }
 }

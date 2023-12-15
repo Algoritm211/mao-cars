@@ -16,10 +16,11 @@ import {
 } from '@/core/constants';
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
 import { useTranslations } from 'next-intl';
+import { QueryClient } from '@tanstack/react-query';
 
 interface Props {
   setFilter: (filter: AuctionsFilterInputs) => void;
-  isLoading: boolean;
+  isLoading?: boolean;
   initialFilterValues: AuctionsFilterInputs;
 }
 
@@ -33,7 +34,8 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
   const onSubmit = useCallback(
     (data: AuctionsFilterInputs) => {
       setFilter(data);
-      void router.push(`?${new URLSearchParams(data as Record<string, string>).toString()}`);
+      const newPath = `?${new URLSearchParams(data as Record<string, string>).toString()}`;
+      void router.push(newPath, newPath, { shallow: true });
     },
     [router, setFilter]
   );
