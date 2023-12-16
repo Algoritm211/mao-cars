@@ -4,7 +4,7 @@ import { BodyType, TransmissionType } from '@/core/interfaces';
 import {
   AUCTION_SORT,
   BODY_TYPES,
-} from '@/system/cars/components/auctions-filter/constants/constants';
+} from './constants/constants';
 import { useRouter } from 'next/router';
 import { clsx } from 'clsx';
 import {
@@ -14,16 +14,15 @@ import {
   START_YEARS,
   TRANSMISSION_FILTER_TYPES,
 } from '@/core/constants';
-import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
+import { AuctionsFilterInputs } from './models/auctions-filter';
 import { useTranslations } from 'next-intl';
 
 interface Props {
   setFilter: (filter: AuctionsFilterInputs) => void;
-  isLoading?: boolean;
   initialFilterValues: AuctionsFilterInputs;
 }
 
-export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialFilterValues }) => {
+export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues }) => {
   const router = useRouter();
   const t = useTranslations('Main_Page.filter');
   const { register, watch, handleSubmit, getValues } = useForm<AuctionsFilterInputs>({
@@ -47,13 +46,13 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={clsx(
-        `mb-4 flex gap-2 flex-col justify-around flex-wrap
-        justify-items-end md:flex-row`,
-        { 'pointer-events-none opacity-50': isLoading }
-      )}
+      className="mb-4 flex gap-2 flex-col
+        justify-around flex-wrap justify-items-end md:flex-row"
     >
-      <div className="flex gap-2 justify-center w-full lg:w-1/2">
+      <div
+        className="flex flex-wrap md:flex-nowrap gap-2
+        justify-center w-full lg:w-1/2"
+      >
         <div className="dropdown dropdown-bottom w-36 sm:w-full sm:flex-1">
           <label tabIndex={0} className="select select-bordered flex place-items-center">
             {t('years.year')}
@@ -92,7 +91,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
           </ul>
         </div>
 
-        <div className="flex-1 min-w-[9rem]">
+        <div className="flex-1 min-w-fit">
           <select
             {...register('transmission')}
             className="select select-bordered w-full lg:w-xs inline-block"
@@ -110,7 +109,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, isLoading, initialF
           </select>
         </div>
 
-        <div className="flex-1 min-w-[9rem]">
+        <div className="flex-1 min-w-fit">
           <select
             {...register('bodyStyle')}
             className="select select-bordered w-full lg:w-xs inline-block"
