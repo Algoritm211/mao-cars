@@ -1,8 +1,9 @@
-import React from 'react';
-import { Icon } from '@/shared/components';
-import { defaultDateFormatter, currencyFormatter } from '@/shared/utils';
 import { GetAuctionById200 } from '@/maocars-client/schemas';
 import { useTranslations } from 'next-intl';
+import React from 'react';
+
+import { Icon } from '@/shared/components';
+import { currencyFormatter, defaultDateFormatter } from '@/shared/utils';
 
 interface Props {
   auction: GetAuctionById200;

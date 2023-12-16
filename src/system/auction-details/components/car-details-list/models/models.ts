@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { TextSection } from '@/system/auction-details/components/car-details-list/sections/text-section';
 import { UserSection } from '@/system/auction-details/components/car-details-list/sections/user-section';
 

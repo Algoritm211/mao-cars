@@ -1,8 +1,9 @@
-import React from 'react';
-import { usePathname } from 'next/navigation';
-import { Icon } from '@/shared/components/icon/icon';
 import { LoginModal } from '@/auth/components/login-modal/login-modal';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import React from 'react';
+
+import { Icon } from '@/shared/components/icon/icon';
 
 interface Props {
   title: string | undefined;

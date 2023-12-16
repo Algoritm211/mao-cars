@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 import type { SVGProps } from 'react';
+
 import type { SpritesMap } from './sprite.gen';
 
 export type IconName = SpritesMap['sprite'];

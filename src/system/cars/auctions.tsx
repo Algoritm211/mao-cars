@@ -1,13 +1,16 @@
+import { useGetAuctions } from '@/maocars-client/maocars';
+import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+
+import { BodyType, TransmissionType } from '@/core/interfaces';
+
 import { AuctionsFilter } from '@/system/cars/components/auctions-filter/auctions-filter';
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
-import { useSearchParams } from 'next/navigation';
-import { BodyType, TransmissionType } from '@/core/interfaces';
+
 import { EntityContainer, Loader } from '@/shared/components';
-import { AuctionContainer } from '@/shared/components/auction/auction-container';
 import { AuctionCard } from '@/shared/components/auction/auction-card';
-import { useGetAuctions } from '@/maocars-client/maocars';
-import { useRouter } from 'next/router';
+import { AuctionContainer } from '@/shared/components/auction/auction-container';
 
 export const Auctions = () => {
   const params = useSearchParams();

@@ -1,8 +1,9 @@
+import { clsx } from 'clsx';
 import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { Icon } from '@/shared/components/icon/icon';
-import { clsx } from 'clsx';
+
 import { FormBlockWrapper, FormErrors } from '@/shared/components/form';
+import { Icon } from '@/shared/components/icon/icon';
 
 export const CarPhotosFormPart = () => {
   const {

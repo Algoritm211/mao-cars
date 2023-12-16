@@ -1,8 +1,9 @@
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import React, { PropsWithChildren } from 'react';
+
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   const t = useTranslations('Layout.header');

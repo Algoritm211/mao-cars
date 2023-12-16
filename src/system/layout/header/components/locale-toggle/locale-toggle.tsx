@@ -1,7 +1,8 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import { Icon } from '@/shared/components';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
+
+import { Icon } from '@/shared/components';
 
 const locales: Record<string, string> = {
   en_US: '🇬🇧 EN',

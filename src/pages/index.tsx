@@ -1,7 +1,8 @@
-import { Auctions } from '@/system/cars/auctions';
-import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { GetServerSidePropsContext } from 'next';
 import { getAuctions, getGetAuctionsQueryKey } from '@/maocars-client/maocars';
+import { QueryClient, dehydrate } from '@tanstack/react-query';
+import { GetServerSidePropsContext } from 'next';
+
+import { Auctions } from '@/system/cars/auctions';
 
 export default function Home() {
   return <Auctions />;

@@ -1,5 +1,6 @@
 import React, { InputHTMLAttributes } from 'react';
 import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
+
 import { FormErrors } from '@/shared/components/form/form-errors/form-errors';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {

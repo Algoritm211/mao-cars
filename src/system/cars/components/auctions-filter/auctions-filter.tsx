@@ -1,12 +1,9 @@
+import { clsx } from 'clsx';
+import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/router';
 import React, { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { BodyType, TransmissionType } from '@/core/interfaces';
-import {
-  AUCTION_SORT,
-  BODY_TYPES,
-} from './constants/constants';
-import { useRouter } from 'next/router';
-import { clsx } from 'clsx';
+
 import {
   END_YEAR,
   END_YEARS,
@@ -14,8 +11,10 @@ import {
   START_YEARS,
   TRANSMISSION_FILTER_TYPES,
 } from '@/core/constants';
+import { BodyType, TransmissionType } from '@/core/interfaces';
+
+import { AUCTION_SORT, BODY_TYPES } from './constants/constants';
 import { AuctionsFilterInputs } from './models/auctions-filter';
-import { useTranslations } from 'next-intl';
 
 interface Props {
   setFilter: (filter: AuctionsFilterInputs) => void;

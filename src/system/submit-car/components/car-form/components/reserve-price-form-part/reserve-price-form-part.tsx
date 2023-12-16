@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
+
 import { FormBlockWrapper, Input } from '@/shared/components/form';
 
 export const ReservePriceFormPart = () => {

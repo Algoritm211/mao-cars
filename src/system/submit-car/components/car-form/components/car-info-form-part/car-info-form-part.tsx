@@ -1,15 +1,18 @@
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
+
 import { END_YEARS, TRANSMISSION_TYPES } from '@/core/constants';
+
 import { CarFormInputs } from '@/system/submit-car/components/car-form/models/models';
-import { requiredRadioValidator } from '@/shared/utils/validators/required-radio-validator';
+
 import {
-  FormErrors,
-  radioStyles,
-  TextArea,
-  Input,
   FormBlockWrapper,
+  FormErrors,
+  Input,
+  TextArea,
+  radioStyles,
 } from '@/shared/components/form';
+import { requiredRadioValidator } from '@/shared/utils/validators/required-radio-validator';
 
 export const CarInfoFormPart = () => {
   const {

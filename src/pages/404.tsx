@@ -1,5 +1,5 @@
-import React from 'react';
 import { GetStaticPropsContext } from 'next';
+import React from 'react';
 
 const PageNotFound = () => {
   return <div>This page was not found</div>;

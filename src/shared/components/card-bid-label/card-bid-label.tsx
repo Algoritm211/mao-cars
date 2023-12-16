@@ -1,7 +1,8 @@
 import React from 'react';
+
+import { Icon } from '@/shared/components/icon/icon';
 import { Timer } from '@/shared/components/timer/timer';
 import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
-import { Icon } from '@/shared/components/icon/icon';
 
 interface Props {
   price: number;

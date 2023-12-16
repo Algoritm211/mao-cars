@@ -1,6 +1,7 @@
-import React from 'react';
-import { SubmitCar } from '@/system/submit-car/submit-car';
 import { GetStaticPropsContext } from 'next';
+import React from 'react';
+
+import { SubmitCar } from '@/system/submit-car/submit-car';
 
 const Submit = () => {
   return (

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { button, Icon } from '@/shared/components';
-import { COMMENT_FILTER } from '@/system/auction-details/components/auction-comments-section/components/comment-form/models/form-constants';
 import { clsx } from 'clsx';
-import { useForm } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
+import { COMMENT_FILTER } from '@/system/auction-details/components/auction-comments-section/components/comment-form/models/form-constants';
+
+import { Icon, button } from '@/shared/components';
 
 interface Inputs {
   comment: string;

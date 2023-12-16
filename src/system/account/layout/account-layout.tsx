@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+
 import AccountNavBar from '@/system/account/components/account-nav-bar/account-nav-bar';
 
 export const AccountLayout: React.FC<PropsWithChildren> = ({ children }) => {

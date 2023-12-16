@@ -1,15 +1,17 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import { EntityContainer, Loader } from '@/shared/components';
 import { useGetAuctionById, useGetCommentsByAuctionId } from '@/maocars-client/maocars';
+import { useRouter } from 'next/router';
+import React from 'react';
+
+import { EntityContainer, Loader } from '@/shared/components';
+
 import {
+  AuctionComments,
+  AuctionStatistics,
   CarDetailsHeader,
-  CarGallery,
   CarDetailsList,
+  CarGallery,
   CarInfoSections,
   PlaceBid,
-  AuctionStatistics,
-  AuctionComments,
 } from './components';
 
 export const AuctionDetails = () => {

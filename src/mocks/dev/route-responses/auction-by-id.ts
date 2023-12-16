@@ -1,7 +1,7 @@
 import { GetAuctionById200, GetAuctionById200Status } from '@/maocars-client/schemas';
-import { faker } from '@faker-js/faker';
-import { usersShort } from '@/mocks/dev/data-buckets/users';
 import { cars } from '@/mocks/dev/data-buckets/cars';
+import { usersShort } from '@/mocks/dev/data-buckets/users';
+import { faker } from '@faker-js/faker';
 
 const generateAuction = (count: number): GetAuctionById200[] => {
   const statuses: GetAuctionById200Status[] = ['live', 'end'];

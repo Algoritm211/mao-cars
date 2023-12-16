@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+
 import { Icon } from '@/shared/components/icon/icon';
 
 interface Props {

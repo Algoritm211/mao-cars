@@ -1,7 +1,8 @@
+import { CarSections } from '@/maocars-client/schemas';
 import React from 'react';
+
 import { TextSection } from '@/system/auction-details/components/car-info-sections/sections/text-section';
 import { VideoSection } from '@/system/auction-details/components/car-info-sections/sections/video-section';
-import { CarSections } from '@/maocars-client/schemas';
 
 type SectionTypes = 'text' | 'video';
 

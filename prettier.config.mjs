@@ -5,6 +5,9 @@ const config = {
   printWidth: 100,
   semi: true,
   singleQuote: true,
+  plugins: ["@trivago/prettier-plugin-sort-imports"],
+  importOrder: ["<THIRD_PARTY_MODULES>", "^@/core/(.*)$", "^@/system/(.*)$", "^@/shared/(.*)$", "^[./]"],
+  importOrderSeparation: true,
 };
 
 export default config;

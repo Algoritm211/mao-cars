@@ -1,6 +1,8 @@
 import React from 'react';
-import { CAR_OWNER } from '@/system/submit-car/components/car-form/constants/constants';
 import { useFormContext } from 'react-hook-form';
+
+import { CAR_OWNER } from '@/system/submit-car/components/car-form/constants/constants';
+
 import { FormBlockWrapper, FormErrors, Input, RadioButton } from '@/shared/components/form';
 
 export const UserInfoFormPart = () => {

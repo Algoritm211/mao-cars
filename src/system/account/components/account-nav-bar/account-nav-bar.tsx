@@ -1,9 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import { Icon } from '@/shared/components/icon/icon';
-import { useRouter } from 'next/router';
 import { clsx } from 'clsx';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
+
 import { ACCOUNTS_ROUTES_MAP } from '@/system/account/core/routes.map';
+
+import { Icon } from '@/shared/components/icon/icon';
 
 const AccountNavBar = () => {
   const router = useRouter();

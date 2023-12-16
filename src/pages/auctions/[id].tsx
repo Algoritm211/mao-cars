@@ -1,13 +1,14 @@
-import React from 'react';
-import { AuctionDetails } from '@/system/auction-details/auction-details';
-import { GetServerSidePropsContext } from 'next';
-import { dehydrate, QueryClient } from '@tanstack/react-query';
 import {
   getAuctionById,
   getCommentsByAuctionId,
   getGetAuctionByIdQueryKey,
   getGetCommentsByAuctionIdQueryKey,
 } from '@/maocars-client/maocars';
+import { QueryClient, dehydrate } from '@tanstack/react-query';
+import { GetServerSidePropsContext } from 'next';
+import React from 'react';
+
+import { AuctionDetails } from '@/system/auction-details/auction-details';
 
 const AuctionCarDetails = () => {
   return <AuctionDetails />;

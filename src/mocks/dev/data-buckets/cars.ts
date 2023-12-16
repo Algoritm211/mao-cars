@@ -5,9 +5,9 @@ import {
   CarSellerType,
   CarTransmission,
 } from '@/maocars-client/schemas';
-import { faker } from '@faker-js/faker';
 import { auctionSubtitles, auctionTitles } from '@/mocks/dev/data-buckets/auction-titles';
 import { galleryPhotosSets } from '@/mocks/dev/data-buckets/gallery-photos-sets';
+import { faker } from '@faker-js/faker';
 
 const generateCars = (count: number): Car[] => {
   const bodyStyles: CarBodyStyle[] = [

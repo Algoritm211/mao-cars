@@ -1,7 +1,9 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
-import { DefaultLoader } from './default-loader';
-import { DefaultError } from '@/shared/components/entity-container/default-error';
 import { UseQueryResult } from '@tanstack/react-query';
+import React, { PropsWithChildren, ReactNode } from 'react';
+
+import { DefaultError } from '@/shared/components/entity-container/default-error';
+
+import { DefaultLoader } from './default-loader';
 
 interface Props<TData, TError> {
   query: UseQueryResult<TData, TError>;

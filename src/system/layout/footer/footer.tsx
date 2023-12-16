@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Icon } from '@/shared/components/icon/icon';
 
 export const Footer = () => {

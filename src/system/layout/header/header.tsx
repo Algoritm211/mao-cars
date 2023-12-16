@@ -1,9 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import { Icon } from '@/shared/components/icon/icon';
 import { LoginModal } from '@/auth/components/login-modal/login-modal';
-import { LocaleToggle } from './components/locale-toggle/locale-toggle';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import React from 'react';
+
+import { Icon } from '@/shared/components/icon/icon';
+
+import { LocaleToggle } from './components/locale-toggle/locale-toggle';
 
 export const Header = () => {
   const isAuthenticated = true;

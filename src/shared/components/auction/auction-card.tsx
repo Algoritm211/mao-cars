@@ -1,6 +1,7 @@
-import React from 'react';
-import { CardBidLabel } from '@/shared/components/card-bid-label/card-bid-label';
 import { Auction } from '@/maocars-client/schemas';
+import React from 'react';
+
+import { CardBidLabel } from '@/shared/components/card-bid-label/card-bid-label';
 
 interface Props {
   auction: Auction;

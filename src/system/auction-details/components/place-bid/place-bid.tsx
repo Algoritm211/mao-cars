@@ -1,10 +1,11 @@
+import { LoginModal } from '@/auth/components/login-modal/login-modal';
+import { GetAuctionById200Stats } from '@/maocars-client/schemas';
+import { useTranslations } from 'next-intl';
 import React from 'react';
+
+import { button } from '@/shared/components/button/button';
 import { Timer } from '@/shared/components/timer/timer';
 import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
-import { LoginModal } from '@/auth/components/login-modal/login-modal';
-import { button } from '@/shared/components/button/button';
-import { useTranslations } from 'next-intl';
-import { GetAuctionById200Stats } from '@/maocars-client/schemas';
 
 interface Props {
   stats: GetAuctionById200Stats;

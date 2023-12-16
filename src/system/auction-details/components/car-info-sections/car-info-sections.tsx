@@ -1,10 +1,11 @@
+import { CarSections } from '@/maocars-client/schemas';
+import { useTranslations } from 'next-intl';
 import React from 'react';
+
 import {
   SECTION_COMPONENTS,
   SECTION_NAMES,
 } from '@/system/auction-details/components/car-info-sections/models/models';
-import { CarSections } from '@/maocars-client/schemas';
-import { useTranslations } from 'next-intl';
 
 interface Props {
   sections: CarSections;

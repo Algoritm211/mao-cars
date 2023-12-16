@@ -1,10 +1,11 @@
-import React from 'react';
-import { Icon } from '@/shared/components';
 import { Comment } from '@/maocars-client/schemas';
-import { commentDateFormatter } from '@/shared/utils/date-formatter/date-formatter';
-import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
+import React from 'react';
+
+import { Icon } from '@/shared/components';
+import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
+import { commentDateFormatter } from '@/shared/utils/date-formatter/date-formatter';
 
 interface Props {
   comment: Comment;
