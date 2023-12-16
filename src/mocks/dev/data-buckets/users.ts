@@ -1,5 +1,6 @@
-import { UserShort } from '@/maocars-client/schemas';
 import { faker } from '@faker-js/faker';
+
+import { UserShort } from '@/maocars-client/schemas';
 
 const generateUsers = (count: number): UserShort[] => {
   return new Array(count).fill(null).map(() => {

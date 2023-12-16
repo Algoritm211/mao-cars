@@ -1,6 +1,7 @@
-import { Car, GetAuctionById200, UserShort } from '@/maocars-client/schemas';
 import { useTranslations } from 'next-intl';
 import React from 'react';
+
+import { Car, GetAuctionById200, UserShort } from '@/maocars-client/schemas';
 
 import { SECTION_COMPONENTS, SECTION_NAMES } from './models/models';
 

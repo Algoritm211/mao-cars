@@ -1,10 +1,11 @@
-import { UserShort } from '@/maocars-client/schemas';
 import React from 'react';
 
 import {
   ddStyles,
   dtStyles,
 } from '@/system/auction-details/components/car-details-list/sections/sections-styles';
+
+import { UserShort } from '@/maocars-client/schemas';
 
 interface Props {
   title: string;

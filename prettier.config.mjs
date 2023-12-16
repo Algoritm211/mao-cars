@@ -6,7 +6,13 @@ const config = {
   semi: true,
   singleQuote: true,
   plugins: ["@trivago/prettier-plugin-sort-imports"],
-  importOrder: ["<THIRD_PARTY_MODULES>", "^@/core/(.*)$", "^@/system/(.*)$", "^@/shared/(.*)$", "^[./]"],
+  importOrder: [
+    "<THIRD_PARTY_MODULES>",
+    "^@/core/(.*)$",
+    "^@/system/(.*)$",
+    "^@/maocars-client/(.*)$",
+    "^@/shared/(.*)$","^[./]"
+  ],
   importOrderSeparation: true,
 };
 

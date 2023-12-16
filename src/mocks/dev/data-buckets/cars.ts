@@ -1,3 +1,7 @@
+import { auctionSubtitles, auctionTitles } from '@/mocks/dev/data-buckets/auction-titles';
+import { galleryPhotosSets } from '@/mocks/dev/data-buckets/gallery-photos-sets';
+import { faker } from '@faker-js/faker';
+
 import {
   Car,
   CarBodyStyle,
@@ -5,9 +9,6 @@ import {
   CarSellerType,
   CarTransmission,
 } from '@/maocars-client/schemas';
-import { auctionSubtitles, auctionTitles } from '@/mocks/dev/data-buckets/auction-titles';
-import { galleryPhotosSets } from '@/mocks/dev/data-buckets/gallery-photos-sets';
-import { faker } from '@faker-js/faker';
 
 const generateCars = (count: number): Car[] => {
   const bodyStyles: CarBodyStyle[] = [

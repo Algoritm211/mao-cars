@@ -1,4 +1,3 @@
-import { useGetAuctions } from '@/maocars-client/maocars';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -7,6 +6,8 @@ import { BodyType, TransmissionType } from '@/core/interfaces';
 
 import { AuctionsFilter } from '@/system/cars/components/auctions-filter/auctions-filter';
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
+
+import { useGetAuctions } from '@/maocars-client/maocars';
 
 import { EntityContainer, Loader } from '@/shared/components';
 import { AuctionCard } from '@/shared/components/auction/auction-card';

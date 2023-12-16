@@ -1,5 +1,5 @@
+import { cva, VariantProps } from 'class-variance-authority';
 import React from 'react';
-import {cva, VariantProps} from "class-variance-authority";
 
 const badge = cva('badge', {
   variants: {
@@ -27,17 +27,12 @@ const badge = cva('badge', {
   defaultVariants: {
     size: 'md',
     outline: true,
-  }
-})
+  },
+});
 
 interface Props extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badge> {
   title?: string;
 }
-export const Badge: React.FC<Props> = ({className, variant, outline, size, title}) => {
-  return (
-    <div
-      className={badge({variant, outline, size, className})}>
-      {title}
-    </div>
-  );
+export const Badge: React.FC<Props> = ({ className, variant, outline, size, title }) => {
+  return <div className={badge({ variant, outline, size, className })}>{title}</div>;
 };

@@ -1,8 +1,9 @@
-import { getAuctions, getGetAuctionsQueryKey } from '@/maocars-client/maocars';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { GetServerSidePropsContext } from 'next';
 
 import { Auctions } from '@/system/cars/auctions';
+
+import { getAuctions, getGetAuctionsQueryKey } from '@/maocars-client/maocars';
 
 export default function Home() {
   return <Auctions />;

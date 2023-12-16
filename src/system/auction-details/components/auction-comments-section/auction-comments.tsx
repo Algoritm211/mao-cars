@@ -1,7 +1,8 @@
-import { Comment } from '@/maocars-client/schemas';
 import React from 'react';
 
 import { AuctionComment } from '@/system/auction-details/components/auction-comments-section/components/aunction-comment/auction-comment';
+
+import { Comment } from '@/maocars-client/schemas';
 
 import { CommentForm } from './components/comment-form/comment-form';
 

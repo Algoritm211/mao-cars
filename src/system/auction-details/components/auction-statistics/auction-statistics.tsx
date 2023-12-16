@@ -1,6 +1,7 @@
-import { GetAuctionById200 } from '@/maocars-client/schemas';
 import { useTranslations } from 'next-intl';
 import React from 'react';
+
+import { GetAuctionById200 } from '@/maocars-client/schemas';
 
 import { Icon } from '@/shared/components';
 import { currencyFormatter, defaultDateFormatter } from '@/shared/utils';

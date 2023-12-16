@@ -1,6 +1,7 @@
-import { useGetAuctionById, useGetCommentsByAuctionId } from '@/maocars-client/maocars';
 import { useRouter } from 'next/router';
 import React from 'react';
+
+import { useGetAuctionById, useGetCommentsByAuctionId } from '@/maocars-client/maocars';
 
 import { EntityContainer, Loader } from '@/shared/components';
 

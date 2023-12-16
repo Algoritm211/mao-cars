@@ -1,5 +1,6 @@
-import { Auction } from '@/maocars-client/schemas';
 import React from 'react';
+
+import { Auction } from '@/maocars-client/schemas';
 
 import { CardBidLabel, Badge } from '@/shared/components';
 
@@ -37,9 +38,9 @@ export const AuctionCard: React.FC<Props> = ({ auction, onCarDetailsClick }) => 
         {/* Address */}
         <p className="text-gray-500">{location}</p>
         <div className="card-actions">
-          <Badge variant='primary' title='No Reserve' />
-          <Badge variant='secondary' title='Reserved' />
-          {has_inspection && <Badge variant='accent' title='Inspected' />}
+          <Badge variant="primary" title="No Reserve" />
+          <Badge variant="secondary" title="Reserved" />
+          {has_inspection && <Badge variant="accent" title="Inspected" />}
         </div>
       </div>
     </div>

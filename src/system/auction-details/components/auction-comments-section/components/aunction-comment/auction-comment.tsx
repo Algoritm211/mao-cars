@@ -1,6 +1,7 @@
-import { Comment } from '@/maocars-client/schemas';
 import { useTranslations } from 'next-intl';
 import React from 'react';
+
+import { Comment } from '@/maocars-client/schemas';
 
 import { Icon, Badge } from '@/shared/components';
 import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
@@ -48,7 +49,7 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
       {comment.type === 'text' && <p>{comment?.text}️</p>}
       {comment.type === 'bid' && (
         <Badge
-          size='lg'
+          size="lg"
           className="bg-neutral text-white rounded"
           title={`${t('bid')} ${currencyFormatter(comment?.amount as number)}`}
         />
