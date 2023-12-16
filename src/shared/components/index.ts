@@ -1,4 +1,5 @@
 export * from './button/button';
+export * from './badge/badge';
 export * from './auction/auction-card';
 export * from './card-bid-label/card-bid-label';
 export * from './icon/icon';

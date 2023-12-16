@@ -1,7 +1,7 @@
 import { Auction } from '@/maocars-client/schemas';
 import React from 'react';
 
-import { CardBidLabel } from '@/shared/components/card-bid-label/card-bid-label';
+import { CardBidLabel, Badge } from '@/shared/components';
 
 interface Props {
   auction: Auction;
@@ -37,9 +37,9 @@ export const AuctionCard: React.FC<Props> = ({ auction, onCarDetailsClick }) => 
         {/* Address */}
         <p className="text-gray-500">{location}</p>
         <div className="card-actions">
-          <div className="badge badge-primary badge-outline">No Reserve</div>
-          <div className="badge badge-secondary badge-outline">Reserved</div>
-          {has_inspection && <div className="badge badge-accent badge-outline">Inspected</div>}
+          <Badge variant='primary' title='No Reserve' />
+          <Badge variant='secondary' title='Reserved' />
+          {has_inspection && <Badge variant='accent' title='Inspected' />}
         </div>
       </div>
     </div>

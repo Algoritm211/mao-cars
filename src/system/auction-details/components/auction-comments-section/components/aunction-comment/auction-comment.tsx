@@ -1,9 +1,8 @@
 import { Comment } from '@/maocars-client/schemas';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/router';
 import React from 'react';
 
-import { Icon } from '@/shared/components';
+import { Icon, Badge } from '@/shared/components';
 import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
 import { commentDateFormatter } from '@/shared/utils/date-formatter/date-formatter';
 
@@ -13,7 +12,6 @@ interface Props {
 }
 
 export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
-  const { locale } = useRouter();
   const t = useTranslations('Auction_Page.auction_details.auction_comments.comment');
   const { user } = comment;
   return (
@@ -26,7 +24,7 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
             </div>
           </div>
           <span className="font-bold">{user.username}</span>
-          {isOwner && <div className="badge bg-purple-600 text-white">{t('seller')}</div>}
+          {isOwner && <Badge className="bg-purple-600 text-white" title={t('seller')} />}
           <p className="text-sm text-gray-600">
             <time dateTime={commentDateFormatter(new Date(comment.created_at))}>
               {commentDateFormatter(new Date(comment.created_at))}
@@ -49,9 +47,11 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
       </div>
       {comment.type === 'text' && <p>{comment?.text}️</p>}
       {comment.type === 'bid' && (
-        <div className="badge badge-lg bg-neutral text-white rounded">
-          {t('bid')} {currencyFormatter(comment?.amount as number)}
-        </div>
+        <Badge
+          size='lg'
+          className="bg-neutral text-white rounded"
+          title={`${t('bid')} ${currencyFormatter(comment?.amount as number)}`}
+        />
       )}
       <div className="flex gap-2">
         <button className="btn btn-sm btn-outline">
