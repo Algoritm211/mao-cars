@@ -26,6 +26,8 @@ export * from './getAuctions200';
 export * from './getAuctionsParams';
 export * from './getAutosAuctionsIdComments200';
 export * from './getCommentsByAuctionId200';
+export * from './getCommentsByAuctionIdFilter';
+export * from './getCommentsByAuctionIdParams';
 export * from './user';
 export * from './userProfileInfo';
 export * from './userShort';

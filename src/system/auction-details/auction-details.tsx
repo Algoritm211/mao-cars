@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { useGetAuctionById, useGetCommentsByAuctionId } from '@/maocars-client/maocars';
+import { useGetAuctionById } from '@/maocars-client/maocars';
 
-import { EntityContainer, Loader } from '@/shared/components';
+import { EntityContainer } from '@/shared/components';
 
 import {
   AuctionComments,
@@ -18,7 +18,6 @@ import {
 export const AuctionDetails = () => {
   const router = useRouter();
   const auctionQuery = useGetAuctionById(router.query?.id as string);
-  const commentsQuery = useGetCommentsByAuctionId(router.query?.id as string);
 
   return (
     <div>
@@ -35,19 +34,7 @@ export const AuctionDetails = () => {
               <CarDetailsList auction={auction!} />
               <CarInfoSections sections={auction.listing?.sections!} />
               <AuctionStatistics auction={auction!} />
-              <EntityContainer
-                query={commentsQuery}
-                customLoading={<Loader loaderTitle="Loading Comments..." size="lg" />}
-              >
-                {(comments) => {
-                  return (
-                    <AuctionComments
-                      comments={comments!.comments_and_bids}
-                      seller_id={auction?.seller.id || ''}
-                    />
-                  );
-                }}
-              </EntityContainer>
+              <AuctionComments sellerId={auction?.seller.id || ''} />
             </React.Fragment>
           );
         }}

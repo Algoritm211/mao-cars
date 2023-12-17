@@ -19,6 +19,7 @@ import type {
   GetAuctions200,
   GetAuctionsParams,
   GetCommentsByAuctionId200,
+  GetCommentsByAuctionIdParams,
 } from './schemas';
 
 /**
@@ -140,15 +141,19 @@ export const useGetAuctionById = <
 /**
  * @summary Your GET endpoint
  */
-export const getCommentsByAuctionId = (id: string) => {
+export const getCommentsByAuctionId = (id: string, params?: GetCommentsByAuctionIdParams) => {
   return customInstance<GetCommentsByAuctionId200>({
     url: `/autos/auctions/${id}/comments`,
     method: 'get',
+    params,
   });
 };
 
-export const getGetCommentsByAuctionIdQueryKey = (id: string) => {
-  return [`/autos/auctions/${id}/comments`] as const;
+export const getGetCommentsByAuctionIdQueryKey = (
+  id: string,
+  params?: GetCommentsByAuctionIdParams
+) => {
+  return [`/autos/auctions/${id}/comments`, ...(params ? [params] : [])] as const;
 };
 
 export const getGetCommentsByAuctionIdQueryOptions = <
@@ -156,6 +161,7 @@ export const getGetCommentsByAuctionIdQueryOptions = <
   TError = unknown,
 >(
   id: string,
+  params?: GetCommentsByAuctionIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<Awaited<ReturnType<typeof getCommentsByAuctionId>>, TError, TData>
@@ -164,10 +170,10 @@ export const getGetCommentsByAuctionIdQueryOptions = <
 ) => {
   const { query: queryOptions } = options ?? {};
 
-  const queryKey = queryOptions?.queryKey ?? getGetCommentsByAuctionIdQueryKey(id);
+  const queryKey = queryOptions?.queryKey ?? getGetCommentsByAuctionIdQueryKey(id, params);
 
   const queryFn: QueryFunction<Awaited<ReturnType<typeof getCommentsByAuctionId>>> = () =>
-    getCommentsByAuctionId(id);
+    getCommentsByAuctionId(id, params);
 
   return {
     queryKey,
@@ -193,13 +199,14 @@ export const useGetCommentsByAuctionId = <
   TError = unknown,
 >(
   id: string,
+  params?: GetCommentsByAuctionIdParams,
   options?: {
     query?: Partial<
       UseQueryOptions<Awaited<ReturnType<typeof getCommentsByAuctionId>>, TError, TData>
     >;
   }
 ): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
-  const queryOptions = getGetCommentsByAuctionIdQueryOptions(id, options);
+  const queryOptions = getGetCommentsByAuctionIdQueryOptions(id, params, options);
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
 

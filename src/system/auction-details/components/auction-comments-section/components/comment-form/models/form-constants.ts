@@ -1,8 +1,10 @@
+import { GetCommentsByAuctionIdFilter } from '@/maocars-client/schemas';
+
 type CommentMessageLabel =
   `filter.${keyof Messages['Auction_Page']['auction_details']['auction_comments']['filter']}`;
 
 interface CommentFilterEntity {
-  key: string;
+  key: GetCommentsByAuctionIdFilter;
   label: CommentMessageLabel;
 }
 export const COMMENT_FILTER: Array<CommentFilterEntity> = [

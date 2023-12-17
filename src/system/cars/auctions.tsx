@@ -30,6 +30,7 @@ export const Auctions = () => {
   const onCarDetails = (auctionId: string) => {
     void router.push(`/auctions/${auctionId}`);
   };
+
   return (
     <EntityContainer query={auctionsQuery}>
       {(data) => {

@@ -91,6 +91,7 @@
         "views": "Views"
       },
       "auction_comments": {
+        "loading_comments": "Loading Comments...",
         "comments_and_bids": "Comments & bids",
         "your_comment": "Your comment",
         "post_comment": "Post comment",

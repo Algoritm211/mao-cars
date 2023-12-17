@@ -27,7 +27,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext<{ id: st
   });
 
   await queryClient.prefetchQuery({
-    queryKey: getGetCommentsByAuctionIdQueryKey(auctionId!),
+    queryKey: getGetCommentsByAuctionIdQueryKey(auctionId!, { filter: 'newest' }),
     queryFn: () => getCommentsByAuctionId(auctionId!),
   });
 

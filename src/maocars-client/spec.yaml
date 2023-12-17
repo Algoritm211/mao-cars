@@ -214,6 +214,17 @@ paths:
       operationId: get-comments-by-auction-id
       x-stoplight:
         id: kawww02u17cya
+      parameters:
+        - schema:
+            type: string
+            enum:
+              - newest
+              - most_upvoted
+              - seller_comments
+              - bid_history
+          in: query
+          name: filter
+          description: 'Filter for comments (newest, most_upvoted, seller_comments, bid_history)'
 components:
   schemas:
     Car:
@@ -604,3 +615,4 @@ components:
         - upvotes
         - user
         - type
+  parameters: {}

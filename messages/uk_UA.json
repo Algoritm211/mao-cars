@@ -91,6 +91,7 @@
         "views": "Переглянуло"
       },
       "auction_comments": {
+        "loading_comments": "Завантаження коментарів...",
         "comments_and_bids": "Коментарі",
         "your_comment": "Ваш коментар",
         "post_comment": "Відправити",
