@@ -1,4 +1,12 @@
-const baseURL = `${process.env.NEXT_PUBLIC_BACKEND_BASE || ''}/api`;
+const createBaseURL = () => {
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}/api`;
+  }
+
+  return `${process.env.NEXT_PUBLIC_BACKEND_BASE || ''}/api`;
+};
+
+const baseURL = createBaseURL();
 
 export const customInstance = async <T>({
   url,
