@@ -1,6 +1,6 @@
 const createBaseURL = () => {
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}/api`;
+  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+    return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api`;
   }
 
   return `${process.env.NEXT_PUBLIC_BACKEND_BASE || ''}/api`;
