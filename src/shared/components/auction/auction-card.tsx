@@ -22,11 +22,12 @@ export const AuctionCard: React.FC<Props> = ({ auction, badges, onCarDetailsClic
 
   return (
     <div
-      className="card card-compact w-80 bg-base-100 shadow-xl cursor-pointer hover:scale-105 transition-all"
+      className="card card-compact w-full bg-base-100
+       shadow-xl cursor-pointer hover:scale-105 transition-all"
       onClick={onCarDetailsClick}
     >
       <figure className="relative">
-        <img src={url} className="w-80 h-52 object-cover" alt={title} />
+        <img src={url} className="w-full h-auto object-cover" alt={title} />
         <div className="absolute bottom-1 left-1">
           <CardBidLabel price={current_bid} endDate={new Date(auction_end)} currency={'USD'} />
         </div>
