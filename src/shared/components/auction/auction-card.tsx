@@ -2,14 +2,15 @@ import React from 'react';
 
 import { Auction } from '@/maocars-client/schemas';
 
-import { CardBidLabel, Badge } from '@/shared/components';
+import { CardBidLabel } from '@/shared/components';
 
 interface Props {
   auction: Auction;
   onCarDetailsClick?: () => void;
+  badges?: React.JSX.Element;
 }
 
-export const AuctionCard: React.FC<Props> = ({ auction, onCarDetailsClick }) => {
+export const AuctionCard: React.FC<Props> = ({ auction, badges, onCarDetailsClick }) => {
   const {
     current_bid,
     auction_end,
@@ -17,7 +18,6 @@ export const AuctionCard: React.FC<Props> = ({ auction, onCarDetailsClick }) => 
     sub_title,
     location,
     main_photo: { url },
-    has_inspection,
   } = auction;
 
   return (
@@ -37,11 +37,7 @@ export const AuctionCard: React.FC<Props> = ({ auction, onCarDetailsClick }) => 
         <p>{sub_title}</p>
         {/* Address */}
         <p className="text-gray-500">{location}</p>
-        <div className="card-actions">
-          <Badge variant="primary" title="No Reserve" />
-          <Badge variant="secondary" title="Reserved" />
-          {has_inspection && <Badge variant="accent" title="Inspected" />}
-        </div>
+        <div className="card-actions">{badges}</div>
       </div>
     </div>
   );

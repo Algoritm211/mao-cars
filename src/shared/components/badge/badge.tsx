@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import React from 'react';
 
-const badge = cva('badge', {
+export const badge = cva('badge', {
   variants: {
     variant: {
       primary: 'badge-primary',

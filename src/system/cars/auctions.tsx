@@ -6,12 +6,14 @@ import { BodyType, TransmissionType } from '@/core/interfaces';
 
 import { AuctionsFilter } from '@/system/cars/components/auctions-filter/auctions-filter';
 import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
+import { AUCTION_CAR_BADGES } from '@/system/cars/components/models/auction-car-badges';
 
 import { useGetAuctions } from '@/maocars-client/maocars';
 
 import { EntityContainer, Loader } from '@/shared/components';
 import { AuctionCard } from '@/shared/components/auction/auction-card';
 import { AuctionContainer } from '@/shared/components/auction/auction-container';
+import BadgeFactory from '@/shared/components/badge/badge-factory';
 
 export const Auctions = () => {
   const params = useSearchParams();
@@ -45,6 +47,7 @@ export const Auctions = () => {
                 <AuctionCard
                   key={auction.id}
                   auction={auction}
+                  badges={<BadgeFactory data={auction} badges={AUCTION_CAR_BADGES} />}
                   onCarDetailsClick={() => onCarDetails(auction.id)}
                 />
               ))}

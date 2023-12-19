@@ -116,6 +116,14 @@
     "states": {
       "loading": "Loading...",
       "error": "An error has occurred"
+    },
+    "badges": {
+      "auction": {
+        "no_reserve": "No reserve",
+        "has_inspection": "Inspected",
+        "reserved": "Reserved",
+        "for_army_purpose": "For \uD83C\uDDFA\uD83C\uDDE6 UA Army"
+      }
     }
   }
 }

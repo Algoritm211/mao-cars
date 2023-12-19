@@ -484,10 +484,6 @@ components:
           type: number
           x-stoplight:
             id: vlcij1ikh4bcj
-        has_inspection:
-          type: boolean
-          x-stoplight:
-            id: hp6k2ibhoptiz
         location:
           type: string
           x-stoplight:
@@ -512,12 +508,6 @@ components:
           type: number
           x-stoplight:
             id: 5on40f68l5xqh
-        status:
-          x-stoplight:
-            id: nvufroiin6byk
-          enum:
-            - live
-            - ended
         sub_title:
           type: string
           x-stoplight:
@@ -530,19 +520,36 @@ components:
           type: boolean
           x-stoplight:
             id: r2jg8jn7o9bi7
+        has_inspection:
+          type: boolean
+          x-stoplight:
+            id: hp6k2ibhoptiz
+        no_reserve:
+          type: boolean
+          x-stoplight:
+            id: 5mnid3nfhmt9z
+        reserved:
+          type: boolean
+          x-stoplight:
+            id: 3skztfqeryzsx
+        for_army_purpose:
+          type: boolean
+          x-stoplight:
+            id: 3xjhikhpuned2
       required:
         - id
         - auction_end
         - current_bid
-        - has_inspection
         - location
         - main_photo
         - seller
         - mileage
-        - status
         - sub_title
         - title
         - watching
+        - has_inspection
+        - no_reserve
+        - reserved
     UserShort:
       title: UserShort
       x-stoplight:

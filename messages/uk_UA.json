@@ -116,6 +116,14 @@
     "states": {
       "loading": "Завантаження...",
       "error": "Виникла помилка завантаження даних"
+    },
+    "badges": {
+      "auction": {
+        "no_reserve": "Без резерву",
+        "has_inspection": "Інспектована",
+        "reserved": "Зарезервована",
+        "for_army_purpose": "\uD83C\uDDFA\uD83C\uDDE6 Авто на ЗСУ"
+      }
     }
   }
 }
