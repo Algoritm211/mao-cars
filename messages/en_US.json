@@ -128,5 +128,11 @@
     "ribbons": {
       "for_army_purpose": "⚡ Special offer"
     }
+  },
+  "Account_Page": {
+    "navbar": {
+      "account": "Account",
+      "listings": "Listings"
+    }
   }
 }

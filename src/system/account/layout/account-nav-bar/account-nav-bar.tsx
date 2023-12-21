@@ -6,9 +6,11 @@ import React from 'react';
 import { ACCOUNTS_ROUTES_MAP } from '@/system/account/core/routes.map';
 
 import { Icon } from '@/shared/components/icon/icon';
+import {useTranslations} from "next-intl";
 
 const AccountNavBar = () => {
   const router = useRouter();
+  const t = useTranslations('Account_Page.navbar');
 
   return (
     <ul className="menu menu-horizontal max-w-xl bg-base-200 rounded-box">
@@ -16,7 +18,7 @@ const AccountNavBar = () => {
         <li key={href}>
           <Link href={href} className={clsx({ active: router.pathname === href })}>
             <Icon name={icon} className="w-5 h-5" />
-            <span>{title}</span>
+            <span>{t(title)}</span>
           </Link>
         </li>
       ))}
