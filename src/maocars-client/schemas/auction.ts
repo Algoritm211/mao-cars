@@ -6,20 +6,22 @@
  * mao-cars-api
  */
 import type { AuctionMainPhoto } from './auctionMainPhoto';
+import type { AuctionStatus } from './auctionStatus';
 import type { UserShort } from './userShort';
 
 export interface Auction {
   auction_end: string;
   current_bid: number;
-  for_army_purpose?: boolean;
-  has_inspection: boolean;
+  for_army_forces?: boolean;
+  has_inspection?: boolean;
   id: string;
   location: string;
   main_photo: AuctionMainPhoto;
   mileage: number;
-  no_reserve: boolean;
-  reserved: boolean;
+  no_reserve?: boolean;
+  reserved?: boolean;
   seller: UserShort;
+  status: AuctionStatus;
   sub_title: string;
   title: string;
   watching: boolean;

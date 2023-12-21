@@ -1,6 +1,6 @@
 import { auctionSubtitles, auctionTitles } from '@/mocks/dev/data-buckets/auction-titles';
 import { mainPhotos } from '@/mocks/dev/data-buckets/main-photos';
-import { usersShort } from '@/mocks/dev/data-buckets/users';
+import { usersShort } from '@/mocks/dev/data-buckets/users-short';
 import { faker } from '@faker-js/faker';
 
 import { Auction } from '@/maocars-client/schemas';

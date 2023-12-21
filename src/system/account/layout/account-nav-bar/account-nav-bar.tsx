@@ -1,4 +1,5 @@
 import { clsx } from 'clsx';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -6,7 +7,6 @@ import React from 'react';
 import { ACCOUNTS_ROUTES_MAP } from '@/system/account/core/routes.map';
 
 import { Icon } from '@/shared/components/icon/icon';
-import {useTranslations} from "next-intl";
 
 const AccountNavBar = () => {
   const router = useRouter();

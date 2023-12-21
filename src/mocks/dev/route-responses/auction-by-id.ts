@@ -1,5 +1,5 @@
 import { cars } from '@/mocks/dev/data-buckets/cars';
-import { usersShort } from '@/mocks/dev/data-buckets/users';
+import { usersShort } from '@/mocks/dev/data-buckets/users-short';
 import { faker } from '@faker-js/faker';
 
 import { GetAuctionById200, GetAuctionById200Status } from '@/maocars-client/schemas';

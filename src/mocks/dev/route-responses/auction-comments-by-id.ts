@@ -1,4 +1,4 @@
-import { usersShort } from '@/mocks/dev/data-buckets/users';
+import { usersShort } from '@/mocks/dev/data-buckets/users-short';
 import { faker } from '@faker-js/faker';
 
 import { Comment } from '@/maocars-client/schemas';

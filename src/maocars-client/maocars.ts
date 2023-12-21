@@ -20,6 +20,7 @@ import type {
   GetAuctionsParams,
   GetCommentsByAuctionId200,
   GetCommentsByAuctionIdParams,
+  GetProfileById200,
 } from './schemas';
 
 /**
@@ -207,6 +208,68 @@ export const useGetCommentsByAuctionId = <
   }
 ): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
   const queryOptions = getGetCommentsByAuctionIdQueryOptions(id, params, options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  query.queryKey = queryOptions.queryKey;
+
+  return query;
+};
+
+/**
+ * @summary Your GET endpoint
+ */
+export const getProfileById = (id: string) => {
+  return customInstance<GetProfileById200>({ url: `/autos/profiles/${id}`, method: 'get' });
+};
+
+export const getGetProfileByIdQueryKey = (id: string) => {
+  return [`/autos/profiles/${id}`] as const;
+};
+
+export const getGetProfileByIdQueryOptions = <
+  TData = Awaited<ReturnType<typeof getProfileById>>,
+  TError = unknown,
+>(
+  id: string,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof getProfileById>>, TError, TData>>;
+  }
+) => {
+  const { query: queryOptions } = options ?? {};
+
+  const queryKey = queryOptions?.queryKey ?? getGetProfileByIdQueryKey(id);
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getProfileById>>> = () =>
+    getProfileById(id);
+
+  return {
+    queryKey,
+    queryFn,
+    enabled: !!id,
+    refetchOnMount: false,
+    ...queryOptions,
+  } as UseQueryOptions<Awaited<ReturnType<typeof getProfileById>>, TError, TData> & {
+    queryKey: QueryKey;
+  };
+};
+
+export type GetProfileByIdQueryResult = NonNullable<Awaited<ReturnType<typeof getProfileById>>>;
+export type GetProfileByIdQueryError = unknown;
+
+/**
+ * @summary Your GET endpoint
+ */
+export const useGetProfileById = <
+  TData = Awaited<ReturnType<typeof getProfileById>>,
+  TError = unknown,
+>(
+  id: string,
+  options?: {
+    query?: Partial<UseQueryOptions<Awaited<ReturnType<typeof getProfileById>>, TError, TData>>;
+  }
+): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
+  const queryOptions = getGetProfileByIdQueryOptions(id, options);
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & { queryKey: QueryKey };
 

@@ -11,5 +11,5 @@ import type { UserProfileInfo } from './userProfileInfo';
 export interface User {
   cars_auctioned: Car[];
   id: string;
-  'profile-info': UserProfileInfo;
+  profile_info: UserProfileInfo;
 }

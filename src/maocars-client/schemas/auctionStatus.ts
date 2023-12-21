@@ -5,9 +5,10 @@
  * mao-cars-api
  */
 
-export type AuctionStatus = {
-  for_army_forces: boolean;
-  has_inspection: boolean;
-  no_reserve: boolean;
-  reserved: boolean;
-};
+export type AuctionStatus = (typeof AuctionStatus)[keyof typeof AuctionStatus];
+
+// eslint-disable-next-line @typescript-eslint/no-redeclare
+export const AuctionStatus = {
+  live: 'live',
+  ended: 'ended',
+} as const;

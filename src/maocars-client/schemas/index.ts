@@ -28,6 +28,7 @@ export * from './getAutosAuctionsIdComments200';
 export * from './getCommentsByAuctionId200';
 export * from './getCommentsByAuctionIdFilter';
 export * from './getCommentsByAuctionIdParams';
+export * from './getProfileById200';
 export * from './user';
 export * from './userProfileInfo';
 export * from './userShort';

@@ -225,6 +225,33 @@ paths:
           in: query
           name: filter
           description: 'Filter for comments (newest, most_upvoted, seller_comments, bid_history)'
+  '/autos/profiles/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  profile:
+                    $ref: '#/components/schemas/User'
+                    x-stoplight:
+                      id: tymz944hozdwm
+                required:
+                  - profile
+      operationId: get-profile-by-id
+      x-stoplight:
+        id: yinpkf6jiq0qf
 components:
   schemas:
     Car:
@@ -421,7 +448,7 @@ components:
           type: string
           x-stoplight:
             id: vg48tzervmo9q
-        profile-info:
+        profile_info:
           type: object
           x-stoplight:
             id: 4vg8to0ussjx2
@@ -463,7 +490,7 @@ components:
               id: g60tncx2g2av4
       required:
         - id
-        - profile-info
+        - profile_info
         - cars_auctioned
     Auction:
       title: Auction
@@ -508,6 +535,12 @@ components:
           type: number
           x-stoplight:
             id: 5on40f68l5xqh
+        status:
+          x-stoplight:
+            id: qagzmv1vmiyrb
+          enum:
+            - live
+            - ended
         sub_title:
           type: string
           x-stoplight:
@@ -523,19 +556,19 @@ components:
         has_inspection:
           type: boolean
           x-stoplight:
-            id: hp6k2ibhoptiz
+            id: dr9mysfd85m2z
         no_reserve:
           type: boolean
           x-stoplight:
-            id: 5mnid3nfhmt9z
+            id: ox4onfjlx8jrr
         reserved:
           type: boolean
           x-stoplight:
-            id: 3skztfqeryzsx
-        for_army_purpose:
+            id: vzgclew9m16g3
+        for_army_forces:
           type: boolean
           x-stoplight:
-            id: 3xjhikhpuned2
+            id: v71qrd30dr4wy
       required:
         - id
         - auction_end
@@ -544,12 +577,10 @@ components:
         - main_photo
         - seller
         - mileage
+        - status
         - sub_title
         - title
         - watching
-        - has_inspection
-        - no_reserve
-        - reserved
     UserShort:
       title: UserShort
       x-stoplight:

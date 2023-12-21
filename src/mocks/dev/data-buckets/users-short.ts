@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 
 import { UserShort } from '@/maocars-client/schemas';
 
-const generateUsers = (count: number): UserShort[] => {
+const generateShortUsers = (count: number): UserShort[] => {
   return new Array(count).fill(null).map(() => {
     return {
       id: faker.string.uuid(),
@@ -12,4 +12,4 @@ const generateUsers = (count: number): UserShort[] => {
   });
 };
 
-export const usersShort: UserShort[] = generateUsers(20);
+export const usersShort: UserShort[] = generateShortUsers(20);
