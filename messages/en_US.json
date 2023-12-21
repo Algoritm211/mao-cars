@@ -124,6 +124,9 @@
         "reserved": "Reserved",
         "for_army_purpose": "For \uD83C\uDDFA\uD83C\uDDE6 UA Army"
       }
+    },
+    "ribbons": {
+      "for_army_purpose": "⚡ Special offer"
     }
   }
 }

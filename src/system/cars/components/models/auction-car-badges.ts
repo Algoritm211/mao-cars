@@ -18,9 +18,4 @@ export const AUCTION_CAR_BADGES: BadgeConfig<Auction>[] = [
     variant: 'primary',
     title: 'auction.reserved',
   },
-  {
-    key: 'for_army_purpose',
-    variant: 'success',
-    title: 'auction.for_army_purpose',
-  },
 ];

@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -11,7 +12,7 @@ import { AUCTION_CAR_BADGES } from '@/system/cars/components/models/auction-car-
 import { useGetAuctions } from '@/maocars-client/maocars';
 
 import { EntityContainer, Loader } from '@/shared/components';
-import { AuctionCard } from '@/shared/components/auction/auction-card';
+import { AuctionCard } from '@/shared/components/auction/auction-card/auction-card';
 import { AuctionContainer } from '@/shared/components/auction/auction-container';
 import BadgeFactory from '@/shared/components/badge/badge-factory';
 
@@ -26,6 +27,7 @@ export const Auctions = () => {
     sort: params.get('sort') || undefined,
   };
   const router = useRouter();
+  const t = useTranslations('Common.ribbons');
   const [filter, setFilter] = useState<AuctionsFilterInputs>(initialFilterParams);
   const auctionsQuery = useGetAuctions(filter);
 
@@ -47,6 +49,7 @@ export const Auctions = () => {
                 <AuctionCard
                   key={auction.id}
                   auction={auction}
+                  ribbonTitle={auction.for_army_purpose ? t('for_army_purpose') : undefined}
                   badges={<BadgeFactory data={auction} badges={AUCTION_CAR_BADGES} />}
                   onCarDetailsClick={() => onCarDetails(auction.id)}
                 />

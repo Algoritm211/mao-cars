@@ -124,6 +124,9 @@
         "reserved": "Зарезервована",
         "for_army_purpose": "\uD83C\uDDFA\uD83C\uDDE6 Авто на ЗСУ"
       }
+    },
+    "ribbons": {
+      "for_army_purpose": "⚡ Краща ціна"
     }
   }
 }
