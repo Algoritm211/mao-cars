@@ -31,7 +31,7 @@ export const AuctionCard: React.FC<Props> = ({
   return (
     <div
       className="card card-compact w-full bg-base-100
-       shadow-xl cursor-pointer relative overflow-hidden hover:scale-105 transition-all"
+       shadow-xl cursor-pointer relative overflow-hidden md:hover:scale-105 transition-all"
       onClick={onCarDetailsClick}
     >
       {ribbonTitle && <AuctionCardRibbon ribbonTitle={ribbonTitle} />}

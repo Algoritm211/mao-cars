@@ -45,7 +45,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mb-4 flex gap-2 flex-col
+      className="mb-4 mx-2 md:mx-0 flex gap-2 flex-col
         justify-around flex-wrap justify-items-end md:flex-row"
     >
       <div
