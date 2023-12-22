@@ -12,10 +12,11 @@ import Layout from '@/system/layout/layout';
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
+
   return (
     <NextIntlClientProvider
       locale={router.locale}
-      timeZone="Europe/Vienna"
+      timeZone="Europe/Kiev"
       messages={pageProps.messages}
     >
       <QueryClientProvider client={queryClient}>

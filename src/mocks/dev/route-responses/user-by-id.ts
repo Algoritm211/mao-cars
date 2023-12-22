@@ -8,7 +8,7 @@ export const generateUsers = (count: number): User[] => {
     return {
       id: faker.string.uuid(),
       profile_info: {
-        bio: faker.person.bio(),
+        bio: faker.lorem.paragraphs({ min: 2, max: 3 }),
         username: `${faker.person.firstName()} ${faker.person.lastName()}`,
         created_at: faker.date.past().toISOString(),
         photo: 'https://picsum.photos/300/300',

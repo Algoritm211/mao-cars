@@ -12,11 +12,12 @@ const AccountNavBar = () => {
   const router = useRouter();
   const t = useTranslations('Account_Page.navbar');
 
+  const routesMap = ACCOUNTS_ROUTES_MAP(router.query?.id as string);
   return (
     <ul className="menu menu-horizontal max-w-xl bg-base-200 rounded-box">
-      {ACCOUNTS_ROUTES_MAP.map(({ href, icon, title }) => (
+      {routesMap.map(({ href, icon, title }) => (
         <li key={href}>
-          <Link href={href} className={clsx({ active: router.pathname === href })}>
+          <Link href={href} className={clsx({ active: router.asPath === href })}>
             <Icon name={icon} className="w-5 h-5" />
             <span>{t(title)}</span>
           </Link>

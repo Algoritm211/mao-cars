@@ -1,4 +1,4 @@
-import { GetStaticPropsContext } from 'next';
+import { GetServerSidePropsContext } from 'next';
 import React from 'react';
 
 import { AccountListings } from '@/system/account/account-listings';
@@ -12,10 +12,10 @@ const Listings = () => {
   );
 };
 
-export async function getStaticProps(context: GetStaticPropsContext) {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
     props: {
-      messages: (await import(`../../../messages/${context.locale}.json`)).default,
+      messages: (await import(`../../../../messages/${context.locale}.json`)).default,
     },
   };
 }

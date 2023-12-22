@@ -133,6 +133,22 @@
     "navbar": {
       "account": "Account",
       "listings": "Listings"
+    },
+    "profile": {
+      "edit_profile": "Edit profile",
+      "bio": "Bio",
+      "joined": "Joined {date}"
+    },
+    "edit_profile_modal": {
+      "edit_profile": "Edit your profile",
+      "pick_photo": "Pick a photo",
+      "user_photo_alt": "User's photo",
+      "bio": "Bio",
+      "bio_placeholder": "Write something about yourself",
+      "save": "Save",
+      "validation": {
+        "no_bio": "Please provide your bio, this field is required"
+      }
     }
   }
 }

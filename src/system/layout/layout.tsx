@@ -17,7 +17,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
       </div>
       <div className="drawer-side">
         <label htmlFor="menu-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-        <ul tabIndex={0} className="menu p-4 w-72 min-h-full bg-base-200">
+        <ul tabIndex={0} className="menu menu-lg p-4 w-72 min-h-full bg-base-200">
           <li>
             <Link href="/">{t('menu.auctions')}</Link>
           </li>

@@ -5,8 +5,8 @@ import React from 'react';
 import { Icon } from '@/shared/components';
 
 const locales: Record<string, string> = {
-  en_US: '🇬🇧 EN',
-  uk_UA: '🇺🇦 UA',
+  'en-US': '🇬🇧 EN',
+  'uk-UA': '🇺🇦 UA',
 };
 
 export const LocaleToggle = () => {
@@ -15,7 +15,7 @@ export const LocaleToggle = () => {
   return (
     <div className="dropdown dropdown-end min-w-fit">
       <div tabIndex={0} role="button" className="btn btn-ghost m-1">
-        {locales[locale || 'en_US']}
+        {locales[locale || 'en-US']}
         <Icon name="chevron-down" className="w-4 h-4" />
       </div>
       <ul
@@ -23,13 +23,13 @@ export const LocaleToggle = () => {
         className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32"
       >
         <li>
-          <Link href={asPath} locale="en_US">
-            {locales.en_US}
+          <Link href={asPath} locale="en-US">
+            {locales['en-US']}
           </Link>
         </li>
         <li>
-          <Link href={asPath} locale="uk_UA">
-            {locales.uk_UA}
+          <Link href={asPath} locale="uk-UA">
+            {locales['uk-UA']}
           </Link>
         </li>
       </ul>

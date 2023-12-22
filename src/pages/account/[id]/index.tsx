@@ -27,7 +27,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext<{ id
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
-      messages: (await import(`../../../messages/${context.locale}.json`)).default,
+      messages: (await import(`../../../../messages/${context.locale}.json`)).default,
     },
   };
 }

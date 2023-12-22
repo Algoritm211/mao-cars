@@ -49,7 +49,7 @@ export const Auctions = () => {
                 <AuctionCard
                   key={auction.id}
                   auction={auction}
-                  ribbonTitle={auction.for_army_purpose ? t('for_army_purpose') : undefined}
+                  ribbonTitle={auction.for_army_forces ? t('for_army_purpose') : undefined}
                   badges={<BadgeFactory data={auction} badges={AUCTION_CAR_BADGES} />}
                   onCarDetailsClick={() => onCarDetails(auction.id)}
                 />

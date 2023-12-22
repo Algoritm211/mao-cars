@@ -5,15 +5,17 @@ interface AccountRoute {
   icon: IconName;
   title: keyof Messages['Account_Page']['navbar'];
 }
-export const ACCOUNTS_ROUTES_MAP: AccountRoute[] = [
-  {
-    href: '/account',
-    icon: 'user',
-    title: 'account',
-  },
-  {
-    href: '/account/listings',
-    icon: 'list',
-    title: 'listings',
-  },
-];
+export const ACCOUNTS_ROUTES_MAP = (profileId: string): AccountRoute[] => {
+  return [
+    {
+      href: `/account/${profileId}`,
+      icon: 'user',
+      title: 'account',
+    },
+    {
+      href: `/account/${profileId}/listings`,
+      icon: 'list',
+      title: 'listings',
+    },
+  ];
+};

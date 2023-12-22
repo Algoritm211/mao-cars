@@ -7,3 +7,4 @@ export * from './icon/icon';
 export * from './loader/loader';
 export * from './timer/timer';
 export * from './entity-container/entity-container';
+export * from './modal/modal';

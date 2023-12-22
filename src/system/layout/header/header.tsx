@@ -24,7 +24,7 @@ export const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>{t('menu.auctions')}</a>
+            <Link href="/">{t('menu.auctions')}</Link>
           </li>
           <li className="border rounded-xl bg-accent font-bold">
             <Link href="/sell-car/submit">{t('menu.sell_car')}</Link>
@@ -51,10 +51,11 @@ export const Header = () => {
                 className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link href="/account">{t('profile')}</Link>
+                  {/*TODO pass a real id*/}
+                  <Link href="/account/some_id">{t('profile')}</Link>
                 </li>
                 <li>
-                  <Link href="/account/listings">{t('listings')}</Link>
+                  <Link href="/account/[id]/listings">{t('listings')}</Link>
                 </li>
               </ul>
             </div>
