@@ -140,7 +140,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
                 />
                 <label
                   htmlFor={`field-${elem.key}`}
-                  className={clsx('tab md:px-14 lg:px-[var(--tab-padding)]', {
+                  className={clsx('tab px-3 md:px-12 lg:px-[var(--tab-padding)]', {
                     'tab-active': getValues('sort') === elem.key,
                   })}
                 >
