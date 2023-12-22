@@ -55,7 +55,7 @@ export const Header = () => {
                   <Link href="/account/some_id">{t('profile')}</Link>
                 </li>
                 <li>
-                  <Link href="/account/[id]/listings">{t('listings')}</Link>
+                  <Link href="/account/some_id/listings">{t('listings')}</Link>
                 </li>
               </ul>
             </div>
