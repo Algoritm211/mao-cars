@@ -5,11 +5,11 @@
  * Do not edit manually.
  * mao-cars-api
  */
-import type { Car } from './car';
+import type { Auction } from './auction';
 import type { UserProfileInfo } from './userProfileInfo';
 
 export interface User {
-  cars_auctioned: Car[];
+  cars_auctioned: Auction[];
   id: string;
   profile_info: UserProfileInfo;
 }

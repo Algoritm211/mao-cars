@@ -26,7 +26,7 @@ const generateAuctions = (count: number) => {
       sub_title: faker.helpers.arrayElement(auctionSubtitles),
       no_reserve: faker.datatype.boolean({ probability: 0.8 }),
       reserved: faker.datatype.boolean({ probability: 0.2 }),
-      for_army_purpose: faker.datatype.boolean({ probability: 0.3 }),
+      for_army_forces: faker.datatype.boolean({ probability: 0.3 }),
     };
   });
 

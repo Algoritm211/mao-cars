@@ -481,11 +481,11 @@ components:
                 id: yyxh56q494j52
               format: uri
         cars_auctioned:
-          type: array
           x-stoplight:
             id: tz290gorce10m
+          type: array
           items:
-            $ref: '#/components/schemas/Car'
+            $ref: '#/components/schemas/Auction'
             x-stoplight:
               id: g60tncx2g2av4
       required:

@@ -149,6 +149,13 @@
       "validation": {
         "no_bio": "Please provide your bio, this field is required"
       }
+    },
+    "listings": {
+      "my_listings": "My Listings",
+      "empty_state": {
+        "no_cars": "You have not submitted any cars yet. Want to sell your car?",
+        "get_started": "Get started"
+      }
     }
   }
 }

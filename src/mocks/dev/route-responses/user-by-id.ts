@@ -1,4 +1,4 @@
-import { cars } from '@/mocks/dev/data-buckets/cars';
+import { auctions } from '@/mocks/dev/route-responses/auctions';
 import { faker } from '@faker-js/faker';
 
 import { User } from '@/maocars-client/schemas';
@@ -14,7 +14,7 @@ export const generateUsers = (count: number): User[] => {
         photo: 'https://picsum.photos/300/300',
         reputation: faker.number.int({ min: 3, max: 20 }),
       },
-      cars_auctioned: faker.helpers.arrayElements(cars, { min: 3, max: 10 }),
+      cars_auctioned: faker.helpers.arrayElements(auctions, { min: 0, max: 5 }),
     };
   });
 };
