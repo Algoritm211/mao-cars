@@ -1,7 +1,8 @@
-import { auctions } from '@/mocks/dev/route-responses/auctions';
 import { faker } from '@faker-js/faker';
 
 import { User } from '@/maocars-client/schemas';
+
+import { auctions } from '@/mocks/dev/route-responses/auctions';
 
 export const generateUsers = (count: number): User[] => {
   return new Array(count).fill(null).map(() => {

@@ -11,6 +11,7 @@ const config = {
     "^@/core/(.*)$",
     "^@/system/(.*)$",
     "^@/maocars-client/(.*)$",
+    "^@/mocks/(.*)$",
     "^@/shared/(.*)$","^[./]"
   ],
   importOrderSeparation: true,

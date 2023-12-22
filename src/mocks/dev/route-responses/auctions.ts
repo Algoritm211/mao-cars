@@ -1,9 +1,10 @@
-import { auctionSubtitles, auctionTitles } from '@/mocks/dev/data-buckets/auction-titles';
-import { mainPhotos } from '@/mocks/dev/data-buckets/main-photos';
-import { usersShort } from '@/mocks/dev/data-buckets/users-short';
 import { faker } from '@faker-js/faker';
 
 import { Auction } from '@/maocars-client/schemas';
+
+import { auctionSubtitles, auctionTitles } from '@/mocks/dev/data-buckets/auction-titles';
+import { mainPhotos } from '@/mocks/dev/data-buckets/main-photos';
+import { usersShort } from '@/mocks/dev/data-buckets/users-short';
 
 const generateAuctions = (count: number) => {
   const auctions: Auction[] = new Array(count).fill(null).map(() => {

@@ -1,7 +1,8 @@
-import { usersShort } from '@/mocks/dev/data-buckets/users-short';
 import { faker } from '@faker-js/faker';
 
 import { Comment } from '@/maocars-client/schemas';
+
+import { usersShort } from '@/mocks/dev/data-buckets/users-short';
 
 const generateComments = (count: number): Comment[] => {
   return new Array(count).fill(null).map(() => {
