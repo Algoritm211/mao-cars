@@ -127,6 +127,12 @@
     },
     "ribbons": {
       "for_army_purpose": "⚡ Special offer"
+    },
+    "car": {
+      "owner": {
+        "dealer": "Dealer",
+        "private": "Private"
+      }
     }
   },
   "Account_Page": {
@@ -155,6 +161,23 @@
       "empty_state": {
         "no_cars": "You have not submitted any cars yet. Want to sell your car?",
         "get_started": "Get started"
+      }
+    }
+  },
+  "Car_submit_page": {
+    "description_section": {
+      "section_title": "Tell us about your car",
+      "needed_info_from_user": "Please give us some basics about yourself and the car you’d like to sell. We’ll also need details about the car’s title status as well as 6 photos that highlight the car’s exterior and interior condition.",
+      "how_we_will_respond": "We’ll respond to your application within a business day. Once accepted, we’ll ask for more details and at least 50 high-res photos, then work with you to build a custom and professional listing and get the auction live."
+    },
+    "form": {
+      "submit_application": "Submit application",
+      "user_info": {
+        "section_title": "Your Info",
+        "dealer_or_private": "Dealer or private party?",
+        "full_name": "Full name",
+        "full_name_placeholder": "Please add your full name",
+        "contact_phone_number": "Contact phone number"
       }
     }
   }

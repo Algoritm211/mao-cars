@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
@@ -11,18 +12,21 @@ export const UserInfoFormPart = () => {
     formState: { errors },
   } = useFormContext();
 
+  const translateCar = useTranslations('Common.car.owner');
+  const translateForm = useTranslations('Car_submit_page.form.user_info');
+
   return (
-    <FormBlockWrapper title="Your Info">
+    <FormBlockWrapper title={translateForm('section_title')}>
       <fieldset className="my-2">
-        <label id="is_owner_private">Dealer or private party?</label>
+        <label id="is_owner_private">{translateForm('dealer_or_private')}</label>
         <div className="flex gap-2 mt-2 mb-2">
-          {CAR_OWNER.map((elem) => {
+          {CAR_OWNER.map((option) => {
             return (
               <RadioButton
                 id="owner"
-                key={elem}
-                label={elem}
-                value={elem}
+                key={option.key}
+                label={translateCar(option.label)}
+                value={option.key}
                 register={register}
                 registerOptions={{ required: true }}
                 aria-labelledby="is_owner_private"
@@ -36,9 +40,9 @@ export const UserInfoFormPart = () => {
         <div className="form-control flex-1">
           <Input
             id="fullName"
-            label="Full name"
+            label={translateForm('full_name')}
             type="text"
-            placeholder="Please add your full name"
+            placeholder={translateForm('full_name_placeholder')}
             register={register}
             errors={errors}
             registerOptions={{ required: true }}
@@ -47,7 +51,7 @@ export const UserInfoFormPart = () => {
         <div className="form-control flex-1">
           <Input
             id="phone"
-            label="Contact phone number"
+            label={translateForm('contact_phone_number')}
             type="tel"
             placeholder="+380980777779"
             register={register}

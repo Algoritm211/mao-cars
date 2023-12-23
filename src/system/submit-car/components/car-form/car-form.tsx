@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
@@ -14,6 +15,7 @@ import { button } from '@/shared/components/button/button';
 import { Icon } from '@/shared/components/icon/icon';
 
 export const CarForm = () => {
+  const t = useTranslations('Car_submit_page');
   const methods = useForm<CarFormInputs>();
   const { handleSubmit } = methods;
 
@@ -24,16 +26,12 @@ export const CarForm = () => {
   return (
     <FormProvider {...methods}>
       <div className="mx-2 md:mx-4">
-        <h1 className="text-4xl font-bold">Tell us about your car</h1>
+        <h1 className="text-4xl font-bold">{t('description_section.section_title')}</h1>
         <p className="my-4">
-          Please give us some basics about yourself and the car you’d like to sell. We’ll also need
-          details about the car’s title status as well as 6 photos that highlight the car’s exterior
-          and interior condition.
+          {t('description_section.needed_info_from_user')}
           <br />
           <br />
-          We’ll respond to your application within a business day. Once accepted, we’ll ask for more
-          details and at least 50 high-res photos, then work with you to build a custom and
-          professional listing and get the auction live.
+          {t('description_section.how_we_will_respond')}
         </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
@@ -44,7 +42,7 @@ export const CarForm = () => {
         <CarPhotosFormPart />
         <div className="mb-4 mt-8 flex justify-center">
           <button type="submit" className={button()}>
-            Submit application
+            {t('form.submit_application')}
             <Icon name="arrow-right" className="w-4 h-4" />
           </button>
         </div>
