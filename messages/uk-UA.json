@@ -221,8 +221,8 @@
         "section_title": "Місцезнаходження машини",
         "where_is_car_titled": "Де знаходиться машина?",
         "title_areas": {
-          "ukraine": "Ukraine",
-          "europe": "Europe"
+          "ukraine": "Україна",
+          "europe": "Європа (ЄС)"
         },
         "location_label": "Область/Місто/Вулиця (адреса місцезнаходження)",
         "location_placeholder": "Будь ласка, вкажіть адресу місцезнаходження авто"

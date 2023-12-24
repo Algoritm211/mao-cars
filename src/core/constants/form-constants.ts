@@ -30,16 +30,16 @@ export const TRANSMISSION_FILTER_TYPES = [
 
 interface TransmissionOption {
   key: string;
-  label: `transmission_types.${keyof Messages['Car_submit_page']['form']['car_info']['transmission_types']}`;
+  label: keyof Messages['Car_submit_page']['form']['car_info']['transmission_types'];
 }
 
 export const TRANSMISSION_OPTIONS: TransmissionOption[] = [
   {
     key: 'automatic',
-    label: 'transmission_types.automatic',
+    label: 'automatic',
   },
   {
     key: 'manual',
-    label: 'transmission_types.manual',
+    label: 'manual',
   },
 ];

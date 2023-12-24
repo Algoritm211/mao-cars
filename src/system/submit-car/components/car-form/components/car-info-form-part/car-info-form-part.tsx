@@ -97,7 +97,7 @@ export const CarInfoFormPart = () => {
             {TRANSMISSION_OPTIONS.map((option) => {
               return (
                 <option key={option.key} value={option.key}>
-                  {t(option.label)}
+                  {t(`transmission_types.${option.label}`)}
                 </option>
               );
             })}
@@ -129,7 +129,7 @@ export const CarInfoFormPart = () => {
 
       <div className="form-control">
         <label id="is_car_modified">{t('is_car_modified')}</label>
-        <div className="flex gap-2 mt-2 mb-2">
+        <div className="flex flex-wrap gap-2 mt-2 mb-2">
           <Controller
             name="isModified"
             control={control}
