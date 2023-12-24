@@ -15,3 +15,19 @@ export const CAR_OWNER: CarOwnerOption[] = [
     label: 'private',
   },
 ];
+
+interface CarTitleOption {
+  key: string;
+  label: keyof Messages['Car_submit_page']['form']['title_info']['title_areas'];
+}
+
+export const CAT_TITLE_OPTIONS: CarTitleOption[] = [
+  {
+    key: 'ukraine',
+    label: 'ukraine',
+  },
+  {
+    key: 'europe',
+    label: 'europe',
+  },
+];

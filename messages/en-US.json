@@ -216,6 +216,16 @@
         },
         "car_has_flaws_label": "Please give details",
         "car_has_flaws_placeholder": "For example: scratch on the right door"
+      },
+      "title_info": {
+        "section_title": "Title Info",
+        "where_is_car_titled": "Where is the car titled?",
+        "title_areas": {
+          "ukraine": "Ukraine",
+          "europe": "Europe"
+        },
+        "location_label": "Province/City (car location)",
+        "location_placeholder": "Please add the location"
       }
     }
   }
