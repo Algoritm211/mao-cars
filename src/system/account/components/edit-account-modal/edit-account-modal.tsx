@@ -4,6 +4,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 import { Modal } from '@/shared/components';
+import { TextArea } from '@/shared/components/form';
 
 interface ProfileInputs {
   profilePhotos: FileList;
@@ -62,15 +63,14 @@ export const EditAccountModal: React.FC<Props> = ({ isOpen, onClose }) => {
           />
         </div>
         <div className="form-control">
-          <label className="label" htmlFor="profile-description">
-            <span className="font-bold">{t('bio')}</span>
-          </label>
-          <textarea
-            {...register('profileBio', { required: true })}
-            id="profile-description"
+          <TextArea
+            id="profileBio"
+            label={t('bio')}
+            labelClassname="font-bold"
             placeholder={t('bio_placeholder')}
-            className="textarea textarea-bordered textarea-md w-full"
-          ></textarea>
+            register={register}
+            registerOptions={{ required: true }}
+          />
           <ErrorMessage
             errors={errors}
             name="profileBio"
