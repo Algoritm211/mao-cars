@@ -178,6 +178,44 @@
         "full_name": "Ваше повне імʼя",
         "full_name_placeholder": "Будь-ласка, введіть своє імʼя",
         "contact_phone_number": "Номер телефону"
+      },
+      "car_info": {
+        "section_title": "Деталі про авто",
+        "vin": "VIN-номер",
+        "vin_placeholder": "Будь-ласка, введіть VIN-номер машини",
+        "year": "Рік",
+        "make": "Марка",
+        "make_placeholder": "Будь-ласка, введіть марку",
+        "model": "Модель",
+        "model_placeholder": "Будь-ласка, введіть модель",
+
+        "transmission": "Трансмісія",
+        "transmission_types": {
+          "automatic": "Автоматична",
+          "manual": "Механічна"
+        },
+
+        "mileage": "Пробіг(km)",
+        "mileage_placeholder": "Будь-ласка, введіть пробіг",
+
+        "special_equipment": "Додаткові опції/обладнання",
+        "special_equipment_placeholder": "Наприклад: спорт-пакет, акумулятор великої дальності, або інші важливі функції, встановлені на заводі",
+
+        "is_car_modified": "Чи був автомобіль модифікований?",
+        "modification_options": {
+          "stock": "Сток (без модифікацій)",
+          "modified": "Був модифікований"
+        },
+        "modifications_exist_label": "Вкажіть будь-які модифікації",
+        "modifications_exist_placeholder": "Наприклад: модифікований вихлоп, модифікована підвіска, збільшена потужність двигуна",
+
+        "is_car_has_flaws": "Чи існують значні механічні або косметичні недоліки?",
+        "flaws_options": {
+          "yes": "Так",
+          "no": "Ні"
+        },
+        "car_has_flaws_label": "Будь ласка, надайте деталі",
+        "car_has_flaws_placeholder": "Наприклад: подряпина на правих дверях"
       }
     }
   }

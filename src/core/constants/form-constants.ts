@@ -28,7 +28,18 @@ export const TRANSMISSION_FILTER_TYPES = [
   },
 ] as const;
 
-export const TRANSMISSION_TYPES: TransmissionType[] = [
-  TransmissionType.Automatic,
-  TransmissionType.Manual,
+interface TransmissionOption {
+  key: string;
+  label: `transmission_types.${keyof Messages['Car_submit_page']['form']['car_info']['transmission_types']}`;
+}
+
+export const TRANSMISSION_OPTIONS: TransmissionOption[] = [
+  {
+    key: 'automatic',
+    label: 'transmission_types.automatic',
+  },
+  {
+    key: 'manual',
+    label: 'transmission_types.manual',
+  },
 ];

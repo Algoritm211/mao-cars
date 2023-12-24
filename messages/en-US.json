@@ -178,6 +178,44 @@
         "full_name": "Full name",
         "full_name_placeholder": "Please add your full name",
         "contact_phone_number": "Contact phone number"
+      },
+      "car_info": {
+        "section_title": "Car Details",
+        "vin": "VIN",
+        "vin_placeholder": "Please enter VIN of your car",
+        "year": "Year",
+        "make": "Make",
+        "make_placeholder": "Please enter make",
+        "model": "Model",
+        "model_placeholder": "Please enter model",
+
+        "transmission": "Transmission",
+        "transmission_types": {
+          "automatic": "Automatic",
+          "manual": "Manual"
+        },
+
+        "mileage": "Mileage(km)",
+        "mileage_placeholder": "Please enter mileage",
+
+        "special_equipment": "Special options/equipment",
+        "special_equipment_placeholder": "For example: sport package, long-range battery, FSD or other important factory-installed features",
+
+        "is_car_modified": "Has the car been modified?",
+        "modification_options": {
+          "stock": "Stock",
+          "modified": "Modified"
+        },
+        "modifications_exist_label": "List any modifications, including modification or removal of the catalytic converters.",
+        "modifications_exist_placeholder": "For example: modified exhaust, some features in car's interior",
+
+        "is_car_has_flaws": "Are there any significant mechanical or cosmetic flaws that we should know about?",
+        "flaws_options": {
+          "yes": "Yes",
+          "no": "No"
+        },
+        "car_has_flaws_label": "Please give details",
+        "car_has_flaws_placeholder": "For example: scratch on the right door"
       }
     }
   }

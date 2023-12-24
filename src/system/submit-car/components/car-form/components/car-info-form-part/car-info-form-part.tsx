@@ -1,7 +1,8 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
-import { END_YEARS, TRANSMISSION_TYPES } from '@/core/constants';
+import { END_YEARS, TRANSMISSION_OPTIONS } from '@/core/constants';
 
 import { CarFormInputs } from '@/system/submit-car/components/car-form/models/models';
 
@@ -15,6 +16,7 @@ import {
 import { requiredRadioValidator } from '@/shared/utils/validators/required-radio-validator';
 
 export const CarInfoFormPart = () => {
+  const t = useTranslations('Car_submit_page.form.car_info');
   const {
     register,
     watch,
@@ -26,13 +28,13 @@ export const CarInfoFormPart = () => {
   const hasFlaws = watch('hasFlaws');
 
   return (
-    <FormBlockWrapper title="Car Details">
+    <FormBlockWrapper title={t('section_title')}>
       <div className="form-control max-w-lg mb-4">
         <Input
           id="vin"
-          label="VIN"
+          label={t('vin')}
           type="text"
-          placeholder="Please ented VIN of your car"
+          placeholder={t('vin_placeholder')}
           register={register}
           errors={errors}
           registerOptions={{ required: true }}
@@ -42,7 +44,7 @@ export const CarInfoFormPart = () => {
       <div className="flex flex-col md:flex-row gap-2 mb-4">
         <div className="form-control md:max-w-xs">
           <label htmlFor="carYear" className="label">
-            <span className="label-text">Year</span>
+            <span className="label-text">{t('year')}</span>
           </label>
           <select
             id="carYear"
@@ -61,9 +63,9 @@ export const CarInfoFormPart = () => {
         <div className="form-control flex-1">
           <Input
             id="make"
-            label="Make"
+            label={t('make')}
             type="text"
-            placeholder="Please enter make"
+            placeholder={t('make_placeholder')}
             register={register}
             errors={errors}
             registerOptions={{ required: true }}
@@ -72,9 +74,9 @@ export const CarInfoFormPart = () => {
         <div className="form-control flex-1">
           <Input
             id="model"
-            label="Model"
+            label={t('model')}
             type="text"
-            placeholder="Please enter model"
+            placeholder={t('model_placeholder')}
             register={register}
             errors={errors}
             registerOptions={{ required: true }}
@@ -85,17 +87,17 @@ export const CarInfoFormPart = () => {
       <div className="flex gap-2 mb-4">
         <div className="form-control flex-1">
           <label htmlFor="transmissionType" className="label">
-            <span className="label-text">Transmission</span>
+            <span className="label-text">{t('transmission')}</span>
           </label>
           <select
             id="transmissionType"
             className="select select-bordered w-full"
             {...register('transmission')}
           >
-            {TRANSMISSION_TYPES.map((elem) => {
+            {TRANSMISSION_OPTIONS.map((option) => {
               return (
-                <option key={elem} value={elem}>
-                  {elem}
+                <option key={option.key} value={option.key}>
+                  {t(option.label)}
                 </option>
               );
             })}
@@ -104,9 +106,9 @@ export const CarInfoFormPart = () => {
         <div className="form-control flex-1">
           <Input
             id="mileage"
-            label="Mileage(km)"
+            label={t('mileage')}
             type="number"
-            placeholder="Please enter mileage"
+            placeholder={t('mileage_placeholder')}
             register={register}
             errors={errors}
             registerOptions={{ valueAsNumber: true, value: 0, required: true }}
@@ -118,15 +120,15 @@ export const CarInfoFormPart = () => {
         <div className="form-control w-full">
           <TextArea
             id="equipment"
-            label="Special options/equipment"
-            placeholder="For example: sport package, long-range battery, FSD or other important factory-installed features"
+            label={t('special_equipment')}
+            placeholder={t('special_equipment_placeholder')}
             register={register}
           />
         </div>
       </div>
 
       <div className="form-control">
-        <label id="is_car_modified">Has the car been modified?</label>
+        <label id="is_car_modified">{t('is_car_modified')}</label>
         <div className="flex gap-2 mt-2 mb-2">
           <Controller
             name="isModified"
@@ -137,7 +139,7 @@ export const CarInfoFormPart = () => {
                 <input
                   type="radio"
                   {...radioStyles}
-                  aria-label="Stock"
+                  aria-label={t('modification_options.stock')}
                   onBlur={onBlur}
                   onChange={() => onChange(false)}
                   checked={value === false}
@@ -146,7 +148,7 @@ export const CarInfoFormPart = () => {
                 <input
                   type="radio"
                   {...radioStyles}
-                  aria-label="Modified"
+                  aria-label={t('modification_options.modified')}
                   onBlur={onBlur}
                   onChange={() => onChange(true)}
                   checked={value === true}
@@ -164,8 +166,8 @@ export const CarInfoFormPart = () => {
           <div className="form-control w-full">
             <TextArea
               id="modifications"
-              label="List any modifications, including modification or removal of the catalytic converters."
-              placeholder="For example: modified exhaust, some features in car's interior"
+              label={t('modifications_exist_label')}
+              placeholder={t('modifications_exist_placeholder')}
               register={register}
             />
           </div>
@@ -173,9 +175,7 @@ export const CarInfoFormPart = () => {
       )}
 
       <div className="form-control">
-        <label id="is_car_has_flaws">
-          Are there any significant mechanical or cosmetic flaws that we should know about?
-        </label>
+        <label id="is_car_has_flaws">{t('is_car_has_flaws')}</label>
         <div className="flex gap-2 mt-2 mb-2">
           <Controller
             name="hasFlaws"
@@ -186,7 +186,7 @@ export const CarInfoFormPart = () => {
                 <input
                   type="radio"
                   {...radioStyles}
-                  aria-label="Yes"
+                  aria-label={t('flaws_options.yes')}
                   onBlur={onBlur}
                   onChange={() => onChange(true)}
                   checked={value === true}
@@ -195,7 +195,7 @@ export const CarInfoFormPart = () => {
                 <input
                   type="radio"
                   {...radioStyles}
-                  aria-label="No"
+                  aria-label={t('flaws_options.no')}
                   onBlur={onBlur}
                   onChange={() => onChange(false)}
                   checked={value === false}
@@ -213,8 +213,8 @@ export const CarInfoFormPart = () => {
           <div className="form-control w-full">
             <TextArea
               id="flaws"
-              label="Please give details."
-              placeholder="For example: scratch on the right door"
+              label={t('car_has_flaws_label')}
+              placeholder={t('car_has_flaws_placeholder')}
               register={register}
             />
           </div>
