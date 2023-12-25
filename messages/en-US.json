@@ -226,6 +226,12 @@
         },
         "location_label": "Province/City (car location)",
         "location_placeholder": "Please add the location"
+      },
+      "reserve_price": {
+        "section_title": "Reserve Price",
+        "reserve_price_description": "The reserve price is a secret, minimum price required for your vehicle to sell. Cars with reserve prices may garner less interest than those without reserves.",
+        "reserve_price_label": "What reserve price would you like (USD)?",
+        "reserve_price_placeholder": "Please enter your reserve price"
       }
     }
   }
