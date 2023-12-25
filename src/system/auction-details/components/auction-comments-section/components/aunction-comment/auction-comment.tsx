@@ -51,7 +51,7 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
         <Badge
           size="lg"
           className="bg-neutral text-white rounded"
-          title={`${t('bid')} ${currencyFormatter(comment?.amount as number)}`}
+          title={t('bid', { amount: currencyFormatter(comment?.amount as number) })}
         />
       )}
       <div className="flex gap-2">

@@ -85,10 +85,10 @@
       },
       "auction_statistics": {
         "current_bid": "Current bid:",
-        "seller": "Seller",
-        "ending": "Ending",
-        "bids": "Bids",
-        "views": "Views"
+        "seller": "Seller:",
+        "ending": "Ending:",
+        "bids": "Bids:",
+        "views": "Views:"
       },
       "auction_comments": {
         "loading_comments": "Loading Comments...",
@@ -106,7 +106,7 @@
           "seller": "seller",
           "edit": "Edit",
           "report": "Report",
-          "bid": "Bid:",
+          "bid": "Bid: {amount}",
           "reply": "Reply"
         }
       }

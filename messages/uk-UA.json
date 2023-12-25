@@ -85,10 +85,10 @@
       },
       "auction_statistics": {
         "current_bid": "Поточна ставка:",
-        "seller": "Продавець",
-        "ending": "Кінець",
-        "bids": "Ставок",
-        "views": "Переглянуло"
+        "seller": "Продавець:",
+        "ending": "Кінець:",
+        "bids": "Ставок:",
+        "views": "Переглянуло:"
       },
       "auction_comments": {
         "loading_comments": "Завантаження коментарів...",
@@ -106,7 +106,7 @@
           "seller": "продавець",
           "edit": "Редагувати",
           "report": "Поскаржитися",
-          "bid": "Ставка:",
+          "bid": "Ставка: {amount}",
           "reply": "Відповісти"
         }
       }
@@ -174,7 +174,7 @@
       "submit_application": "Подати заявку",
       "user_info": {
         "section_title": "Інформація про вас",
-        "dealer_or_private": "Машине продається від ділера чи власника?",
+        "dealer_or_private": "Машина продається від ділера чи власника?",
         "full_name": "Ваше повне імʼя",
         "full_name_placeholder": "Будь-ласка, введіть своє імʼя",
         "contact_phone_number": "Номер телефону"
