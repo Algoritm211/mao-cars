@@ -1,11 +1,9 @@
-import React, { InputHTMLAttributes } from 'react';
-import { FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
+import React from 'react';
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  id: string;
+import { BaseInputProps } from '@/shared/components/form';
+
+interface Props extends BaseInputProps<'input'> {
   label: string;
-  register: UseFormRegister<FieldValues | any>;
-  registerOptions?: RegisterOptions;
 }
 
 export const radioStyles = {

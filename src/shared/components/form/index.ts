@@ -1,3 +1,4 @@
+export * from './core';
 export * from './input/input';
 export * from './textarea/textarea';
 export * from './form-errors/form-errors';

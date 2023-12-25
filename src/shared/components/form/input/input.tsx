@@ -1,14 +1,10 @@
-import React, { InputHTMLAttributes } from 'react';
-import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
+import React from 'react';
 
+import { BaseInputProps } from '@/shared/components/form';
 import { FormErrors } from '@/shared/components/form/form-errors/form-errors';
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  id: string;
+interface Props extends BaseInputProps<'input'> {
   label: string;
-  errors?: FieldErrors<FieldValues>;
-  register: UseFormRegister<FieldValues | any>;
-  registerOptions?: RegisterOptions;
 }
 
 export const Input: React.FC<Props> = ({

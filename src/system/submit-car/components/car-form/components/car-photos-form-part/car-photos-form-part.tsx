@@ -1,9 +1,8 @@
-import { clsx } from 'clsx';
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
 import { FormBlockWrapper, FormErrors } from '@/shared/components/form';
-import { Icon } from '@/shared/components/icon/icon';
+import { FileInputArea } from '@/shared/components/form/file-input-area/file-input-area';
 
 export const CarPhotosFormPart = () => {
   const {
@@ -13,7 +12,7 @@ export const CarPhotosFormPart = () => {
     formState: { errors },
     clearErrors,
   } = useFormContext();
-  const [isDraggingOver, setIsDraggingOver] = useState(false);
+
   const carPhotos: FileList = watch('photos');
 
   const handlePhotoDrop = (event: React.DragEvent<HTMLLabelElement>) => {
@@ -34,37 +33,15 @@ export const CarPhotosFormPart = () => {
       </p>
 
       <div>
-        <label
-          htmlFor="car_photos"
-          onDrop={handlePhotoDrop}
-          onDragOver={(e) => {
-            e.preventDefault();
-            setIsDraggingOver(true);
-          }}
-          onDragLeave={() => setIsDraggingOver(false)}
-          className={clsx(
-            `flex justify-center w-full h-32 px-4
-          transition bg-white border-2 border-gray-300 border-dashed
-          rounded-md appearance-none cursor-pointer
-          hover:border-gray-400 focus:outline-none`,
-            { 'border-gray-400': isDraggingOver }
-          )}
-        >
-          <span className="flex items-center space-x-2">
-            <Icon name="upload-file" className="w-6 h-6 text-gray-600" />
-            <span className="font-medium text-gray-600">
-              Drop files to Attach, or click to browse
-            </span>
-          </span>
-          <input
-            id="car_photos"
-            type="file"
-            className="hidden"
-            multiple={true}
-            accept="image/png, image/jpeg"
-            {...register('photos', { required: true })}
-          />
-        </label>
+        <FileInputArea
+          multiple
+          id="photos"
+          areaTitle="Drop files to Attach, or click to browse"
+          handleFileDrop={handlePhotoDrop}
+          register={register}
+          registerOptions={{ required: true }}
+          accept="image/png, image/jpeg"
+        />
       </div>
 
       {carPhotos?.length > 0 && (

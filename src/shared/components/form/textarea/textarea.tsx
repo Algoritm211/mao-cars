@@ -1,14 +1,11 @@
 import { clsx } from 'clsx';
-import { className } from 'postcss-selector-parser';
-import React, { InputHTMLAttributes } from 'react';
-import { FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
+import React from 'react';
 
-interface Props extends InputHTMLAttributes<HTMLTextAreaElement> {
-  id: string;
+import { BaseInputProps } from '@/shared/components/form';
+
+interface Props extends BaseInputProps<'textarea'> {
   label: string;
-  register: UseFormRegister<FieldValues | any>;
   labelClassname?: string;
-  registerOptions?: RegisterOptions;
 }
 
 export const TextArea: React.FC<Props> = ({
