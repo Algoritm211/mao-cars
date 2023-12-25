@@ -25,7 +25,7 @@ const fileInput = cva(
 );
 
 interface Props extends BaseInputProps<'input'>, VariantProps<typeof fileInput> {
-  areaTitle: string;
+  title: string;
 
   register: UseFormRegister<FieldValues | any>;
   registerOptions?: RegisterOptions;
@@ -35,7 +35,7 @@ interface Props extends BaseInputProps<'input'>, VariantProps<typeof fileInput> 
 
 export const FileInputArea: React.FC<Props> = ({
   id,
-  areaTitle,
+  title,
   multiple,
   active,
   accept,
@@ -61,7 +61,7 @@ export const FileInputArea: React.FC<Props> = ({
     >
       <span className="flex items-center space-x-2">
         <Icon name="upload-file" className="w-6 h-6 text-gray-600" />
-        <span className="font-medium text-gray-600">{areaTitle}</span>
+        <span className="font-medium text-gray-600">{title}</span>
       </span>
       <input
         id={id}

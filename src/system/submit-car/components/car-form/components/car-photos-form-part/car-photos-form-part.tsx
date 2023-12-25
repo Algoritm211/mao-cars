@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
@@ -5,6 +6,7 @@ import { FormBlockWrapper, FormErrors } from '@/shared/components/form';
 import { FileInputArea } from '@/shared/components/form/file-input-area/file-input-area';
 
 export const CarPhotosFormPart = () => {
+  const t = useTranslations('Car_submit_page.form.car_photos');
   const {
     register,
     watch,
@@ -27,16 +29,18 @@ export const CarPhotosFormPart = () => {
   };
 
   return (
-    <FormBlockWrapper title="Photos">
+    <FormBlockWrapper title={t('section_title')}>
       <p className="my-2">
-        Please upload at least 6 photos of the <b>exterior</b> and <b>interior</b> of the car.
+        {t.rich('attach_photos_description', {
+          b: (chunks) => <b>{chunks}</b>,
+        })}
       </p>
 
       <div>
         <FileInputArea
           multiple
           id="photos"
-          areaTitle="Drop files to Attach, or click to browse"
+          title={t('attach_photos_placeholder')}
           handleFileDrop={handlePhotoDrop}
           register={register}
           registerOptions={{ required: true }}
