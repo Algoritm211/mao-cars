@@ -22,4 +22,7 @@ export interface CarFormInputs {
   reservePrice: string;
 
   photos: FileList;
+  isMoneyForCharity: boolean;
+  amountMoneyForCharity: number;
+  isAutoForUAArmy: boolean;
 }

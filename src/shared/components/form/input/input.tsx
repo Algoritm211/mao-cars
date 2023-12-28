@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import React from 'react';
 
 import { BaseInputProps } from '@/shared/components/form';
@@ -13,6 +14,7 @@ export const Input: React.FC<Props> = ({
   errors,
   register,
   registerOptions,
+  className,
   ...rest
 }) => {
   return (
@@ -22,7 +24,7 @@ export const Input: React.FC<Props> = ({
       </label>
       <input
         id={id}
-        className="input input-bordered"
+        className={clsx('input input-bordered', className)}
         {...register(id, registerOptions)}
         {...rest}
       />

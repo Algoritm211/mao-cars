@@ -237,6 +237,15 @@
         "section_title": "Photos",
         "attach_photos_description": "Please upload at least 6 photos of the <b>exterior</b> and <b>interior</b> of the car.",
         "attach_photos_placeholder": "Drop files to Attach, or click to browse"
+      },
+      "charity": {
+        "section_charity_sum_title": "Charity",
+        "charity_label": "I want to donate part of the proceeds from the sale of my car to charity",
+        "charity_amount_label": "Cool! If you want to send money for charity, please provide a sum (USD)",
+        "charity_amount_placeholder": "Please enter the number",
+
+        "section_is_auto_for_ua_army": "Is this auto for the UA army?",
+        "is_auto_for_ua_army_label": "Yes, I want to sell this auto for UA army (please, consider rules)"
       }
     }
   }

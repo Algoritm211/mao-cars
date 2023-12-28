@@ -237,6 +237,15 @@
         "section_title": "Фото автомобіля",
         "attach_photos_description": "Будь-ласка завантажте 6 фото <b>Екстерʼєра</b> та <b>Інтерʼєра</b> автомобіля.",
         "attach_photos_placeholder": "Перетягніть файлі щоб додати або натисніть щоб вибрати"
+      },
+      "charity": {
+        "section_charity_sum_title": "\uD83C\uDDFA\uD83C\uDDE6 Благодійність на ЗСУ",
+        "charity_label": "Я хочу задонатити частину від продажу свого авто на ЗСУ",
+        "charity_amount_label": "Дякуємо вам! Будь-ласка вкажіть сумму в долларах (USD)",
+        "charity_amount_placeholder": "Будь-ласка, введіть сумму",
+
+        "section_is_auto_for_ua_army": " \uD83C\uDDFA\uD83C\uDDE6 Це авто для потреби ЗСУ",
+        "is_auto_for_ua_army_label": "Так, я хочу продати це авто для ЗСУ (будь-ласка, ознайомтесь з правилами)"
       }
     }
   }
