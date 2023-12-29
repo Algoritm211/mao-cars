@@ -156,10 +156,7 @@
       "user_photo_alt": "User's photo",
       "bio": "Bio",
       "bio_placeholder": "Write something about yourself",
-      "save": "Save",
-      "validation": {
-        "no_bio": "Please provide your bio, this field is required"
-      }
+      "save": "Save"
     },
     "listings": {
       "my_listings": "My Listings",

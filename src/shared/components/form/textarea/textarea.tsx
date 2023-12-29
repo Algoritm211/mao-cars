@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import React from 'react';
 
-import { BaseInputProps } from '@/shared/components/form';
+import { BaseInputProps, FormErrors } from '@/shared/components/form';
 
 interface Props extends BaseInputProps<'textarea'> {
   label: string;
@@ -14,6 +14,7 @@ export const TextArea: React.FC<Props> = ({
   labelClassname,
   register,
   registerOptions,
+  errors,
   ...rest
 }) => {
   return (
@@ -27,6 +28,7 @@ export const TextArea: React.FC<Props> = ({
         {...register(id, registerOptions)}
         {...rest}
       ></textarea>
+      {errors && <FormErrors errors={errors} fieldId={id} />}
     </React.Fragment>
   );
 };

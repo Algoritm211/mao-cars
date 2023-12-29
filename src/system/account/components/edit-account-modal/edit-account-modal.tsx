@@ -1,4 +1,3 @@
-import { ErrorMessage } from '@hookform/error-message';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -69,12 +68,8 @@ export const EditAccountModal: React.FC<Props> = ({ isOpen, onClose }) => {
             labelClassname="font-bold"
             placeholder={t('bio_placeholder')}
             register={register}
-            registerOptions={{ required: true }}
-          />
-          <ErrorMessage
             errors={errors}
-            name="profileBio"
-            render={() => <p className="text-red-600 text-sm">{t('validation.no_bio')}</p>}
+            registerOptions={{ required: true }}
           />
           <div className="modal-action">
             <button className="btn btn-primary">{t('save')}</button>

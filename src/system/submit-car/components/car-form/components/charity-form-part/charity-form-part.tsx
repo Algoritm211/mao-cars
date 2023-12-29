@@ -10,25 +10,15 @@ export const CharityFormPart = () => {
     register,
     formState: { errors },
     watch,
-    resetField,
   } = useFormContext();
 
   const isMoneyForCharity: boolean = watch('isMoneyForCharity');
-  const isAutoForUAArmy: boolean = watch('isAutoForUAArmy');
-
-  useEffect(() => {
-    if (isAutoForUAArmy) {
-      resetField('isMoneyForCharity');
-      resetField('amountMoneyForCharity');
-    }
-  }, [isAutoForUAArmy, resetField]);
 
   return (
     <React.Fragment>
       <FormBlockWrapper
         title={t('section_charity_sum_title')}
         className="border-4 border-dashed border-red-200"
-        disabled={isAutoForUAArmy}
       >
         <div>
           <label className="label justify-start cursor-pointer">

@@ -12,7 +12,6 @@
     "format:check": "npx prettier ./src --check"
   },
   "dependencies": {
-    "@hookform/error-message": "^2.0.1",
     "@tanstack/react-query": "^5.8.1",
     "@tanstack/react-query-devtools": "^5.8.1",
     "class-variance-authority": "^0.7.0",
