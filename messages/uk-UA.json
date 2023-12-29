@@ -133,6 +133,11 @@
         "dealer": "Дилер",
         "private": "Власник"
       }
+    },
+    "form": {
+      "validation": {
+        "required": "*Це поле обовʼязкове до заповнення"
+      }
     }
   },
   "Account_Page": {

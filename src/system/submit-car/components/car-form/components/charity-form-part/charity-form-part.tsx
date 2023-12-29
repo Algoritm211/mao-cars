@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import React, { useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { FormBlockWrapper, FormErrors, Input } from '@/shared/components/form';
+import { FormBlockWrapper, Input } from '@/shared/components/form';
 
 export const CharityFormPart = () => {
   const t = useTranslations('Car_submit_page.form.charity');
@@ -50,9 +50,9 @@ export const CharityFormPart = () => {
               className="max-w-md w-full"
               type="number"
               register={register}
+              errors={errors}
               registerOptions={{ required: isMoneyForCharity, valueAsNumber: true }}
             />
-            <FormErrors fieldId="amountMoneyForCharity" errors={errors} />
           </div>
         )}
       </FormBlockWrapper>

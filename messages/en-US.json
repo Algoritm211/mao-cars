@@ -133,6 +133,11 @@
         "dealer": "Dealer",
         "private": "Private"
       }
+    },
+    "form": {
+      "validation": {
+        "required": "*This field is required"
+      }
     }
   },
   "Account_Page": {
