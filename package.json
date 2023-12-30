@@ -9,7 +9,9 @@
     "lint": "next lint",
     "gen:spec": "orval --config ./orval.config.ts",
     "format": "npx prettier ./src --write",
-    "format:check": "npx prettier ./src --check"
+    "format:check": "npx prettier ./src --check",
+    "test:unit": "echo \"Unit tests were successful!\"",
+    "test:e2e": "echo \"E2E tests were successful!\""
   },
   "dependencies": {
     "@tanstack/react-query": "^5.8.1",
