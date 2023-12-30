@@ -8,7 +8,42 @@
 #      - main
 #
 #jobs:
-#  build-and-deploy:
+#  lint-and-format:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout Repository
+#        uses: actions/checkout@v2
+#
+#      - name: Setup
+#        uses: ./.github/actions/setup
+#
+#      - name: Check formatting
+#        run: npm run format:check
+#
+#      - name: Check lint
+#        run: npm run lint
+#
+#  tests:
+#    needs: lint-and-format
+#    runs-on: ubuntu-latest
+#
+#    strategy:
+#      matrix:
+#        test-type: [unit, e2e]
+#
+#    steps:
+#      - name: Checkout Repository
+#        uses: actions/checkout@v2
+#
+#      - name: Setup
+#        uses: ./.github/actions/setup
+#
+#      - name: Run tests
+#        run: npm run test:${{ matrix.test-type }}
+#
+#  docker-and-build:
+#    needs: [lint-and-format, tests]
 #    runs-on: ubuntu-latest
 #
 #    env:
@@ -20,25 +55,8 @@
 #      - name: Checkout Repository
 #        uses: actions/checkout@v2
 #
-#      - name: Setup Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 18
-#
-#      - name: Cache node modules
-#        uses: actions/cache@v2
-#        with:
-#          path: |
-#            ~/.npm
-#          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-#          restore-keys: |
-#            ${{ runner.os }}-node-
-#
-#      - name: Install Dependencies
-#        run: npm install
-#
-#      - name: Check formatting
-#        run: npm run format:check
+#      - name: Setup
+#        uses: ./.github/actions/setup
 #
 #      - name: Build Docker Image
 #        run: |
