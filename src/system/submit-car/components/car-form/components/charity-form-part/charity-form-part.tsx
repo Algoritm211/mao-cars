@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { FormBlockWrapper, Input } from '@/shared/components/form';
+import { CheckboxInput, FormBlockWrapper, Input } from '@/shared/components/form';
 
 export const CharityFormPart = () => {
   const t = useTranslations('Car_submit_page.form.charity');
@@ -20,16 +20,13 @@ export const CharityFormPart = () => {
         title={t('section_charity_sum_title')}
         className="border-4 border-dashed border-red-200"
       >
-        <div>
-          <label className="label justify-start cursor-pointer">
-            <input
-              type="checkbox"
-              className="checkbox checkbox-primary checkbox-md mr-2"
-              {...register('isMoneyForCharity')}
-            />
-            <span className="label-text font-bold">{t('charity_label')}</span>
-          </label>
-        </div>
+        <CheckboxInput
+          id="isMoneyForCharity"
+          checkboxType="md"
+          variant="primary"
+          register={register}
+          label={t('charity_label')}
+        />
 
         {isMoneyForCharity && (
           <div className="w-full">
@@ -51,16 +48,13 @@ export const CharityFormPart = () => {
         title={t('section_is_auto_for_ua_army')}
         className="border-4 border-dashed border-green-800"
       >
-        <div>
-          <label className="label justify-start cursor-pointer">
-            <input
-              type="checkbox"
-              className="checkbox checkbox-primary checkbox-lg mr-2"
-              {...register('isAutoForUAArmy')}
-            />
-            <span className="label-text font-bold">{t('is_auto_for_ua_army_label')}</span>
-          </label>
-        </div>
+        <CheckboxInput
+          id="isAutoForUAArmy"
+          checkboxType="lg"
+          variant="primary"
+          register={register}
+          label={t('is_auto_for_ua_army_label')}
+        />
       </FormBlockWrapper>
     </React.Fragment>
   );
