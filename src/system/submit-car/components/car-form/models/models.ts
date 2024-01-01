@@ -1,4 +1,4 @@
-import { TransmissionType } from '@/core/interfaces';
+import { GetAuctionsTransmission } from '@/maocars-client/schemas';
 
 export interface CarFormInputs {
   owner: 'private' | 'dealer';
@@ -8,7 +8,7 @@ export interface CarFormInputs {
   year: number;
   make: string;
   model: string;
-  transmission: TransmissionType;
+  transmission: GetAuctionsTransmission;
   mileage: number;
   equipment: string;
   isModified: boolean;

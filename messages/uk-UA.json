@@ -26,7 +26,7 @@
         "manual": "Механічна"
       },
       "body_style": {
-        "body_style": "Тип кузова",
+        "body_style_title": "Тип кузова",
         "all": "Усі",
         "coupe": "Купе",
         "convertible": "Кабріолет",

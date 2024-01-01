@@ -1,6 +1,7 @@
 export * from './core';
 export * from './input/input';
 export * from './checkbox-input/checkbox-input';
+export * from './select/select';
 export * from './textarea/textarea';
 export * from './form-errors/form-errors';
 export * from './form-title/form-title';

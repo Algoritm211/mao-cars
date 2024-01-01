@@ -11,25 +11,31 @@ import {
   START_YEARS,
   TRANSMISSION_FILTER_TYPES,
 } from '@/core/constants';
-import { BodyType, TransmissionType } from '@/core/interfaces';
+
+import {
+  GetAuctionsParams,
+  GetAuctionsTransmission,
+  GetAuctionsBodyStyle,
+} from '@/maocars-client/schemas';
+
+import { Select } from '@/shared/components/form';
 
 import { AUCTION_SORT, BODY_TYPES } from './constants/constants';
-import { AuctionsFilterInputs } from './models/auctions-filter';
 
 interface Props {
-  setFilter: (filter: AuctionsFilterInputs) => void;
-  initialFilterValues: AuctionsFilterInputs;
+  setFilter: (filter: GetAuctionsParams) => void;
+  initialFilterValues: GetAuctionsParams;
 }
 
 export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues }) => {
   const router = useRouter();
   const t = useTranslations('Main_Page.filter');
-  const { register, watch, handleSubmit, getValues } = useForm<AuctionsFilterInputs>({
+  const { register, watch, handleSubmit, getValues } = useForm<GetAuctionsParams>({
     values: initialFilterValues,
   });
 
   const onSubmit = useCallback(
-    (data: AuctionsFilterInputs) => {
+    (data: GetAuctionsParams) => {
       setFilter(data);
       const newPath = `?${new URLSearchParams(data as Record<string, string>).toString()}`;
       void router.push(newPath, newPath, { shallow: true });
@@ -41,6 +47,16 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
     const subscription = watch(() => handleSubmit(onSubmit)());
     return () => subscription.unsubscribe();
   }, [handleSubmit, onSubmit, watch]);
+
+  const translatedTransmissionOptions = TRANSMISSION_FILTER_TYPES.map((option) => ({
+    ...option,
+    label: t(`transmission.${option.label}`),
+  }));
+
+  const translatedBodyTypeOptions = BODY_TYPES.map((option) => ({
+    ...option,
+    label: t(`body_style.${option.label}`),
+  }));
 
   return (
     <form
@@ -91,39 +107,29 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
         </div>
 
         <div className="flex-1 min-w-fit">
-          <select
-            {...register('transmission')}
-            className="select select-bordered w-full lg:w-xs inline-block"
-          >
-            <option value={TransmissionType.All} hidden>
-              {t('transmission.select_title')}
-            </option>
-            {TRANSMISSION_FILTER_TYPES.map((elem) => {
-              return (
-                <option key={elem.key} value={elem.key}>
-                  {t(elem.label)}
-                </option>
-              );
-            })}
-          </select>
+          <Select
+            isLabelHidden
+            id="transmission"
+            className="w-full lg:w-xs"
+            label={t('transmission.select_title')}
+            defaultOptionTitle={t('transmission.select_title')}
+            defaultOptionValue={GetAuctionsTransmission.all}
+            options={translatedTransmissionOptions}
+            register={register}
+          />
         </div>
 
         <div className="flex-1 min-w-fit">
-          <select
-            {...register('bodyStyle')}
-            className="select select-bordered w-full lg:w-xs inline-block"
-          >
-            <option value={BodyType.All} hidden>
-              {t('body_style.body_style_title')}
-            </option>
-            {BODY_TYPES.map((elem) => {
-              return (
-                <option key={elem.key} value={elem.key}>
-                  {t(elem.label)}
-                </option>
-              );
-            })}
-          </select>
+          <Select
+            isLabelHidden
+            id="bodyStyle"
+            className="w-full lg:w-xs"
+            label={t('body_style.body_style_title')}
+            defaultOptionTitle={t('body_style.body_style_title')}
+            defaultOptionValue={GetAuctionsBodyStyle.all}
+            options={translatedBodyTypeOptions}
+            register={register}
+          />
         </div>
       </div>
       <div

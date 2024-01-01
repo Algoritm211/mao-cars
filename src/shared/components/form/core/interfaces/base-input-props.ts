@@ -4,7 +4,7 @@ import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from 'reac
 /**
  * Please extend if it's needed
  */
-type AvailableInputs = 'input' | 'textarea';
+type AvailableInputs = 'input' | 'textarea' | 'select';
 
 export interface BasedFormProps {
   id: string;

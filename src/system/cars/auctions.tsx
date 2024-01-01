@@ -3,13 +3,16 @@ import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
-import { BodyType, TransmissionType } from '@/core/interfaces';
-
 import { AuctionsFilter } from '@/system/cars/components/auctions-filter/auctions-filter';
-import { AuctionsFilterInputs } from '@/system/cars/components/auctions-filter/models/auctions-filter';
 import { AUCTION_CAR_BADGES } from '@/system/cars/components/models/auction-car-badges';
 
 import { useGetAuctions } from '@/maocars-client/maocars';
+import {
+  type GetAuctionsBodyStyle,
+  GetAuctionsParams,
+  GetAuctionsSort,
+  GetAuctionsTransmission,
+} from '@/maocars-client/schemas';
 
 import { EntityContainer } from '@/shared/components';
 import { AuctionCard } from '@/shared/components/auction/auction-card/auction-card';
@@ -19,16 +22,16 @@ import BadgeFactory from '@/shared/components/badge/badge-factory';
 export const Auctions = () => {
   const params = useSearchParams();
 
-  const initialFilterParams = {
+  const initialFilterParams: GetAuctionsParams = {
     startYear: params.get('startYear') || undefined,
     endYear: params.get('endYear') || undefined,
-    bodyStyle: (params.get('bodyStyle') as BodyType) || undefined,
-    transmission: (params.get('transmission') as TransmissionType) || undefined,
-    sort: params.get('sort') || undefined,
+    bodyStyle: (params.get('bodyStyle') as GetAuctionsBodyStyle) || undefined,
+    transmission: (params.get('transmission') as GetAuctionsTransmission) || undefined,
+    sort: (params.get('sort') as GetAuctionsSort) || undefined,
   };
   const router = useRouter();
   const t = useTranslations('Common.ribbons');
-  const [filter, setFilter] = useState<AuctionsFilterInputs>(initialFilterParams);
+  const [filter, setFilter] = useState<GetAuctionsParams>(initialFilterParams);
   const auctionsQuery = useGetAuctions(filter);
 
   const onCarDetails = (auctionId: string) => {

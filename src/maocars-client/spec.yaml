@@ -53,10 +53,24 @@ paths:
           name: endYear
         - schema:
             type: string
+            enum:
+              - all
+              - coupe
+              - convertible
+              - hatchback
+              - sedan
+              - SUV
+              - truck
+              - van
+              - wagon
           in: query
           name: bodyStyle
         - schema:
             type: string
+            enum:
+              - all
+              - automatic
+              - manual
           in: query
           name: transmission
         - schema:

@@ -3,39 +3,39 @@ import { GetAuctionsSort } from '@/maocars-client/schemas';
 export const BODY_TYPES = [
   {
     key: 'all',
-    label: 'body_style.all',
+    label: 'all',
   },
   {
     key: 'coupe',
-    label: 'body_style.coupe',
+    label: 'coupe',
   },
   {
     key: 'convertible',
-    label: 'body_style.convertible',
+    label: 'convertible',
   },
   {
     key: 'hatchback',
-    label: 'body_style.hatchback',
+    label: 'hatchback',
   },
   {
     key: 'sedan',
-    label: 'body_style.sedan',
+    label: 'sedan',
   },
   {
     key: 'suv',
-    label: 'body_style.suv',
+    label: 'suv',
   },
   {
     key: 'truck',
-    label: 'body_style.truck',
+    label: 'truck',
   },
   {
     key: 'van',
-    label: 'body_style.van',
+    label: 'van',
   },
   {
     key: 'wagon',
-    label: 'body_style.wagon',
+    label: 'wagon',
   },
 ] as const;
 

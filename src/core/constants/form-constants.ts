@@ -1,5 +1,3 @@
-import { TransmissionType } from '@/core/interfaces';
-
 export const START_YEAR = 1980;
 export const END_YEAR = new Date().getFullYear() + 1;
 export const START_YEARS = Array(END_YEAR - START_YEAR)
@@ -16,15 +14,15 @@ export const END_YEARS = [...START_YEARS].reverse();
 export const TRANSMISSION_FILTER_TYPES = [
   {
     key: 'all',
-    label: 'transmission.all',
+    label: 'all',
   },
   {
     key: 'automatic',
-    label: 'transmission.automatic',
+    label: 'automatic',
   },
   {
     key: 'manual',
-    label: 'transmission.manual',
+    label: 'manual',
   },
 ] as const;
 

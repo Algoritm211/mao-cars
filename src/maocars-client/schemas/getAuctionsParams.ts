@@ -5,12 +5,14 @@
  * Do not edit manually.
  * mao-cars-api
  */
+import type { GetAuctionsBodyStyle } from './getAuctionsBodyStyle';
 import type { GetAuctionsSort } from './getAuctionsSort';
+import type { GetAuctionsTransmission } from './getAuctionsTransmission';
 
 export type GetAuctionsParams = {
   startYear?: string;
   endYear?: string;
-  bodyStyle?: string;
-  transmission?: string;
+  bodyStyle?: GetAuctionsBodyStyle;
+  transmission?: GetAuctionsTransmission;
   sort?: GetAuctionsSort;
 };
