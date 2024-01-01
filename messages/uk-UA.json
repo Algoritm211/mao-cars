@@ -20,7 +20,7 @@
         "to": "ДО"
       },
       "transmission": {
-        "transmission": "Трансмісія",
+        "select_title": "Трансмісія",
         "all": "Усі",
         "automatic": "Автоматична",
         "manual": "Механічна"
@@ -40,7 +40,8 @@
       "auction_sort": {
         "lowest_mileage": "Менший пробіг",
         "newly_listed": "Нові пропозиції",
-        "no_reserve": "Без резерву"
+        "no_reserve": "Без резерву",
+        "charity": "Благодійність"
       }
     }
   },

@@ -24,6 +24,7 @@ export * from './getAuctionById200StatsCurrentBid';
 export * from './getAuctionById200Status';
 export * from './getAuctions200';
 export * from './getAuctionsParams';
+export * from './getAuctionsSort';
 export * from './getAutosAuctionsIdComments200';
 export * from './getCommentsByAuctionId200';
 export * from './getCommentsByAuctionIdFilter';

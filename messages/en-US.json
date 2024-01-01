@@ -14,19 +14,19 @@
   "Main_Page": {
     "filter": {
       "years": {
-        "year": "Year",
+        "year_title": "Year",
         "startYear": "Start",
         "endYear": "End",
         "to": "TO"
       },
       "transmission": {
-        "transmission": "Transmission",
+        "select_title": "Transmission",
         "all": "All",
         "automatic": "Automatic",
         "manual": "Manual"
       },
       "body_style": {
-        "body_style": "Body style",
+        "body_style_title": "Body style",
         "all": "All",
         "coupe": "Coupe",
         "convertible": "Convertible",
@@ -40,7 +40,8 @@
       "auction_sort": {
         "lowest_mileage": "Lowest Mileage",
         "newly_listed": "Newly Listed",
-        "no_reserve": "No Reserve"
+        "no_reserve": "No Reserve",
+        "charity": "Charity"
       }
     }
   },

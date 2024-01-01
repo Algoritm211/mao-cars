@@ -18,7 +18,7 @@ export interface Car {
   engine: string;
   exterior_color: string;
   history_report?: CarHistoryReport;
-  id?: string;
+  id: string;
   interior_color?: string;
   location: string;
   make: string;

@@ -1,3 +1,5 @@
+import { GetAuctionsSort } from '@/maocars-client/schemas';
+
 export const BODY_TYPES = [
   {
     key: 'all',
@@ -37,17 +39,26 @@ export const BODY_TYPES = [
   },
 ] as const;
 
-export const AUCTION_SORT = [
+interface SortParam {
+  key: GetAuctionsSort;
+  label: keyof Messages['Main_Page']['filter']['auction_sort'];
+}
+
+export const AUCTION_SORT: SortParam[] = [
   {
     key: 'lowest_mileage',
-    label: 'auction_sort.lowest_mileage',
+    label: 'lowest_mileage',
   },
   {
     key: 'newly_listed',
-    label: 'auction_sort.newly_listed',
+    label: 'newly_listed',
   },
   {
     key: 'no_reserve',
-    label: 'auction_sort.no_reserve',
+    label: 'no_reserve',
   },
-] as const;
+  {
+    key: 'charity',
+    label: 'charity',
+  },
+];

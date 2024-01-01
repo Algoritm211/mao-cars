@@ -61,6 +61,11 @@ paths:
           name: transmission
         - schema:
             type: string
+            enum:
+              - lowest_mileage
+              - newly_listed
+              - no_reserve
+              - charity
           in: query
           name: sort
     parameters: []
@@ -426,6 +431,7 @@ components:
         - title_status
         - make
         - model
+        - id
         - mileage
         - vin
         - seller_type

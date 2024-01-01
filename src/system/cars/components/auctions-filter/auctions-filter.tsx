@@ -54,7 +54,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
       >
         <div className="dropdown dropdown-bottom w-36 sm:w-full sm:flex-1">
           <label tabIndex={0} className="select select-bordered flex place-items-center">
-            {t('years.year')}
+            {t('years.year_title')}
           </label>
           <ul
             tabIndex={0}
@@ -96,7 +96,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
             className="select select-bordered w-full lg:w-xs inline-block"
           >
             <option value={TransmissionType.All} hidden>
-              {t('transmission.transmission')}
+              {t('transmission.select_title')}
             </option>
             {TRANSMISSION_FILTER_TYPES.map((elem) => {
               return (
@@ -114,7 +114,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
             className="select select-bordered w-full lg:w-xs inline-block"
           >
             <option value={BodyType.All} hidden>
-              {t('body_style.body_style')}
+              {t('body_style.body_style_title')}
             </option>
             {BODY_TYPES.map((elem) => {
               return (
@@ -126,30 +126,31 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
           </select>
         </div>
       </div>
-      <div className="flex justify-center place-items-center">
-        <div className="tabs">
-          {AUCTION_SORT.map((elem) => {
-            return (
-              <React.Fragment key={elem.key}>
-                <input
-                  {...register('sort')}
-                  value={elem.key}
-                  type="radio"
-                  id={`field-${elem.key}`}
-                  className={`hidden`}
-                />
-                <label
-                  htmlFor={`field-${elem.key}`}
-                  className={clsx('tab px-3 md:px-12 lg:px-[var(--tab-padding)]', {
-                    'tab-active': getValues('sort') === elem.key,
-                  })}
-                >
-                  {t(elem.label)}
-                </label>
-              </React.Fragment>
-            );
-          })}
-        </div>
+      <div
+        className="grid grid-cols-2
+        sm:grid-cols-none sm:grid-flow-col sm:items-center"
+      >
+        {AUCTION_SORT.map((elem) => {
+          return (
+            <React.Fragment key={elem.key}>
+              <input
+                {...register('sort')}
+                value={elem.key}
+                type="radio"
+                id={elem.key}
+                className="hidden"
+              />
+              <label
+                htmlFor={elem.key}
+                className={clsx('tab px-3 md:px-12 lg:px-3', {
+                  'tab-active': getValues('sort') === elem.key,
+                })}
+              >
+                {t(`auction_sort.${elem.label}`)}
+              </label>
+            </React.Fragment>
+          );
+        })}
       </div>
     </form>
   );
