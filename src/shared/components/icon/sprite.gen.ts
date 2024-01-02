@@ -2,6 +2,7 @@ export interface SpritesMap {
   sprite:
     | 'arrow-left'
     | 'arrow-right'
+    | 'artificial-intelligence'
     | 'calendar'
     | 'chevron-down'
     | 'clock'
@@ -29,6 +30,7 @@ export const SPRITES_META: {
   sprite: Array<
     | 'arrow-left'
     | 'arrow-right'
+    | 'artificial-intelligence'
     | 'calendar'
     | 'chevron-down'
     | 'clock'
@@ -56,6 +58,7 @@ export const SPRITES_META: {
   sprite: [
     'arrow-left',
     'arrow-right',
+    'artificial-intelligence',
     'calendar',
     'chevron-down',
     'clock',

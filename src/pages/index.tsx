@@ -1,12 +1,19 @@
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { GetServerSidePropsContext } from 'next';
+import React from 'react';
 
 import { Auctions } from '@/system/cars/auctions';
+import { AIChatButton } from '@/system/chat/components/ai-chat-button';
 
 import { getAuctions, getGetAuctionsQueryKey } from '@/maocars-client/maocars';
 
 export default function Home() {
-  return <Auctions />;
+  return (
+    <React.Fragment>
+      <Auctions />
+      <AIChatButton />
+    </React.Fragment>
+  );
 }
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
