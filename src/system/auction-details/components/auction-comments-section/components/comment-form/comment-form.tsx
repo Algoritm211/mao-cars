@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 
 import { COMMENT_FILTER } from '@/system/auction-details/components/auction-comments-section/components/comment-form/models/form-constants';
 
-import { useGetCommentsByAuctionId } from '@/maocars-client/maocars';
 import { GetCommentsByAuctionIdFilter } from '@/maocars-client/schemas';
 
 import { Icon, button } from '@/shared/components';

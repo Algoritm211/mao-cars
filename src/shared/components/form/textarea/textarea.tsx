@@ -1,4 +1,5 @@
 import { clsx } from 'clsx';
+import { className } from 'postcss-selector-parser';
 import React from 'react';
 
 import { BaseInputProps, FormErrors } from '@/shared/components/form';
@@ -15,6 +16,7 @@ export const TextArea: React.FC<Props> = ({
   register,
   registerOptions,
   errors,
+  className,
   ...rest
 }) => {
   return (
@@ -24,7 +26,7 @@ export const TextArea: React.FC<Props> = ({
       </label>
       <textarea
         id={id}
-        className="textarea textarea-bordered h-36"
+        className={clsx('textarea textarea-bordered', className)}
         {...register(id, registerOptions)}
         {...rest}
       ></textarea>

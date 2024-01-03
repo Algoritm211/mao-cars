@@ -64,6 +64,7 @@ export const EditAccountModal: React.FC<Props> = ({ isOpen, onClose }) => {
         <div className="form-control">
           <TextArea
             id="profileBio"
+            className="h-36"
             label={t('bio')}
             labelClassname="font-bold"
             placeholder={t('bio_placeholder')}

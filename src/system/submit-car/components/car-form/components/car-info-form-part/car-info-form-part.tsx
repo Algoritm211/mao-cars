@@ -120,6 +120,7 @@ export const CarInfoFormPart = () => {
         <div className="form-control w-full">
           <TextArea
             id="equipment"
+            className="h-36"
             label={t('special_equipment')}
             placeholder={t('special_equipment_placeholder')}
             register={register}
@@ -166,6 +167,7 @@ export const CarInfoFormPart = () => {
           <div className="form-control w-full">
             <TextArea
               id="modifications"
+              className="h-36"
               label={t('modifications_exist_label')}
               placeholder={t('modifications_exist_placeholder')}
               register={register}
@@ -213,6 +215,7 @@ export const CarInfoFormPart = () => {
           <div className="form-control w-full">
             <TextArea
               id="flaws"
+              className="h-36"
               label={t('car_has_flaws_label')}
               placeholder={t('car_has_flaws_placeholder')}
               register={register}
