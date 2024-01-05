@@ -14,7 +14,7 @@
   "Main_Page": {
     "filter": {
       "years": {
-        "year": "Рік випуску",
+        "year_title": "Рік випуску",
         "startYear": "Старт",
         "endYear": "Кінець",
         "to": "ДО"
