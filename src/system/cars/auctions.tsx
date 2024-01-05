@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 
 import { AuctionsFilter } from '@/system/cars/components/auctions-filter/auctions-filter';
 import { AUCTION_CAR_BADGES } from '@/system/cars/components/models/auction-car-badges';
+import { AIChatButton } from '@/system/chat/shared-promo-components/ai-chat-button/ai-chat-button';
 
 import { useGetAuctions } from '@/maocars-client/maocars';
 import {
@@ -58,6 +59,7 @@ export const Auctions = () => {
                 />
               ))}
             </AuctionContainer>
+            <AIChatButton />
           </React.Fragment>
         );
       }}

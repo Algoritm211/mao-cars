@@ -17,7 +17,7 @@ export const ChatForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleUsersRequest)}>
+    <form className="mx-1" onSubmit={handleSubmit(handleUsersRequest)}>
       <div className="form-control relative">
         <TextArea
           id="usersRequest"

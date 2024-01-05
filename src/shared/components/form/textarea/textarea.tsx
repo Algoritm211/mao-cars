@@ -22,7 +22,7 @@ export const TextArea: React.FC<Props> = ({
   return (
     <React.Fragment>
       <label htmlFor={id} className={clsx('label', labelClassname)}>
-        <span className="label-text">{label}</span>
+        <span className="label-text text-base">{label}</span>
       </label>
       <textarea
         id={id}
