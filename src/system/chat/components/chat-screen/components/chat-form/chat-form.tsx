@@ -21,7 +21,7 @@ export const ChatForm = () => {
       <div className="form-control relative">
         <TextArea
           id="usersRequest"
-          className="w-full h-20 md:h-28 min-h-16 pr-16"
+          className="w-full h-18 md:h-28 min-h-16 pr-16"
           label="What car do you want?"
           placeholder="Briefly describe a couple of requirements for your new car"
           register={register}

@@ -26,7 +26,7 @@ export const TextArea: React.FC<Props> = ({
       </label>
       <textarea
         id={id}
-        className={clsx('textarea textarea-bordered', className)}
+        className={clsx('textarea text-base textarea-bordered', className)}
         {...register(id, registerOptions)}
         {...rest}
       ></textarea>
