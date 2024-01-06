@@ -1,5 +1,6 @@
 export interface SpritesMap {
   sprite:
+    | 'arrow-down'
     | 'arrow-left'
     | 'arrow-right'
     | 'artificial-intelligence'
@@ -28,6 +29,7 @@ export interface SpritesMap {
 }
 export const SPRITES_META: {
   sprite: Array<
+    | 'arrow-down'
     | 'arrow-left'
     | 'arrow-right'
     | 'artificial-intelligence'
@@ -56,6 +58,7 @@ export const SPRITES_META: {
   >;
 } = {
   sprite: [
+    'arrow-down',
     'arrow-left',
     'arrow-right',
     'artificial-intelligence',
