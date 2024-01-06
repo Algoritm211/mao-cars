@@ -61,6 +61,7 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
+      style={{ gridTemplateRows: 'min-content' }}
       className="mb-4 mx-2 md:mx-0 flex gap-2 flex-col
         justify-around flex-wrap justify-items-end md:flex-row"
     >
@@ -133,8 +134,9 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
         </div>
       </div>
       <div
-        className="grid grid-cols-2
-        sm:grid-cols-none sm:grid-flow-col sm:items-center"
+        className="grid grid-cols-2 h-16
+        sm:grid-cols-none sm:grid-flow-col sm:items-center
+        sm:h-8 lg:h-12"
       >
         {AUCTION_SORT.map((elem) => {
           return (
