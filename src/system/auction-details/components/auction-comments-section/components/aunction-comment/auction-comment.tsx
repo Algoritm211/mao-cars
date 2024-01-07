@@ -5,7 +5,7 @@ import { Comment } from '@/maocars-client/schemas';
 
 import { Icon, Badge } from '@/shared/components';
 import { currencyFormatter } from '@/shared/utils/currency-formatter/currency-formatter';
-import { commentDateFormatter } from '@/shared/utils/date-formatter/date-formatter';
+import { messageDateFormatter } from '@/shared/utils/date-formatter/date-formatter';
 
 interface Props {
   comment: Comment;
@@ -27,8 +27,8 @@ export const AuctionComment: React.FC<Props> = ({ comment, isOwner }) => {
           <span className="font-bold">{user.username}</span>
           {isOwner && <Badge className="bg-purple-600 text-white" title={t('seller')} />}
           <p className="text-sm text-gray-600">
-            <time dateTime={commentDateFormatter(new Date(comment.created_at))}>
-              {commentDateFormatter(new Date(comment.created_at))}
+            <time dateTime={messageDateFormatter(new Date(comment.created_at))}>
+              {messageDateFormatter(new Date(comment.created_at))}
             </time>
           </p>
         </div>

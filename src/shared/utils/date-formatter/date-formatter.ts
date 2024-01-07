@@ -10,7 +10,7 @@ export const defaultDateFormatter = (date: Date) => {
   }).format(date);
 };
 
-export const commentDateFormatter = (date: Date) => {
+export const messageDateFormatter = (date: Date) => {
   return new Intl.DateTimeFormat('en-EN', {
     month: 'short',
     day: 'numeric',

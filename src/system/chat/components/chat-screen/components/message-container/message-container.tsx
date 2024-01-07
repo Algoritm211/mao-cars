@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { Icon } from '@/shared/components';
+import { button, Icon } from '@/shared/components';
 
-const MessagesArr = new Array(20).fill(null).map((elem, index) => (
-  <div key={index} className="bg-blue-300 w-full h-12 my-2">
-    {index}
-  </div>
-));
+import { Message } from './components/message/message';
+
+const MessagesArr = new Array(200)
+  .fill(null)
+  .map((elem, index) => <Message key={index} isBot={index % 2 === 0} />);
 
 export const MessageContainer = () => {
   const chatBottomRef = useRef<HTMLDivElement>(null);
@@ -18,9 +18,12 @@ export const MessageContainer = () => {
   }, []);
 
   useEffect(() => {
-    const chatObserver = new IntersectionObserver(([entry]) => {
-      setIsShowScrollToBottom(!entry.isIntersecting);
-    });
+    const chatObserver = new IntersectionObserver(
+      ([entry]) => {
+        setIsShowScrollToBottom(!entry.isIntersecting);
+      },
+      { threshold: 0.25 }
+    );
     chatObserver.observe(chatBottomRef.current!);
 
     return () => {
@@ -35,14 +38,14 @@ export const MessageContainer = () => {
   };
 
   return (
-    <div className="overflow-y-scroll mx-1 max-h-full lg:mx-0 relative">
+    <div className="overflow-y-scroll shadow-inner mx-1 px-2 max-h-full lg:mx-0 relative">
       {MessagesArr}
 
-      <div ref={chatBottomRef} className="invisible"></div>
+      <div ref={chatBottomRef} className="invisible h-1"></div>
       {isShowScrollToBottom && (
         <button
           onClick={() => handleScrollToBottom()}
-          className="btn btn-md btn-circle sticky bottom-2 left-[100%] mr-2"
+          className={button({ className: 'btn-circle sticky bottom-2 left-[100%] mr-2' })}
         >
           <Icon name="arrow-down" className="w-5 h-5" />
         </button>
