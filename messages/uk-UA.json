@@ -251,6 +251,12 @@
         "is_auto_for_ua_army_label": "Так, я хочу продати це авто для ЗСУ (будь-ласка, ознайомтесь з правилами)"
       }
     }
+  },
+  "Chat_page": {
+    "form": {
+      "users_request_label": "What car do you want?",
+      "users_request_placeholder": "Briefly describe a couple of requirements for your new car"
+    }
   }
 }
 

@@ -251,5 +251,11 @@
         "is_auto_for_ua_army_label": "Yes, I want to sell this auto for UA army (please, consider rules)"
       }
     }
+  },
+  "Chat_page": {
+    "form": {
+      "users_request_label": "Яку машину ви бажаєте?",
+      "users_request_placeholder": "Коротко опишіть кілька вимог до вашого нового автомобіля"
+    }
   }
 }

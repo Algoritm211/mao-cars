@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -9,6 +10,7 @@ interface Inputs {
 }
 
 export const ChatForm = () => {
+  const t = useTranslations('Chat_page.form');
   const { register, handleSubmit, reset } = useForm<Inputs>();
 
   const handleUsersRequest = (data: Inputs) => {
@@ -22,8 +24,8 @@ export const ChatForm = () => {
         <TextArea
           id="usersRequest"
           className="w-full h-18 md:h-28 min-h-16 pr-16"
-          label="What car do you want?"
-          placeholder="Briefly describe a couple of requirements for your new car"
+          label={t('users_request_label')}
+          placeholder={t('users_request_placeholder')}
           register={register}
           registerOptions={{ required: true }}
         />
