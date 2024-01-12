@@ -33,7 +33,7 @@ export const MessageContainer = () => {
 
   const handleScrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
     if (chatBottomRef.current) {
-      chatBottomRef.current.scrollIntoView({ behavior });
+      chatBottomRef.current.scrollIntoView({ behavior, block: 'nearest', inline: 'start' });
     }
   };
 
