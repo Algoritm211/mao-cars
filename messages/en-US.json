@@ -254,8 +254,8 @@
   },
   "Chat_page": {
     "form": {
-      "users_request_label": "Яку машину ви бажаєте?",
-      "users_request_placeholder": "Коротко опишіть кілька вимог до вашого нового автомобіля"
+      "users_request_label": "What car do you want?",
+      "users_request_placeholder": "Briefly describe a couple of requirements for your new car"
     }
   }
 }
