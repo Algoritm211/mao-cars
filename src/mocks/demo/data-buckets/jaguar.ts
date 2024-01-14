@@ -1,9 +1,11 @@
 import { faker } from '@faker-js/faker';
 
-import { Car, GetAuctionById200 } from '@/maocars-client/schemas';
+import { Car, Comment, GetAuctionById200 } from '@/maocars-client/schemas';
 
 import { cars } from '@/mocks/demo/data-buckets/cars';
 import { usersShort } from '@/mocks/demo/data-buckets/users-short';
+import { generateAuction } from '@/mocks/demo/utils/generate-auction';
+import { generateShortAuction } from '@/mocks/demo/utils/generate-short-auction';
 
 export const jaguar: Car = {
   id: '1',
@@ -146,24 +148,40 @@ export const jaguar: Car = {
   },
 };
 
-export const jaguarAuction: GetAuctionById200 = {
-  submission_id: '1',
-  seller: faker.helpers.arrayElement(usersShort),
-  status: faker.helpers.arrayElement(['live', 'end']),
-  watching: faker.datatype.boolean(),
-  no_reserve: faker.datatype.boolean(),
-  stats: {
-    auction_end: faker.date.future().toISOString(),
-    bids: faker.number.int({ min: 0, max: 20 }),
-    current_bid: {
-      amount: faker.number.float({ min: 3000, max: 5000 }),
-      bidder: faker.helpers.arrayElement(usersShort),
-    },
-    comments: faker.number.int({ min: 5, max: 20 }),
-    questions: faker.number.int({ min: 1, max: 50 }),
-    watchers: faker.number.int({ min: 100, max: 5000 }),
+const jaguarComments: Comment[] = [
+  {
+    id: faker.string.uuid(),
+    amount: 25_400,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
   },
-  views: faker.number.int({ min: 5000, max: 50_000 }),
-  shipping_quote_eligible: faker.datatype.boolean(),
-  listing: jaguar,
-};
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: `Rare car, I've dreamed about it several years`,
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: 'Wow, nice car',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 15_400,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+];
+
+export const jaguarAuction = generateAuction(jaguar, jaguarComments);
+export const jaguarShortAuction = generateShortAuction(jaguarAuction);
