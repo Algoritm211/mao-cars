@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { GetCommentsByAuctionId200 } from '@/maocars-client/schemas';
 
-import { comments } from '@/mocks/dev/route-responses/auction-comments-by-id';
+import { comments } from '@/mocks/dev';
 
 export default function handler(
   req: NextApiRequest,

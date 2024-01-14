@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { GetProfileById200 } from '@/maocars-client/schemas';
 
-import { users } from '@/mocks/dev/route-responses/user-by-id';
+import { users } from '@/mocks/dev';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<GetProfileById200>) {
   res.status(200).json({
