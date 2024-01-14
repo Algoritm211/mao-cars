@@ -15,6 +15,7 @@ export interface SpritesMap {
     | 'google-icon-logo'
     | 'hashtag'
     | 'heart'
+    | 'link'
     | 'list'
     | 'menu-bars'
     | 'paper-airplane'
@@ -44,6 +45,7 @@ export const SPRITES_META: {
     | 'google-icon-logo'
     | 'hashtag'
     | 'heart'
+    | 'link'
     | 'list'
     | 'menu-bars'
     | 'paper-airplane'
@@ -73,6 +75,7 @@ export const SPRITES_META: {
     'google-icon-logo',
     'hashtag',
     'heart',
+    'link',
     'list',
     'menu-bars',
     'paper-airplane',

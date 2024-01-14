@@ -1,13 +1,19 @@
 import { clsx } from 'clsx';
 import React from 'react';
+import Markdown from 'react-markdown';
 
 import { messageDateFormatter } from '@/shared/utils';
 
+import { messageMarkdownConfigComponents } from './message-markdown-config';
+
 interface Props {
   isBot: boolean;
+  message: string;
+  messageDate: string;
 }
 
-export const Message: React.FC<Props> = ({ isBot }) => {
+export const Message: React.FC<Props> = ({ isBot, message, messageDate }) => {
+  const displayDate = messageDateFormatter(new Date(messageDate));
   return (
     <div className={clsx('chat', isBot ? 'chat-start' : 'chat-end')}>
       {isBot && (
@@ -18,16 +24,13 @@ export const Message: React.FC<Props> = ({ isBot }) => {
         </div>
       )}
       <div className="chat-header">
-        <span className="me-1">Obi-Wan Kenobi</span>
-        <time className="text-xs opacity-50" dateTime={messageDateFormatter(new Date())}>
-          {messageDateFormatter(new Date())}
+        <span className="me-1">{isBot ? 'MaoBot' : 'You'}</span>
+        <time className="text-xs opacity-50" dateTime={displayDate}>
+          {displayDate}
         </time>
       </div>
       <div className="chat-bubble">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci culpa doloremque earum
-        error laboriosam numquam officiis quaerat quisquam quo rem. Accusantium ad aperiam, autem
-        beatae cumque delectus doloremque dolorum error id iusto laboriosam maxime nesciunt non
-        pariatur provident quaerat quasi quod quos ullam voluptatem! A ad ex nemo nobis nostrum?
+        <Markdown components={messageMarkdownConfigComponents}>{message}</Markdown>
       </div>
     </div>
   );

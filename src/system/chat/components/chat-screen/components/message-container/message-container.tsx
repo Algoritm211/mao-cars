@@ -1,16 +1,30 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { button, Icon } from '@/shared/components';
 
 import { Message } from './components/message/message';
+import messagesEng from './mocks-messages/eng-messages.json';
+import messagesUa from './mocks-messages/ua-messages.json';
 
-const MessagesArr = new Array(200)
-  .fill(null)
-  .map((elem, index) => <Message key={index} isBot={index % 2 === 0} />);
+const generateMessages = (messages: typeof messagesUa) => {
+  return messages.map((elem) => (
+    <Message
+      key={elem.id}
+      isBot={elem.type === 'bot'}
+      message={elem.message}
+      messageDate={elem.created_at}
+    />
+  ));
+};
 
 export const MessageContainer = () => {
+  const router = useRouter();
   const chatBottomRef = useRef<HTMLDivElement>(null);
   const [isShowScrollToBottom, setIsShowScrollToBottom] = useState(false);
+
+  const messagesArr = router.locale === 'en-US' ? messagesEng : messagesUa;
+  const messages = generateMessages(messagesArr);
 
   useEffect(() => {
     // Initial scroll to bottom when you are entering to the page
@@ -39,7 +53,7 @@ export const MessageContainer = () => {
 
   return (
     <div className="overflow-y-scroll shadow-inner mx-1 px-2 max-h-full lg:mx-0 relative">
-      {MessagesArr}
+      {messages}
 
       <div ref={chatBottomRef} className="invisible h-1"></div>
       {isShowScrollToBottom && (
