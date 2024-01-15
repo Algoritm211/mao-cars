@@ -1,3 +1,4 @@
-import { jaguarAuction } from '@/mocks/demo/data-buckets/jaguar';
+import { jaguarAuction } from '@/mocks/demo/data-buckets/cars/jaguar';
+import { rrCountyAuction } from '@/mocks/demo/data-buckets/cars/rr-county';
 
-export const auctionsById = [jaguarAuction];
+export const auctionsById = [jaguarAuction, rrCountyAuction];

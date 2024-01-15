@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 
 import { Car, Comment, GetAuctionById200 } from '@/maocars-client/schemas';
 
-import { jaguar } from '@/mocks/demo/data-buckets/jaguar';
+import { jaguar } from '@/mocks/demo/data-buckets/cars/jaguar';
 import { usersShort } from '@/mocks/demo/data-buckets/users-short';
 
 export const generateAuction = (car: Car, comments: Comment[]): GetAuctionById200 => {
@@ -25,6 +25,6 @@ export const generateAuction = (car: Car, comments: Comment[]): GetAuctionById20
     },
     views: faker.number.int({ min: 5000, max: 50_000 }),
     shipping_quote_eligible: faker.datatype.boolean(),
-    listing: jaguar,
+    listing: car,
   };
 };

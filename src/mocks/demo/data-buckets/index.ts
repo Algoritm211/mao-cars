@@ -1,1 +1,1 @@
-export * from './cars';
+export * from './cars/cars';
