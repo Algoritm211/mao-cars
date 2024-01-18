@@ -32,9 +32,9 @@ export const jaguar: Car = {
     '/demo/cars/jaguar/car-photos/4.jpeg',
     '/demo/cars/jaguar/car-photos/5.jpeg',
     '/demo/cars/jaguar/car-photos/6.jpeg',
+    '/demo/cars/jaguar/car-photos/6.jpeg',
     '/demo/cars/jaguar/car-photos/7.jpeg',
     '/demo/cars/jaguar/car-photos/8.jpeg',
-    '/demo/cars/jaguar/car-photos/9.jpeg',
   ],
   sections: {
     highlights:

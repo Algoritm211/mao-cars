@@ -32,9 +32,9 @@ export const rrCounty: Car = {
     '/demo/cars/rr-county/car-photos/4.jpeg',
     '/demo/cars/rr-county/car-photos/5.jpeg',
     '/demo/cars/rr-county/car-photos/6.jpeg',
+    '/demo/cars/rr-county/car-photos/6.jpeg',
     '/demo/cars/rr-county/car-photos/7.jpeg',
     '/demo/cars/rr-county/car-photos/8.jpeg',
-    '/demo/cars/rr-county/car-photos/9.jpeg',
   ],
   sections: {
     highlights: `
