@@ -25,7 +25,7 @@
   },
   {
     "type": "bot",
-    "message": "Understood. Safety and space are crucial. I recommend considering SUVs or minivans. Here are some options for you:\n\n1. [Toyota Highlander](https://mao-cars.vercel.app/auctions/123456)\n2. [Honda Odyssey](https://mao-cars.vercel.app/auctions/789012)",
+    "message": "Understood. Safety and space are crucial. I recommend considering SUVs or minivans. Here are some options for you:\n\n1. [Toyota Highlander](https://mao-cars.vercel.app/auctions/1)\n2. [Honda Odyssey](https://mao-cars.vercel.app/auctions/2)",
     "created_at": "2024-01-13T12:04:00Z",
     "id": "mno345"
   },
@@ -37,7 +37,7 @@
   },
   {
     "type": "bot",
-    "message": "You're welcome! In addition to the ones mentioned, you might also consider:\n\n3. [Ford Explorer](https://mao-cars.vercel.app/auctions/345678)\n4. [Chrysler Pacifica](https://mao-cars.vercel.app/auctions/901234)",
+    "message": "You're welcome! In addition to the ones mentioned, you might also consider:\n\n3. [Ford Explorer](https://mao-cars.vercel.app/auctions/2)\n4. [Chrysler Pacifica](https://mao-cars.vercel.app/auctions/1)",
     "created_at": "2024-01-13T12:06:00Z",
     "id": "stu901"
   },
