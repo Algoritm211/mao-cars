@@ -2,7 +2,6 @@ import { faker } from '@faker-js/faker';
 
 import { Car, Comment, GetAuctionById200 } from '@/maocars-client/schemas';
 
-import { jaguar } from '@/mocks/demo/data-buckets/cars/jaguar';
 import { usersShort } from '@/mocks/demo/data-buckets/users-short';
 
 export const generateAuction = (car: Car, comments: Comment[]): GetAuctionById200 => {
