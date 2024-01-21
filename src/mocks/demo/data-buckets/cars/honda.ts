@@ -99,7 +99,7 @@ export const honda: Car = {
   },
 };
 
-const hondaComments: Comment[] = [
+export const hondaComments: Comment[] = [
   {
     id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
@@ -133,6 +133,3 @@ const hondaComments: Comment[] = [
     user: faker.helpers.arrayElement(usersShort),
   },
 ];
-
-export const hondaAuction = generateAuction(honda, hondaComments);
-export const hondaShortAuction = generateShortAuction(hondaAuction);

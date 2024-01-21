@@ -59,7 +59,15 @@ export const jaguar: Car = {
   },
 };
 
-const jaguarComments: Comment[] = [
+export const jaguarComments: Comment[] = [
+  {
+    id: faker.string.uuid(),
+    amount: 25_400,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
   {
     id: faker.string.uuid(),
     amount: 15_400,
@@ -84,15 +92,4 @@ const jaguarComments: Comment[] = [
     text: `Rare car, I've dreamed about it several years`,
     user: faker.helpers.arrayElement(usersShort),
   },
-  {
-    id: faker.string.uuid(),
-    amount: 25_400,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
-    user: faker.helpers.arrayElement(usersShort),
-  },
 ];
-
-export const jaguarAuction = generateAuction(jaguar, jaguarComments);
-export const jaguarShortAuction = generateShortAuction(jaguarAuction);

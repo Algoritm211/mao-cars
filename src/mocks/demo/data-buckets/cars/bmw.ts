@@ -88,7 +88,7 @@ export const bmw: Car = {
   },
 };
 
-const bmwComments: Comment[] = [
+export const bmwComments: Comment[] = [
   {
     id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
@@ -122,6 +122,3 @@ const bmwComments: Comment[] = [
     user: faker.helpers.arrayElement(usersShort),
   },
 ];
-
-export const bmwAuction = generateAuction(bmw, bmwComments);
-export const bmwShortAuction = generateShortAuction(bmwAuction);

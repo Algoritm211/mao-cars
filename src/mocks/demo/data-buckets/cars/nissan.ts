@@ -125,7 +125,15 @@ The seller states that the engine oil and filter were last changed in July 2023.
   },
 };
 
-const nissanComments: Comment[] = [
+export const nissanComments: Comment[] = [
+  {
+    id: faker.string.uuid(),
+    amount: 10_400,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
   {
     id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
@@ -158,15 +166,4 @@ const nissanComments: Comment[] = [
     text: `Good luck to all biders let's see who's gonna take the beautiful cima home`,
     user: faker.helpers.arrayElement(usersShort),
   },
-  {
-    id: faker.string.uuid(),
-    amount: 10_400,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
-    user: faker.helpers.arrayElement(usersShort),
-  },
 ];
-
-export const nissanAuction = generateAuction(nissan, nissanComments);
-export const nissanShortAuction = generateShortAuction(nissanAuction);

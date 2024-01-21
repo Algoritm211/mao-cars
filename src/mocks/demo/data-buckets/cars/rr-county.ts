@@ -108,31 +108,7 @@ The seller reports that the battery and the throttle position sensor were replac
   },
 };
 
-const rrCountyComments: Comment[] = [
-  {
-    id: faker.string.uuid(),
-    amount: 17_320,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'text',
-    text: 'Nice classic Rangie. That interior looks minty.',
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
-    amount: 23_890,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
-    user: faker.helpers.arrayElement(usersShort),
-  },
+export const rrCountyComments: Comment[] = [
   {
     id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
@@ -149,7 +125,28 @@ const rrCountyComments: Comment[] = [
     type: 'bid',
     user: faker.helpers.arrayElement(usersShort),
   },
+  {
+    id: faker.string.uuid(),
+    amount: 23_890,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 17_320,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: 'Nice classic Rangie. That interior looks minty.',
+    user: faker.helpers.arrayElement(usersShort),
+  },
 ];
-
-export const rrCountyAuction = generateAuction(rrCounty, rrCountyComments);
-export const rrCountyShortAuction = generateShortAuction(rrCountyAuction);
