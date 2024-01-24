@@ -1,6 +1,8 @@
-import {Car, Comment} from "@/maocars-client/schemas";
-import {faker} from "@faker-js/faker";
-import {usersShort} from "@/mocks/demo/data-buckets/users-short";
+import { faker } from '@faker-js/faker';
+
+import { Car, Comment } from '@/maocars-client/schemas';
+
+import { usersShort } from '@/mocks/demo/data-buckets/users-short';
 
 export const mini: Car = {
   id: '6',
@@ -69,7 +71,8 @@ The seller reports that the engine oil and filter were changed in June 2023 at 9
 - 2 keys
 - Owner's manual
 `,
-    ownership_history: 'The seller purchased this Mini in May 2023 and has added approximately 2,700 miles since.',
+    ownership_history:
+      'The seller purchased this Mini in May 2023 and has added approximately 2,700 miles since.',
     videos: [
       'https://www.youtube.com/embed/gNUlXq1sx4o',
       'https://www.youtube.com/embed/CwfL67bicck',
@@ -78,14 +81,29 @@ The seller reports that the engine oil and filter were changed in June 2023 at 9
   },
 };
 
-
 export const miniComments: Comment[] = [
+  {
+    id: faker.string.uuid(),
+    amount: 24_635,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 18_900,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
   {
     id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
-    text: 'I owned a 2009 JCW and it\'s the only car that I sold that I still miss. This one looks great!',
+    text: "I owned a 2009 JCW and it's the only car that I sold that I still miss. This one looks great!",
     user: faker.helpers.arrayElement(usersShort),
   },
   {
@@ -106,26 +124,10 @@ export const miniComments: Comment[] = [
   },
   {
     id: faker.string.uuid(),
-    amount: 18_900,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
     text: `Hello all. This one has the 17" wheels FYI. I have a 2023 with the same setup. Too bad because the 18" ones look so much better.`,
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
-    amount: 24_635,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
     user: faker.helpers.arrayElement(usersShort),
   },
 ];

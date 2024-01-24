@@ -102,6 +102,14 @@ export const honda: Car = {
 export const hondaComments: Comment[] = [
   {
     id: faker.string.uuid(),
+    amount: 10_900,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
@@ -122,14 +130,6 @@ export const hondaComments: Comment[] = [
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
     text: `Is the car titled in Canada or the states?`,
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
-    amount: 10_900,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
     user: faker.helpers.arrayElement(usersShort),
   },
 ];

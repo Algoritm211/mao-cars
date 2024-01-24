@@ -1,7 +1,8 @@
-import {Car, Comment} from "@/maocars-client/schemas";
-import {faker} from "@faker-js/faker";
-import {usersShort} from "@/mocks/demo/data-buckets/users-short";
+import { faker } from '@faker-js/faker';
 
+import { Car, Comment } from '@/maocars-client/schemas';
+
+import { usersShort } from '@/mocks/demo/data-buckets/users-short';
 
 export const rangeRover: Car = {
   id: '7',
@@ -97,14 +98,45 @@ The selling dealer reports that a 10,000-mile service was recently completed at 
 - Owner's manual
 - Full size spare wheel
 `,
-    ownership_history: 'The selling dealer acquired this Range Rover in November 2023 and has added approximately 100 miles since.',
-    videos: [
-      'https://www.youtube.com/embed/LfSVcoxLJqE',
-    ],
+    ownership_history:
+      'The selling dealer acquired this Range Rover in November 2023 and has added approximately 100 miles since.',
+    videos: ['https://www.youtube.com/embed/LfSVcoxLJqE'],
   },
 };
 
 export const rangeRoverComments: Comment[] = [
+  {
+    id: faker.string.uuid(),
+    amount: 191_200,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: `So sleek, love the taillights and clean exterior lines.`,
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 123_456,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: `Rare and Range Rover aren’t something you hear a lot but this indeed is a super rare Rover! GLWTS!`,
+    user: faker.helpers.arrayElement(usersShort),
+  },
   {
     id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
@@ -126,31 +158,7 @@ export const rangeRoverComments: Comment[] = [
     created_at: faker.date.future().toISOString(),
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
-    text: `Rare and Range Rover aren’t something you hear a lot but this indeed is a super rare Rover! GLWTS!`,
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
-    amount: 123_456,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'text',
     text: `So sleek, love the taillights and clean exterior lines.`,
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
-    amount: 191_200,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
     user: faker.helpers.arrayElement(usersShort),
   },
 ];

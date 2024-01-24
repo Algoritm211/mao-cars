@@ -91,6 +91,14 @@ export const bmw: Car = {
 export const bmwComments: Comment[] = [
   {
     id: faker.string.uuid(),
+    amount: 8900,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
@@ -111,14 +119,6 @@ export const bmwComments: Comment[] = [
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
     text: `Seller, please provide details of the service history. A one owner car would seem to make it easy to share all that info and there’s not a single Carfax record of BMW dealer service having been performed.`,
-    user: faker.helpers.arrayElement(usersShort),
-  },
-  {
-    id: faker.string.uuid(),
-    amount: 8900,
-    created_at: faker.date.future().toISOString(),
-    upvotes: faker.number.int({ min: 5, max: 10 }),
-    type: 'bid',
     user: faker.helpers.arrayElement(usersShort),
   },
 ];
