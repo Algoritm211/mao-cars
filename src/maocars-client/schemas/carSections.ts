@@ -8,7 +8,7 @@
 export type CarSections = {
   equipment: string;
   highlights: string;
-  known_flaws: string;
+  known_flaws?: string;
   modifications?: string;
   other_items?: string;
   ownership_history: string;

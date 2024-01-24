@@ -1,6 +1,7 @@
 import { Car, Comment } from '@/maocars-client/schemas';
 
 import { bmw, bmwComments } from '@/mocks/demo/data-buckets/cars/bmw';
+import { ford, fordComments } from '@/mocks/demo/data-buckets/cars/ford';
 import { honda, hondaComments } from '@/mocks/demo/data-buckets/cars/honda';
 import { jaguar, jaguarComments } from '@/mocks/demo/data-buckets/cars/jaguar';
 import { mini, miniComments } from '@/mocks/demo/data-buckets/cars/mini';
@@ -40,5 +41,9 @@ export const cars: Array<MockCars> = [
   {
     car: rangeRover,
     comments: rangeRoverComments,
+  },
+  {
+    car: ford,
+    comments: fordComments,
   },
 ];
