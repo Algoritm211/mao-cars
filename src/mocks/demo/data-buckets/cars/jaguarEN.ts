@@ -6,7 +6,7 @@ import { usersShort } from '@/mocks/demo/data-buckets/users-short';
 import { generateAuction } from '@/mocks/demo/utils/generate-auction';
 import { generateShortAuction } from '@/mocks/demo/utils/generate-short-auction';
 
-export const jaguar: Car = {
+export const jaguarEN: Car = {
   id: '1',
   title: '2018 Jaguar XF Sportbrake S',
   sub_title: '380-hp Supercharged V6, AWD, Highly Equipped, Ultra-Rare Wagon',
@@ -59,7 +59,7 @@ export const jaguar: Car = {
   },
 };
 
-export const jaguarComments: Comment[] = [
+export const jaguarCommentsEN: Comment[] = [
   {
     id: faker.string.uuid(),
     amount: 25_400,

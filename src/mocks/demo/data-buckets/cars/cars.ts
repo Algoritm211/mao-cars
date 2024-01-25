@@ -3,47 +3,63 @@ import { Car, Comment } from '@/maocars-client/schemas';
 import { bmw, bmwComments } from '@/mocks/demo/data-buckets/cars/bmw';
 import { ford, fordComments } from '@/mocks/demo/data-buckets/cars/ford';
 import { honda, hondaComments } from '@/mocks/demo/data-buckets/cars/honda';
-import { jaguar, jaguarComments } from '@/mocks/demo/data-buckets/cars/jaguar';
+import { jaguarEN, jaguarCommentsEN } from '@/mocks/demo/data-buckets/cars/jaguarEN';
 import { mini, miniComments } from '@/mocks/demo/data-buckets/cars/mini';
 import { nissan, nissanComments } from '@/mocks/demo/data-buckets/cars/nissan';
 import { rangeRover, rangeRoverComments } from '@/mocks/demo/data-buckets/cars/range-rover';
 import { rrCounty, rrCountyComments } from '@/mocks/demo/data-buckets/cars/rr-county';
 
-interface MockCars {
+interface MockCar {
   car: Car;
   comments: Comment[];
 }
-export const cars: Array<MockCars> = [
+export const cars: Array<Record<string, MockCar>> = [
   {
-    car: jaguar,
-    comments: jaguarComments,
+    'en-US': {
+      car: jaguarEN,
+      comments: jaguarCommentsEN,
+    },
   },
   {
-    car: rrCounty,
-    comments: rrCountyComments,
+    'en-US': {
+      car: rrCounty,
+      comments: rrCountyComments,
+    },
   },
   {
-    car: bmw,
-    comments: bmwComments,
+    'en-US': {
+      car: bmw,
+      comments: bmwComments,
+    },
   },
   {
-    car: nissan,
-    comments: nissanComments,
+    'en-US': {
+      car: nissan,
+      comments: nissanComments,
+    },
   },
   {
-    car: honda,
-    comments: hondaComments,
+    'en-US': {
+      car: honda,
+      comments: hondaComments,
+    },
   },
   {
-    car: mini,
-    comments: miniComments,
+    'en-US': {
+      car: mini,
+      comments: miniComments,
+    },
   },
   {
-    car: rangeRover,
-    comments: rangeRoverComments,
+    'en-US': {
+      car: rangeRover,
+      comments: rangeRoverComments,
+    },
   },
   {
-    car: ford,
-    comments: fordComments,
+    'en-US': {
+      car: ford,
+      comments: fordComments,
+    },
   },
 ];

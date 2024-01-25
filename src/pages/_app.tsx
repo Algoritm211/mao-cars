@@ -5,13 +5,19 @@ import { NextIntlClientProvider } from 'next-intl';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import NextNProgress from 'nextjs-progressbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { LOCALE_KEY } from '@/core/constants';
 
 import Layout from '@/system/layout/layout';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
+
+  useEffect(() => {
+    localStorage.setItem(LOCALE_KEY, router.locale || 'en-US');
+  }, [router.locale]);
 
   return (
     <NextIntlClientProvider
