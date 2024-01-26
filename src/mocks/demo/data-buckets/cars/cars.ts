@@ -3,7 +3,12 @@ import { Car, Comment } from '@/maocars-client/schemas';
 import { bmw, bmwComments } from '@/mocks/demo/data-buckets/cars/bmw';
 import { ford, fordComments } from '@/mocks/demo/data-buckets/cars/ford';
 import { honda, hondaComments } from '@/mocks/demo/data-buckets/cars/honda';
-import { jaguarEN, jaguarCommentsEN } from '@/mocks/demo/data-buckets/cars/jaguarEN';
+import {
+  jaguarEN,
+  jaguarCommentsEN,
+  jaguarUA,
+  jaguarCommentsUA,
+} from '@/mocks/demo/data-buckets/cars/jaguar';
 import { mini, miniComments } from '@/mocks/demo/data-buckets/cars/mini';
 import { nissan, nissanComments } from '@/mocks/demo/data-buckets/cars/nissan';
 import { rangeRover, rangeRoverComments } from '@/mocks/demo/data-buckets/cars/range-rover';
@@ -18,6 +23,10 @@ export const cars: Array<Record<string, MockCar>> = [
     'en-US': {
       car: jaguarEN,
       comments: jaguarCommentsEN,
+    },
+    'uk-UA': {
+      car: jaguarUA,
+      comments: jaguarCommentsUA,
     },
   },
   {

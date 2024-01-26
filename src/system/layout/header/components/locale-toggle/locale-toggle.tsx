@@ -1,6 +1,9 @@
+import { useQueryClient } from '@tanstack/react-query';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+
+import { LOCALE_KEY } from '@/core/constants';
 
 import { Icon } from '@/shared/components';
 
@@ -10,7 +13,13 @@ const locales: Record<string, string> = {
 };
 
 export const LocaleToggle = () => {
+  const queryClient = useQueryClient();
   const { locale, asPath } = useRouter();
+
+  const onChangeLocale = (locale: string) => {
+    localStorage.setItem(LOCALE_KEY, locale);
+    void queryClient.clear();
+  };
 
   return (
     <div className="dropdown dropdown-end min-w-fit">
@@ -23,12 +32,12 @@ export const LocaleToggle = () => {
         className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32"
       >
         <li>
-          <Link href={asPath} locale="en-US">
+          <Link onClick={() => onChangeLocale('en-US')} href={asPath} locale="en-US">
             {locales['en-US']}
           </Link>
         </li>
         <li>
-          <Link href={asPath} locale="uk-UA">
+          <Link onClick={() => onChangeLocale('uk-UA')} href={asPath} locale="uk-UA">
             {locales['uk-UA']}
           </Link>
         </li>
