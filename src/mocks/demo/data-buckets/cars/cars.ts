@@ -1,22 +1,42 @@
 import { Car, Comment } from '@/maocars-client/schemas';
 
 import { bmwEN, bmwCommentsEN, bmwUA, bmwCommentsUA } from '@/mocks/demo/data-buckets/cars/bmwEN';
-import { ford, fordComments } from '@/mocks/demo/data-buckets/cars/ford';
-import { honda, hondaComments } from '@/mocks/demo/data-buckets/cars/honda';
+import {
+  fordCommentsEN,
+  fordCommentsUA,
+  fordEN,
+  fordUA,
+} from '@/mocks/demo/data-buckets/cars/ford';
+import {
+  hondaCommentsEN,
+  hondaCommentsUA,
+  hondaEN,
+  hondaUA,
+} from '@/mocks/demo/data-buckets/cars/honda';
 import {
   jaguarEN,
   jaguarCommentsEN,
   jaguarUA,
   jaguarCommentsUA,
 } from '@/mocks/demo/data-buckets/cars/jaguar';
-import { mini, miniComments } from '@/mocks/demo/data-buckets/cars/mini';
+import {
+  miniCommentsEN,
+  miniCommentsUA,
+  miniEN,
+  miniUA,
+} from '@/mocks/demo/data-buckets/cars/mini';
 import {
   nissanEN,
   nissanCommentsEN,
   nissanUA,
   nissanCommentsUA,
-} from '@/mocks/demo/data-buckets/cars/nissanEN';
-import { rangeRover, rangeRoverComments } from '@/mocks/demo/data-buckets/cars/range-rover';
+} from '@/mocks/demo/data-buckets/cars/nissan';
+import {
+  rangeRoverCommentsEN,
+  rangeRoverCommentsUA,
+  rangeRoverEN,
+  rangeRoverUA,
+} from '@/mocks/demo/data-buckets/cars/range-rover';
 import {
   rrCountyCommentsEN,
   rrCountyCommentsUA,
@@ -71,26 +91,42 @@ export const cars: Array<Record<string, MockCar>> = [
   },
   {
     'en-US': {
-      car: honda,
-      comments: hondaComments,
+      car: hondaEN,
+      comments: hondaCommentsEN,
+    },
+    'uk-UA': {
+      car: hondaUA,
+      comments: hondaCommentsUA,
     },
   },
   {
     'en-US': {
-      car: mini,
-      comments: miniComments,
+      car: miniEN,
+      comments: miniCommentsEN,
+    },
+    'uk-UA': {
+      car: miniUA,
+      comments: miniCommentsUA,
     },
   },
   {
     'en-US': {
-      car: rangeRover,
-      comments: rangeRoverComments,
+      car: rangeRoverEN,
+      comments: rangeRoverCommentsEN,
+    },
+    'uk-UA': {
+      car: rangeRoverUA,
+      comments: rangeRoverCommentsUA,
     },
   },
   {
     'en-US': {
-      car: ford,
-      comments: fordComments,
+      car: fordEN,
+      comments: fordCommentsEN,
+    },
+    'uk-UA': {
+      car: fordUA,
+      comments: fordCommentsUA,
     },
   },
 ];

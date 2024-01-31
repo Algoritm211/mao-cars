@@ -4,7 +4,7 @@ import { Car, Comment } from '@/maocars-client/schemas';
 
 import { usersShort } from '@/mocks/demo/data-buckets/users-short';
 
-export const ford: Car = {
+export const fordEN: Car = {
   id: '8',
   title: '2023 Ford F-450 Super Duty Lariat 4x4',
   sub_title: '6.7-Liter Turbodiesel V8, 4WD, FX4 Off-Road Package',
@@ -79,7 +79,7 @@ The attached Carfax history report shows that pre-delivery, maintenance, and saf
   },
 };
 
-export const fordComments: Comment[] = [
+export const fordCommentsEN: Comment[] = [
   {
     id: faker.string.uuid(),
     amount: 83_000,
@@ -134,6 +134,140 @@ export const fordComments: Comment[] = [
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
     text: `thats a big boy`,
+    user: faker.helpers.arrayElement(usersShort),
+  },
+];
+
+export const fordUA: Car = {
+  id: '8',
+  title: '2023 Ford F-450 Super Duty Lariat 4x4',
+  sub_title: '6.7-літровий турбодізель, повний привід',
+  engine: '6.7L V8',
+  body_style: 'truck',
+  drive_train: 'all-drive',
+  make: 'Ford',
+  model: 'Super Duty',
+  vin: 'WMW73DH09N2R96120',
+  seller_type: 'private',
+  transmission: 'automatic',
+  year: 2023,
+  title_status: 'Clean (NC)',
+  transmission_details: '',
+  exterior_color: 'Сірий',
+  interior_color: 'Чорний',
+  location: 'Київ',
+  mileage: 1_100,
+  photos: [
+    '/demo/cars/ford/car-photos/1.jpeg',
+    '/demo/cars/ford/car-photos/2.jpeg',
+    '/demo/cars/ford/car-photos/3.jpeg',
+    '/demo/cars/ford/car-photos/4.jpeg',
+    '/demo/cars/ford/car-photos/5.jpeg',
+    '/demo/cars/ford/car-photos/6.jpeg',
+    '/demo/cars/ford/car-photos/7.jpeg',
+    '/demo/cars/ford/car-photos/8.jpeg',
+  ],
+  sections: {
+    highlights: `
+**ЦЕ...** - це 2023 Ford F-450 Super Duty Lariat 4x4, завершений в вугільно-сірому кольорі з чорним внутрішнім.
+
+- Прикріплений звіт про історію аварій Carfax не показує жодних аварій або розбіжностей в пробігу за короткий час існування цього F-450; він також підтверджує, що це автомобіль з одним власником.
+- Згідно з віконним стікером, зображеним в фотогалереї, цей F-450 мав початковий MSRP в розмірі $83,545, і він обладнаний пакетом FX4 Off-Road, 19,5-дюймовими колесами, подвійними задніми колесами, електричними підйомниками, скляним люком з подвійними панелями, шкіряним оббивкою, електрично регульованими, обігріваними і охолоджуваними передніми сидіннями, обігріваними задніми сидіннями, обігрівом керма, електрично керованим заднім вікном, двозонним автоматичним клімат-контролем, аудіосистемою Bang & Olufsen, адаптивним круїз-контролем, моніторингом сліпих зон та більшим, як описано нижче. Єдине змінюване продавцем - це тонування вікон.
+- Випущений на 2023 рік, п'яте покоління серії F Super Duty пропонується в різноманітних конфігураціях з кількома рівнями технічних і комфортних функцій. Пропонується з двома різними версіями дизельного V8 Power Stroke об'ємом 6,7 літра від Ford, F-450 має найкращий в класі потужність на буксир призначений для буксира з вагою до 40,000 фунтів, коли він поєднується з фургоном gooseneck.
+- Потужність надходить від дизельного V8 Power Stroke об'ємом 6,7 літра від Ford, оціненою в 475 кінських сил і 1,050 фунт-футів крутного моменту. Потужність надсилається на чотири задні колеса або всі шість коліс за допомогою 10-ступінчастої автоматичної коробки передач і двоступеневої коробки передач.
+`,
+    equipment: `
+У фотогалереї надано віконний стікер, а частковий список значущого обладнання включає:
+
+- Пакет FX4 Off-Road (система контролю спуску зі схилу, амортизатори з налаштуванням для бездоріжжя, захисні щити для роздаткової коробки та бака для палива, наклейки FX4 Off-Road на кузові)
+- Колеса діаметром 19,5 дюйма
+- Двоступенева роздаткова коробка
+- LED-фари
+- Подвійні задні колеса
+- Електричні підйомники
+- Бризкові ковпачки передніх та задніх коліс
+- Скляний люк з подвійними панелями
+- Шкіряне оббивання
+- Електрично регульовані, обігрівані та охолоджувані передні сидіння
+- Обігрівані задні сидіння
+- Обігрів керма
+- Електрично кероване заднє вікно
+- Двозонний автоматичний клімат-контроль
+- Sync 4 з екраном інфотейнменту 12 дюймів
+- 12-дюймовий цифровий приладовий щит
+- Аудіосистема Bang & Olufsen
+- Камера 360 градусів
+- Моніторинг сліпих зон з попередженням про рух на перехресті
+`,
+    modifications: `
+- Тоновані вікна
+`,
+    recent_service_history: `
+Доданий історичний звіт Carfax показує, що перед поставкою, технічне обслуговування та перевірки безпеки були проведені у квітні 2023 року.
+`,
+    other_items: `    
+- 2 ключа
+`,
+    ownership_history: 'Продавець придбав цей новий F-450 у травні 2023 року.',
+    videos: ['https://www.youtube.com/embed/1A7_ublxcps'],
+  },
+};
+
+export const fordCommentsUA: Comment[] = [
+  {
+    id: faker.string.uuid(),
+    amount: 83_000,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: `Ця цифра крутного моменту БЕЗУМНА!`,
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 70_500,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: `Ця вантажівка виглядає добре з усіх боків`,
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: 'Навіщо вам купувати вантажівку, а через місяць виставляти її на аукціон?',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 70_000,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: `Велика тачка`,
     user: faker.helpers.arrayElement(usersShort),
   },
 ];

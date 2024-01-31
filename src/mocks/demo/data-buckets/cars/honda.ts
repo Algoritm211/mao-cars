@@ -6,7 +6,7 @@ import { usersShort } from '@/mocks/demo/data-buckets/users-short';
 import { generateAuction } from '@/mocks/demo/utils/generate-auction';
 import { generateShortAuction } from '@/mocks/demo/utils/generate-short-auction';
 
-export const honda: Car = {
+export const hondaEN: Car = {
   id: '5',
   title: '1998 Honda Integra Type R Sedan',
   sub_title: '"98 Spec" Japanese-Market Model, 5-Speed Manual, Mostly Unmodified, U.S. Title',
@@ -99,7 +99,7 @@ export const honda: Car = {
   },
 };
 
-export const hondaComments: Comment[] = [
+export const hondaCommentsEN: Comment[] = [
   {
     id: faker.string.uuid(),
     amount: 10_900,
@@ -130,6 +130,134 @@ export const hondaComments: Comment[] = [
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
     text: `Is the car titled in Canada or the states?`,
+    user: faker.helpers.arrayElement(usersShort),
+  },
+];
+
+export const hondaUA: Car = {
+  id: '5',
+  title: '1998 Honda Integra Type R Sedan',
+  sub_title: '"Автомобіль для японського ринку, механічна трансмісія, не модифікований',
+  engine: '1.8L I4',
+  body_style: 'sedan',
+  drive_train: 'front',
+  make: 'Honda',
+  model: 'Integra',
+  vin: 'DB81300826',
+  seller_type: 'private',
+  transmission: 'automatic',
+  year: 1998,
+  title_status: 'Clean (QC, Canada)',
+  transmission_details: '',
+  exterior_color: 'Білий',
+  interior_color: 'Чорний',
+  location: 'Запорізька область',
+  mileage: 87_600,
+  photos: [
+    '/demo/cars/honda/car-photos/1.jpeg',
+    '/demo/cars/honda/car-photos/2.jpeg',
+    '/demo/cars/honda/car-photos/3.jpeg',
+    '/demo/cars/honda/car-photos/4.jpeg',
+    '/demo/cars/honda/car-photos/5.jpeg',
+    '/demo/cars/honda/car-photos/6.jpeg',
+    '/demo/cars/honda/car-photos/7.jpeg',
+    '/demo/cars/honda/car-photos/8.jpeg',
+    '/demo/cars/honda/car-photos/9.jpeg',
+  ],
+  sections: {
+    highlights: `
+**ЦЕ...** - це седан Honda Integra Type R 1998 року випуску. Він виконаний в кольорі Championship White з чорним салоном.
+
+- Цей Integra Type R є праворучним седаном японської специфікації, зареєстрованим та розташованим в Квебеку, Канада. Він оснащений метричною приладовою панеллю, а одометр показує приблизно 141 000 кілометрів, що становить приблизно 87 700 миль.
+- Звіт історії автомобіля японського Car VX не показує жодних аварій або розбіжностей в показаннях одометра в минулому цього автомобіля.
+
+**Заводське обладнання включає:**
+- 16-дюймові диски
+- Обмежений змійовик
+- Задній спойлер
+- Передні сидіння Recaro
+- Кермо MOMO
+- Кондиціонер
+- Електропривід вікон, дверей та дзеркал.
+
+**Модифікації, про які повідомив продавець, обмежуються:**
+- Головний блок Pioneer Carrozzeria
+- Післямаркетні твітери
+- Тоновані вікна.
+- Honda представила третє покоління моделі Integra в 1993 році в рідній Японії. Продавалася під брендом Acura в Сполучених Штатах, вона пропонувалася з двома або чотирма дверима і отримала визнання за свій швидкозапускний двигун і керованість. У 1995 році була представлена варіант версії Type R, яка пропонувала ентузіастам більше продуктивності та ще кращу керованість, ніж інші варіанти Integra.
+- Потужність надається рядним 4-циліндровим двигуном об'ємом 1,8 л B18C, з потужністю 197 кінських сил та крутним моментом 133 фунт-футів. Потужність передається на передні колеса за допомогою 5-ступінчастої механічної коробки передач.
+`,
+    equipment: `
+- 16-дюймові диски
+- Обмежений змійовик
+- Задній спойлер
+- Тканинна оббивка салону
+- Передні сидіння Recaro
+- Кермо MOMO
+- Вигляд внутрішніх обшивок під карбонове волокно
+- Кондиціонер
+- Електропривід вікон, замків та дзеркал
+`,
+    modifications: `
+- Головний блок Pioneer Carrozzeria DEH-5300
+- Тоновані вікна
+`,
+    known_flaws: `
+- Деякі сколи та подряпини на зовнішній поверхні
+- Вм'ятини на капоті
+- Згини та знос на передніх сидіннях
+- Деякий знос на внутрішніх точках дотику та обшивкових панелях; пошкоджена панель за кермом
+- Деяка корозія на компонентах підвіски та кріплення у двигунному відсіку
+`,
+    recent_service_history: `
+Продавець звітує, що в 2023 році були виконані наступні роботи:
+
+- Перебудова трансмісії (замінено всі підшипники та синхронізатори)
+- Заміна кришки клапана, прокладки кришки клапана та свічок запалювання
+`,
+    other_items: `    
+- 1 ключ
+`,
+    ownership_history: 'Продавець придбав цей Integra Type R в 2023 році.',
+    videos: [
+      'https://www.youtube.com/embed/wRsyksIXvDk',
+      'https://www.youtube.com/embed/81R_v8pC56Q',
+      'https://www.youtube.com/embed/C0CKyvZxqAQ',
+    ],
+  },
+};
+
+export const hondaCommentsUA: Comment[] = [
+  {
+    id: faker.string.uuid(),
+    amount: 10_900,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: 'Неймовірно! Одного дня я куплю себе таку',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 5900,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: `Де конкретно знаходиться машина?`,
     user: faker.helpers.arrayElement(usersShort),
   },
 ];
