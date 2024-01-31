@@ -1,6 +1,6 @@
 import { Car, Comment } from '@/maocars-client/schemas';
 
-import { bmw, bmwComments } from '@/mocks/demo/data-buckets/cars/bmw';
+import { bmwEN, bmwCommentsEN, bmwUA, bmwCommentsUA } from '@/mocks/demo/data-buckets/cars/bmwEN';
 import { ford, fordComments } from '@/mocks/demo/data-buckets/cars/ford';
 import { honda, hondaComments } from '@/mocks/demo/data-buckets/cars/honda';
 import {
@@ -10,9 +10,19 @@ import {
   jaguarCommentsUA,
 } from '@/mocks/demo/data-buckets/cars/jaguar';
 import { mini, miniComments } from '@/mocks/demo/data-buckets/cars/mini';
-import { nissan, nissanComments } from '@/mocks/demo/data-buckets/cars/nissan';
+import {
+  nissanEN,
+  nissanCommentsEN,
+  nissanUA,
+  nissanCommentsUA,
+} from '@/mocks/demo/data-buckets/cars/nissanEN';
 import { rangeRover, rangeRoverComments } from '@/mocks/demo/data-buckets/cars/range-rover';
-import { rrCounty, rrCountyComments } from '@/mocks/demo/data-buckets/cars/rr-county';
+import {
+  rrCountyCommentsEN,
+  rrCountyCommentsUA,
+  rrCountyEN,
+  rrCountyUA,
+} from '@/mocks/demo/data-buckets/cars/rr-county';
 
 interface MockCar {
   car: Car;
@@ -31,20 +41,32 @@ export const cars: Array<Record<string, MockCar>> = [
   },
   {
     'en-US': {
-      car: rrCounty,
-      comments: rrCountyComments,
+      car: rrCountyEN,
+      comments: rrCountyCommentsEN,
+    },
+    'uk-UA': {
+      car: rrCountyUA,
+      comments: rrCountyCommentsUA,
     },
   },
   {
     'en-US': {
-      car: bmw,
-      comments: bmwComments,
+      car: bmwEN,
+      comments: bmwCommentsEN,
+    },
+    'uk-UA': {
+      car: bmwUA,
+      comments: bmwCommentsUA,
     },
   },
   {
     'en-US': {
-      car: nissan,
-      comments: nissanComments,
+      car: nissanEN,
+      comments: nissanCommentsEN,
+    },
+    'uk-UA': {
+      car: nissanUA,
+      comments: nissanCommentsUA,
     },
   },
   {

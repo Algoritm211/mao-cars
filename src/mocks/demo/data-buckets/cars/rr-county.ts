@@ -6,7 +6,7 @@ import { usersShort } from '@/mocks/demo/data-buckets/users-short';
 import { generateAuction } from '@/mocks/demo/utils/generate-auction';
 import { generateShortAuction } from '@/mocks/demo/utils/generate-short-auction';
 
-export const rrCounty: Car = {
+export const rrCountyEN: Car = {
   id: '2',
   title: '1989 Range Rover County',
   sub_title: 'V8 Power, 4WD, Mostly Unmodified, Western-Owned Until 2021',
@@ -108,7 +108,7 @@ The seller reports that the battery and the throttle position sensor were replac
   },
 };
 
-export const rrCountyComments: Comment[] = [
+export const rrCountyCommentsEN: Comment[] = [
   {
     id: faker.string.uuid(),
     created_at: faker.date.future().toISOString(),
@@ -147,6 +147,151 @@ export const rrCountyComments: Comment[] = [
     upvotes: faker.number.int({ min: 5, max: 10 }),
     type: 'text',
     text: 'Nice classic Rangie. That interior looks minty.',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+];
+
+export const rrCountyUA: Car = {
+  id: '2',
+  title: '1989 Range Rover County',
+  sub_title: 'Двигун V8, Повний привід',
+  engine: '3.9L V8',
+  body_style: 'suv',
+  drive_train: 'all-drive',
+  make: 'Land Rover',
+  model: 'Range Rover',
+  vin: 'SALHV124XKA358075',
+  seller_type: 'private',
+  transmission: 'automatic',
+  year: 1989,
+  title_status: 'Clean (NY)',
+  transmission_details: '',
+  exterior_color: 'Білий',
+  interior_color: 'Бежевий',
+  location: 'Житомир',
+  mileage: 76_100,
+  photos: [
+    '/demo/cars/rr-county/car-photos/1.jpeg',
+    '/demo/cars/rr-county/car-photos/2.jpeg',
+    '/demo/cars/rr-county/car-photos/3.jpeg',
+    '/demo/cars/rr-county/car-photos/4.jpeg',
+    '/demo/cars/rr-county/car-photos/5.jpeg',
+    '/demo/cars/rr-county/car-photos/6.jpeg',
+    '/demo/cars/rr-county/car-photos/6.jpeg',
+    '/demo/cars/rr-county/car-photos/7.jpeg',
+    '/demo/cars/rr-county/car-photos/8.jpeg',
+  ],
+  sections: {
+    highlights: `
+**ОЦЕ...** - 1989 Range Rover County Завершений у білому кольорі з бежевим салоном. Приєднаний звіт Carfax не вказує на жодні аварії в минулому цього Range Rover. Також показує власність в Західних штатах до 2021 року.
+
+**Заводське обладнання включає:**
+  - 16-дюймові колеса
+  - Передача з двома швидкостями
+  - Протитуманні фари
+  - Задній склоочисник
+  - Фаркоп
+  - Скляний люк
+  - Дерев'яна обробка салону
+  - Шкіряний оббив
+  - Регульовані електроприводом передні сидіння
+  - Електроприводом вікна
+  - Кондиціонер
+  - Круїз-контроль.
+
+**Модифікації, повідомлені продавцем:**
+- Чорні фарбовані колеса
+- Аудіосистема Alpine
+- Комплект підлогових килимків Armor All для будь-якої погоди.
+`,
+    equipment: `
+- 16-дюймові колеса
+- Коробка передач з двома швидкостями
+- Протитуманні фари з захистом
+- Задній склоочисник
+- Приймач фаркопа
+- Скляний люк
+- Дерев'яна обробка салону
+- Шкіряний оббив
+- Регульовані електроприводом передні сидіння
+- Електроприводом вікна
+- Кондиціонер
+- Круїз-контроль
+`,
+    modifications: `
+- Колеса, забарвлені чорним кольором
+- Автомагнітола Alpine
+- Підлогові килимки Armor All для будь-якої погоди
+`,
+    known_flaws: `
+- Звіт Carfax також показує неузгодженість пробігу у січні 2007 року. Він не надає додаткових деталей. Одометр наразі показує приблизно 76,100 миль, але загальний пробіг невідомий.
+- Подряпини, подряпини та вдари на зовнішній частині
+- Корозія на передньому буксирному крюку
+- Деяка корозія на петлях дверей
+- Подряпини та тріщини на задніх фарах
+- Деяка корозія на пасажирському бічному кварталі та дверях
+- Деякі подряпини на колесах
+- Деякий знос на передніх сидіннях
+- Деякий знос на кермі
+- Тріщини в пластику на приладовій панелі
+- Деяка корозія на компонентах підкріплення
+`,
+    recent_service_history: `
+Продавець повідомляє, що акумулятор та датчик положення дросельної заслонки були замінені під час їх власності. Прикріплений звіт Carfax показує, що були виконані наступні роботи:
+
+- Січень 2017: Замінено насос гідропідсилювача керма, замінено ремінь серпентину
+- Червень 2016: Замінено передні та задні амортизатори, замінено шланги/лінії гідропідсилювача керма, замінено шланг/лінію кондиціонера, замінено свічки та проводи запалювання, замінено капот розподільника, замінено приводний ремінь
+`,
+    other_items: `1 ключ`,
+    ownership_history: `Продавець придбав цей Range Rover у грудні 2021 року і додав мінімальний пробіг з того часу.`,
+    videos: [
+      'https://www.youtube.com/embed/5Lx2otyZqdw',
+      'https://www.youtube.com/embed/mxvhAxpQe3w',
+      'https://www.youtube.com/embed/HgMFOJBaUUw',
+      'https://www.youtube.com/embed/Iniafa7YgyY',
+    ],
+  },
+};
+
+export const rrCountyCommentsUA: Comment[] = [
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: `Не впевнений на рахунок шин, але вони виглядають досить новими.`,
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 24_500,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 23_890,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    amount: 17_320,
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'bid',
+    user: faker.helpers.arrayElement(usersShort),
+  },
+  {
+    id: faker.string.uuid(),
+    created_at: faker.date.future().toISOString(),
+    upvotes: faker.number.int({ min: 5, max: 10 }),
+    type: 'text',
+    text: 'Гарний класичний Ровер. Салон виглядає гарно',
     user: faker.helpers.arrayElement(usersShort),
   },
 ];
