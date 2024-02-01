@@ -7,6 +7,8 @@ export interface SpritesMap {
     | 'calendar'
     | 'chevron-down'
     | 'clock'
+    | 'copied-to-clipboard'
+    | 'copy-to-clipboard'
     | 'currency-dollar'
     | 'error-label'
     | 'eye'
@@ -37,6 +39,8 @@ export const SPRITES_META: {
     | 'calendar'
     | 'chevron-down'
     | 'clock'
+    | 'copied-to-clipboard'
+    | 'copy-to-clipboard'
     | 'currency-dollar'
     | 'error-label'
     | 'eye'
@@ -67,6 +71,8 @@ export const SPRITES_META: {
     'calendar',
     'chevron-down',
     'clock',
+    'copied-to-clipboard',
+    'copy-to-clipboard',
     'currency-dollar',
     'error-label',
     'eye',

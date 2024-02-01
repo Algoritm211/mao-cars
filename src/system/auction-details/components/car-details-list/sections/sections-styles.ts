@@ -18,7 +18,7 @@ export const dtStyles = cva(
 
 export const ddStyles = cva(
   `
-  flex items-center pl-4 border-gray-200
+  flex items-center px-2 border-gray-200
 `,
   {
     variants: {

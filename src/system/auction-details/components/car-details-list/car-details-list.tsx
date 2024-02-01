@@ -24,6 +24,7 @@ export const CarDetailsList: React.FC<Props> = ({ auction }) => {
         return (
           <Component
             key={name}
+            sectionName={name}
             title={t(name)}
             content={content as UserShort & string}
             isCorner={index !== arr.length - 1}
