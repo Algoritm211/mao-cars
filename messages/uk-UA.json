@@ -93,6 +93,11 @@
           "seller_type": {
             "private": "Власник",
             "dealer": "Дилер"
+          },
+          "drive_train": {
+            "all-drive": "Повний",
+            "rear": "Задній",
+            "front": "Передній"
           }
         }
       },

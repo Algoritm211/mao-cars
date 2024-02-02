@@ -45,6 +45,10 @@ export const TextSection: React.FC<Props> = ({ title, content, isCorner, section
       return t(`seller_type.${content as keyof DetailsTranslations['seller_type']}`);
     }
 
+    if (sectionName === 'drive_train') {
+      return t(`drive_train.${content as keyof DetailsTranslations['drive_train']}`);
+    }
+
     return content;
   };
   return (

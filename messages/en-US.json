@@ -93,6 +93,11 @@
           "seller_type": {
             "private": "Private",
             "dealer": "Dealer"
+          },
+          "drive_train": {
+            "all-drive": "All drive",
+            "rear": "Rear",
+            "front": "Front"
           }
         }
       },
