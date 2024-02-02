@@ -170,7 +170,7 @@ export const jaguarUA: Car = {
   transmission_details: '',
   exterior_color: 'Чорний оксамит',
   interior_color: 'Чорний',
-  location: 'Albuquerque, NM 87106',
+  location: 'Київська область',
   mileage: 55_300,
   photos: [
     '/demo/cars/jaguar/car-photos/1.jpeg',

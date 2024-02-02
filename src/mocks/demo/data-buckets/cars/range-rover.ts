@@ -21,7 +21,7 @@ export const rangeRoverEN: Car = {
   transmission_details: '',
   exterior_color: 'Varesine Blue Metallic',
   interior_color: 'Perlino',
-  location: 'Дніпро',
+  location: 'Mesa, AZ 85212',
   mileage: 9_400,
   photos: [
     '/demo/cars/range-rover/car-photos/1.jpeg',
@@ -180,7 +180,7 @@ export const rangeRoverUA: Car = {
   transmission_details: '',
   exterior_color: 'Синій металік',
   interior_color: 'Білий перламутр',
-  location: 'Mesa, AZ 85212',
+  location: 'Дніпропетровська область',
   mileage: 9_400,
   photos: [
     '/demo/cars/range-rover/car-photos/1.jpeg',
