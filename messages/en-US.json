@@ -59,20 +59,42 @@
         "place_bid": "Place Bid"
       },
       "car_details_list": {
-        "make": "Make",
-        "model": "Model",
-        "mileage": "Mileage",
-        "vin": "VIN",
-        "title_status": "Title Status",
-        "location": "Location",
-        "seller": "Seller",
-        "engine": "Engine",
-        "drive_train": "Drivetrain",
-        "transmission": "Transmission",
-        "body_style": "Body Style",
-        "exterior_color": "Exterior Color",
-        "interior_color": "Interior Color",
-        "seller_type": "Seller type"
+        "titles": {
+          "make": "Make",
+          "model": "Model",
+          "mileage": "Mileage",
+          "vin": "VIN",
+          "title_status": "Title Status",
+          "location": "Location",
+          "seller": "Seller",
+          "engine": "Engine",
+          "drive_train": "Drivetrain",
+          "transmission": "Transmission",
+          "body_style": "Body Style",
+          "exterior_color": "Exterior Color",
+          "interior_color": "Interior Color",
+          "seller_type": "Seller type"
+        },
+        "details": {
+          "transmission": {
+            "automatic": "Automatic",
+            "manual": "Manual"
+          },
+          "body_style": {
+            "coupe": "Coupe",
+            "convertible": "Convertible",
+            "hatchback": "Hatchback",
+            "sedan": "Sedan",
+            "suv": "SUV",
+            "truck": "Truck",
+            "van": "Van",
+            "wagon": "Wagon"
+          },
+          "seller_type": {
+            "private": "Private",
+            "dealer": "Dealer"
+          }
+        }
       },
       "car_info_sections": {
         "equipment":"Equipment",

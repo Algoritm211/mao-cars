@@ -10,6 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<GetAuc
   res.status(200).json({
     count: 20,
     total: 350,
-    auctions: auctions['en-US'],
+    auctions: auctions[language],
   });
 }

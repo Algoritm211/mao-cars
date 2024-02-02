@@ -59,20 +59,42 @@
         "place_bid": "Зробити ставку"
       },
       "car_details_list": {
-        "make": "Марка",
-        "model": "Модель",
-        "mileage": "Пробіг",
-        "vin": "VIN",
-        "title_status": "Статус",
-        "location": "Місце знаходження",
-        "seller": "Продавець",
-        "engine": "Двигун",
-        "drive_train": "Привід",
-        "transmission": "Трансмісія",
-        "body_style": "Тип кузова",
-        "exterior_color": "Колір екстерʼєра",
-        "interior_color": "Колір інтерʼєра",
-        "seller_type": "Тип власника"
+        "titles": {
+          "make": "Марка",
+          "model": "Модель",
+          "mileage": "Пробіг",
+          "vin": "VIN",
+          "title_status": "Статус",
+          "location": "Місце знаходження",
+          "seller": "Продавець",
+          "engine": "Двигун",
+          "drive_train": "Привід",
+          "transmission": "Трансмісія",
+          "body_style": "Тип кузова",
+          "exterior_color": "Колір екстерʼєра",
+          "interior_color": "Колір інтерʼєра",
+          "seller_type": "Тип власника"
+        },
+        "details": {
+          "transmission": {
+            "automatic": "Автоматична",
+            "manual": "Механічна"
+          },
+          "body_style": {
+            "coupe": "Купе",
+            "convertible": "Кабріолет",
+            "hatchback": "Хетчбек",
+            "sedan": "Седан",
+            "suv": "Позашляховик",
+            "truck": "Вантажівка",
+            "van": "Фургон",
+            "wagon": "Універсал"
+          },
+          "seller_type": {
+            "private": "Власник",
+            "dealer": "Дилер"
+          }
+        }
       },
       "car_info_sections": {
         "equipment": "Обладнання",
