@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
+import { ReportSection } from '@/system/auction-details/components/report-section/report-section';
+
 import { useGetAuctionById } from '@/maocars-client/maocars';
 
 import { EntityContainer } from '@/shared/components';
@@ -25,6 +27,7 @@ export const AuctionDetails = () => {
         {(auction) => {
           return (
             <React.Fragment>
+              <ReportSection />
               <CarDetailsHeader
                 title={auction.listing?.title}
                 subTitle={auction.listing?.sub_title}

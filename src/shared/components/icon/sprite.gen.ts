@@ -28,7 +28,9 @@ export interface SpritesMap {
     | 'twitter'
     | 'upload-file'
     | 'user'
-    | 'youtube';
+    | 'youtube'
+    | 'check-circle'
+    | 'x-circle';
 }
 export const SPRITES_META: {
   sprite: Array<
@@ -61,6 +63,8 @@ export const SPRITES_META: {
     | 'upload-file'
     | 'user'
     | 'youtube'
+    | 'check-circle'
+    | 'x-circle'
   >;
 } = {
   sprite: [
@@ -93,5 +97,7 @@ export const SPRITES_META: {
     'upload-file',
     'user',
     'youtube',
+    'check-circle',
+    'x-circle',
   ],
 };
