@@ -137,6 +137,19 @@
           "bid": "Bid: {amount}",
           "reply": "Reply"
         }
+      },
+      "report": {
+        "report_types": "Report types",
+        "main_specs": "Main characteristics and configuration data",
+        "mileage_history": "Mileage history and mileage twist check",
+        "car_accidents": "Car accidents history in USA, Europe and Ukraine",
+        "insurance_availability": "Insurance availability",
+        "registration_history": "Registration history in USA, Europe and Ukraine",
+        "owner_verification": "Owner verification in USA, Europe and Ukraine",
+        "hijackings_arrests": "Hijackings and arrests",
+        "repairs_dealer": "Repairs from an authorized dealer",
+        "service_history": "Service history",
+        "price": "Price"
       }
     }
   },

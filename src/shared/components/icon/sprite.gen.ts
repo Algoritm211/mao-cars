@@ -5,6 +5,7 @@ export interface SpritesMap {
     | 'arrow-right'
     | 'artificial-intelligence'
     | 'calendar'
+    | 'check-circle'
     | 'chevron-down'
     | 'clock'
     | 'copied-to-clipboard'
@@ -28,9 +29,8 @@ export interface SpritesMap {
     | 'twitter'
     | 'upload-file'
     | 'user'
-    | 'youtube'
-    | 'check-circle'
-    | 'x-circle';
+    | 'x-circle'
+    | 'youtube';
 }
 export const SPRITES_META: {
   sprite: Array<
@@ -39,6 +39,7 @@ export const SPRITES_META: {
     | 'arrow-right'
     | 'artificial-intelligence'
     | 'calendar'
+    | 'check-circle'
     | 'chevron-down'
     | 'clock'
     | 'copied-to-clipboard'
@@ -62,9 +63,8 @@ export const SPRITES_META: {
     | 'twitter'
     | 'upload-file'
     | 'user'
-    | 'youtube'
-    | 'check-circle'
     | 'x-circle'
+    | 'youtube'
   >;
 } = {
   sprite: [
@@ -73,6 +73,7 @@ export const SPRITES_META: {
     'arrow-right',
     'artificial-intelligence',
     'calendar',
+    'check-circle',
     'chevron-down',
     'clock',
     'copied-to-clipboard',
@@ -96,8 +97,7 @@ export const SPRITES_META: {
     'twitter',
     'upload-file',
     'user',
-    'youtube',
-    'check-circle',
     'x-circle',
+    'youtube',
   ],
 };

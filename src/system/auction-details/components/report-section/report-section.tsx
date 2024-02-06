@@ -1,10 +1,26 @@
 import { clsx } from 'clsx';
+import { useTranslations } from 'next-intl';
 import React from 'react';
+
+import { reportSections } from '@/system/auction-details/components/report-section/models/report-sections';
 
 import { Icon } from '@/shared/components';
 
+const getIcon = (isPositive: boolean) => {
+  return (
+    <Icon
+      name={isPositive ? 'check-circle' : 'x-circle'}
+      className={clsx('inline w-7 h-7', {
+        'text-green-600': isPositive,
+        'text-red-600': !isPositive,
+      })}
+    />
+  );
+};
+
 export const ReportSection = () => {
-  const iconClassName = 'inline w-7 h-7';
+  const t = useTranslations('Auction_Page.auction_details.report');
+
   return (
     <React.Fragment>
       <div className="divider px-1">Special offer</div>
@@ -18,33 +34,13 @@ export const ReportSection = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>Основные характеристики и данные о коплектации</th>
-              <td className="text-center">
-                <Icon name="check-circle" className={clsx(iconClassName, 'text-green-600')} />
-              </td>
-              <td className="text-center">
-                <Icon name="check-circle" className={clsx(iconClassName, 'text-green-600')} />
-              </td>
-            </tr>
-            <tr>
-              <th>Проверка на скручивание пробега</th>
-              <td className="text-center">
-                <Icon name="check-circle" className={clsx(iconClassName, 'text-green-600')} />
-              </td>
-              <td className="text-center">
-                <Icon name="check-circle" className={clsx(iconClassName, 'text-green-600')} />
-              </td>
-            </tr>
-            <tr>
-              <th>Наличие страхового полиса</th>
-              <td className="text-center">
-                <Icon name="x-circle" className={clsx(iconClassName, 'text-red-600')} />
-              </td>
-              <td className="text-center">
-                <Icon name="check-circle" className={clsx(iconClassName, 'text-green-600')} />
-              </td>
-            </tr>
+            {reportSections.map((reportElem) => (
+              <tr key={reportElem.labelKey}>
+                <th>{t(reportElem.labelKey)}</th>
+                <td className="text-center">{getIcon(reportElem.isAvailablePlus)}</td>
+                <td className="text-center">{getIcon(reportElem.isAvailableMax)}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
