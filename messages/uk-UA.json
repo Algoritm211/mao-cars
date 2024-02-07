@@ -149,7 +149,9 @@
         "hijackings_arrests": "Наявність угонів та арестів",
         "repairs_dealer": "Ремонти від офіційного дилера",
         "service_history": "Історія сервісного обслуговування",
-        "price": "Ціна"
+        "price": "Ціна",
+        "buy_vin_plus": "Замовити VIN+",
+        "buy_vin_max": "Замовити VIN MAX"
       }
     }
   },
