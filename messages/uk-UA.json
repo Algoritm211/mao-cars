@@ -139,7 +139,9 @@
         }
       },
       "report": {
+        "special_offer": "Спеціальна пропозиція",
         "report_types": "Тип звіту",
+        "report_example": "Приклад",
         "main_specs": "Основні характеристики та дані про комплектацію",
         "mileage_history": "Історія пробігу та перевірка на скручування",
         "car_accidents": "ДТП в США, Європі та Україні",
@@ -151,7 +153,8 @@
         "service_history": "Історія сервісного обслуговування",
         "price": "Ціна",
         "buy_vin_plus": "Замовити VIN+",
-        "buy_vin_max": "Замовити VIN MAX"
+        "buy_vin_max": "Замовити VIN MAX",
+        "check_your_car": "Перевірте цю машину"
       }
     }
   },

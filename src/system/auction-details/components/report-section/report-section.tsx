@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import React from 'react';
 
 import { reportSections } from '@/system/auction-details/components/report-section/models/report-sections';
@@ -24,7 +25,7 @@ export const ReportSection = () => {
 
   return (
     <React.Fragment>
-      <div className="divider px-1">Special offer</div>
+      <div className="divider px-1">{t('special_offer')}</div>
       <div className="overflow-x-auto text-center">
         <table className="table">
           <thead>
@@ -35,6 +36,21 @@ export const ReportSection = () => {
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <th className="text-lg">{t('report_types')}</th>
+              <td className="text-center">
+                <a href="/reports/vin_plus_example.pdf" className="btn">
+                  {t('report_example')}
+                  <Icon name="link" className="hidden lg:inline w-4 h-4" />
+                </a>
+              </td>
+              <td className="text-center">
+                <a href="/reports/vin_max_example.pdf" className="btn">
+                  {t('report_example')}
+                  <Icon name="link" className="hidden lg:inline w-4 h-4" />
+                </a>
+              </td>
+            </tr>
             {reportSections.map((reportElem) => (
               <tr key={reportElem.labelKey}>
                 <th className="text-lg">{t(reportElem.labelKey)}</th>
@@ -63,7 +79,7 @@ export const ReportSection = () => {
         <button className={button({ className: 'flex-grow' })}>{t('buy_vin_plus')}</button>
         <button className={button({ className: 'flex-grow' })}>{t('buy_vin_max')}</button>
       </div>
-      <div className="divider px-1">Check your car</div>
+      <div className="divider px-1">{t('check_your_car')}</div>
     </React.Fragment>
   );
 };

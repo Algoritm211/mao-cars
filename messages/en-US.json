@@ -139,6 +139,8 @@
         }
       },
       "report": {
+        "special_offer": "Special Offer",
+        "report_example": "Example",
         "report_types": "Report types",
         "main_specs": "Main characteristics and configuration data",
         "mileage_history": "Mileage history and mileage twist check",
@@ -151,7 +153,8 @@
         "service_history": "Service history",
         "price": "Price",
         "buy_vin_plus": "Buy VIN +",
-        "buy_vin_max": "Buy VIN MAX"
+        "buy_vin_max": "Buy VIN MAX",
+        "check_your_car": "Check the car"
       }
     }
   },
