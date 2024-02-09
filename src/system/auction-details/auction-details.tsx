@@ -27,7 +27,6 @@ export const AuctionDetails = () => {
         {(auction) => {
           return (
             <React.Fragment>
-              <ReportSection />
               <CarDetailsHeader
                 title={auction.listing?.title}
                 subTitle={auction.listing?.sub_title}
@@ -37,6 +36,7 @@ export const AuctionDetails = () => {
               <CarDetailsList auction={auction!} />
               <CarInfoSections sections={auction.listing?.sections!} />
               <AuctionStatistics auction={auction!} />
+              <ReportSection />
               <AuctionComments sellerId={auction?.seller.id || ''} />
             </React.Fragment>
           );

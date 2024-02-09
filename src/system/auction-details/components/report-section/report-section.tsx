@@ -1,6 +1,5 @@
 import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import React from 'react';
 
 import { reportSections } from '@/system/auction-details/components/report-section/models/report-sections';
@@ -22,6 +21,11 @@ const getIcon = (isPositive: boolean) => {
 
 export const ReportSection = () => {
   const t = useTranslations('Auction_Page.auction_details.report');
+
+  const notImplementedStub = () => {
+    console.log('Not implemented');
+    alert('Not implemented for now, but later you will have an opportunity to buy');
+  };
 
   return (
     <React.Fragment>
@@ -66,18 +70,26 @@ export const ReportSection = () => {
             <tr className="hidden md:table-row">
               <th></th>
               <td className="text-center">
-                <button className={button()}>{t('buy_vin_plus')}</button>
+                <button className={button()} onClick={notImplementedStub}>
+                  {t('buy_vin_plus')}
+                </button>
               </td>
               <td className="text-center">
-                <button className={button()}>{t('buy_vin_max')}</button>
+                <button className={button()} onClick={notImplementedStub}>
+                  {t('buy_vin_max')}
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
       <div className="flex gap-2 my-2 md:hidden">
-        <button className={button({ className: 'flex-grow' })}>{t('buy_vin_plus')}</button>
-        <button className={button({ className: 'flex-grow' })}>{t('buy_vin_max')}</button>
+        <button className={button({ className: 'flex-grow' })} onClick={notImplementedStub}>
+          {t('buy_vin_plus')}
+        </button>
+        <button className={button({ className: 'flex-grow' })} onClick={notImplementedStub}>
+          {t('buy_vin_max')}
+        </button>
       </div>
       <div className="divider px-1">{t('check_your_car')}</div>
     </React.Fragment>
