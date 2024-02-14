@@ -5,6 +5,7 @@ export interface SpritesMap {
     | 'arrow-right'
     | 'artificial-intelligence'
     | 'calendar'
+    | 'chat-bubble'
     | 'check-circle'
     | 'chevron-down'
     | 'clock'
@@ -39,6 +40,7 @@ export const SPRITES_META: {
     | 'arrow-right'
     | 'artificial-intelligence'
     | 'calendar'
+    | 'chat-bubble'
     | 'check-circle'
     | 'chevron-down'
     | 'clock'
@@ -73,6 +75,7 @@ export const SPRITES_META: {
     'arrow-right',
     'artificial-intelligence',
     'calendar',
+    'chat-bubble',
     'check-circle',
     'chevron-down',
     'clock',

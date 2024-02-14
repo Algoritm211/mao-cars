@@ -13,15 +13,23 @@ import { CharityFormPart } from '@/system/submit-car/components/car-form/compone
 import { CarFormInputs } from '@/system/submit-car/components/car-form/models/models';
 
 import { button, Icon } from '@/shared/components';
+import {useParams} from "next/navigation";
+import {useRouter} from "next/router";
+import {SellCarPreview} from "@/system/submit-car/components/sell-car-preview/sell-car-preview";
 
 export const SubmitCar = () => {
   const t = useTranslations('Car_submit_page');
+  const {query} = useRouter();
   const methods = useForm<CarFormInputs>();
   const { handleSubmit } = methods;
 
   const onSubmit = (data: CarFormInputs) => {
     console.log('DATA', data);
   };
+
+  if (Object.keys(query).length > 0) {
+    return <SellCarPreview />
+  }
 
   return (
     <FormProvider {...methods}>
