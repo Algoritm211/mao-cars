@@ -27,7 +27,9 @@ export const Header = () => {
             <Link href="/">{t('menu.auctions')}</Link>
           </li>
           <li className="border rounded-xl bg-accent font-bold">
-            <Link href="/sell-car/submit?utm_source=nav&utm_medium=site&utm_campaign=sell&utm_content=header">{t('menu.sell_car')}</Link>
+            <Link href="/sell-car/submit?utm_source=nav&utm_medium=site&utm_campaign=sell&utm_content=header">
+              {t('menu.sell_car')}
+            </Link>
           </li>
           <li>
             <a>{t('menu.about_us')}</a>

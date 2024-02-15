@@ -22,7 +22,10 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
             <Link href="/">{t('menu.auctions')}</Link>
           </li>
           <li>
-            <Link className="border rounded-xl bg-accent" href="/sell-car/submit?utm_source=nav&utm_medium=site&utm_campaign=sell&utm_content=right-menu">
+            <Link
+              className="border rounded-xl bg-accent"
+              href="/sell-car/submit?utm_source=nav&utm_medium=site&utm_campaign=sell&utm_content=right-menu"
+            >
               {t('menu.sell_car')}
             </Link>
           </li>

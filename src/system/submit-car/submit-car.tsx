@@ -1,4 +1,6 @@
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
@@ -11,15 +13,13 @@ import {
 } from '@/system/submit-car/components/car-form/components';
 import { CharityFormPart } from '@/system/submit-car/components/car-form/components/charity-form-part/charity-form-part';
 import { CarFormInputs } from '@/system/submit-car/components/car-form/models/models';
+import { SellCarPreview } from '@/system/submit-car/components/sell-car-preview/sell-car-preview';
 
 import { button, Icon } from '@/shared/components';
-import {useParams} from "next/navigation";
-import {useRouter} from "next/router";
-import {SellCarPreview} from "@/system/submit-car/components/sell-car-preview/sell-car-preview";
 
 export const SubmitCar = () => {
   const t = useTranslations('Car_submit_page');
-  const {query} = useRouter();
+  const { query } = useRouter();
   const methods = useForm<CarFormInputs>();
   const { handleSubmit } = methods;
 
@@ -28,7 +28,7 @@ export const SubmitCar = () => {
   };
 
   if (Object.keys(query).length > 0) {
-    return <SellCarPreview />
+    return <SellCarPreview />;
   }
 
   return (

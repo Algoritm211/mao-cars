@@ -3,6 +3,7 @@ export interface SpritesMap {
     | 'arrow-down'
     | 'arrow-left'
     | 'arrow-right'
+    | 'arrow-ripple'
     | 'artificial-intelligence'
     | 'calendar'
     | 'chat-bubble'
@@ -23,8 +24,10 @@ export interface SpritesMap {
     | 'list'
     | 'menu-bars'
     | 'paper-airplane'
+    | 'receipt-percent'
     | 'reply'
     | 'share'
+    | 'squares-plus'
     | 'star'
     | 'three-dots'
     | 'twitter'
@@ -38,6 +41,7 @@ export const SPRITES_META: {
     | 'arrow-down'
     | 'arrow-left'
     | 'arrow-right'
+    | 'arrow-ripple'
     | 'artificial-intelligence'
     | 'calendar'
     | 'chat-bubble'
@@ -58,8 +62,10 @@ export const SPRITES_META: {
     | 'list'
     | 'menu-bars'
     | 'paper-airplane'
+    | 'receipt-percent'
     | 'reply'
     | 'share'
+    | 'squares-plus'
     | 'star'
     | 'three-dots'
     | 'twitter'
@@ -73,6 +79,7 @@ export const SPRITES_META: {
     'arrow-down',
     'arrow-left',
     'arrow-right',
+    'arrow-ripple',
     'artificial-intelligence',
     'calendar',
     'chat-bubble',
@@ -93,8 +100,10 @@ export const SPRITES_META: {
     'list',
     'menu-bars',
     'paper-airplane',
+    'receipt-percent',
     'reply',
     'share',
+    'squares-plus',
     'star',
     'three-dots',
     'twitter',
