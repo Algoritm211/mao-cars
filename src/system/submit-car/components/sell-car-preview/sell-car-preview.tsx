@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { OurAuctions } from '@/system/submit-car/components/sell-car-preview/components/our-auctions/our-auctions';
+import { RecentSales } from '@/system/submit-car/components/sell-car-preview/components/recent-sales/recent-sales';
+
 import { ApplyToSale } from './components/apply-to-sale/apply-to-sale';
 import { HeadTitle } from './components/head-title/head-title';
 import { OfferToCustomers } from './components/offer-to-customers/offer-to-customers';
@@ -12,6 +15,8 @@ export const SellCarPreview = () => {
       <OfferToCustomers />
       <ApplyToSale />
       <WhyMaoCars />
+      <RecentSales />
+      <OurAuctions />
     </section>
   );
 };

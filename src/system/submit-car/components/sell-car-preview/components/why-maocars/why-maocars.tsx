@@ -1,12 +1,11 @@
-import { clsx } from 'clsx';
 import React from 'react';
 
 import { Icon } from '@/shared/components';
 
 export const WhyMaoCars = () => {
   return (
-    <div>
-      <h3 className="text-3xl text-center font-bold mb-3">Why Mao Cars?</h3>
+    <div className="my-8">
+      <h3 className="text-3xl text-center font-bold mb-4">Why Mao Cars?</h3>
       <div className="flex flex-col gap-4 justify-center">
         <div className="stats stats-vertical md:stats-horizontal shadow">
           <div className="stat">
