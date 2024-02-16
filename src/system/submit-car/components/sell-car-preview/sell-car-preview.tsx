@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { GetStartedNow } from '@/system/submit-car/components/sell-car-preview/components/get-started-now/get-started-now';
 import { OurAuctions } from '@/system/submit-car/components/sell-car-preview/components/our-auctions/our-auctions';
 import { RecentSales } from '@/system/submit-car/components/sell-car-preview/components/recent-sales/recent-sales';
 
@@ -17,6 +18,7 @@ export const SellCarPreview = () => {
       <WhyMaoCars />
       <RecentSales />
       <OurAuctions />
+      <GetStartedNow />
     </section>
   );
 };
