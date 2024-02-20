@@ -33,14 +33,14 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.16",
-    "daisyui": "^3.9.3",
+    "autoprefixer": "^10.4.17",
+    "daisyui": "^4.7.2",
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
     "orval": "^6.20.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.35",
     "prettier": "3.1.0",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
 }
