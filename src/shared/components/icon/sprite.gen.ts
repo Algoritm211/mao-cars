@@ -24,6 +24,7 @@ export interface SpritesMap {
     | 'list'
     | 'menu-bars'
     | 'paper-airplane'
+    | 'picture'
     | 'receipt-percent'
     | 'reply'
     | 'share'
@@ -62,6 +63,7 @@ export const SPRITES_META: {
     | 'list'
     | 'menu-bars'
     | 'paper-airplane'
+    | 'picture'
     | 'receipt-percent'
     | 'reply'
     | 'share'
@@ -100,6 +102,7 @@ export const SPRITES_META: {
     'list',
     'menu-bars',
     'paper-airplane',
+    'picture',
     'receipt-percent',
     'reply',
     'share',

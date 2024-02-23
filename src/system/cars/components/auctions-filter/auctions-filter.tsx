@@ -150,10 +150,13 @@ export const AuctionsFilter: React.FC<Props> = ({ setFilter, initialFilterValues
               />
               <label
                 htmlFor={elem.key}
-                className={clsx(`flex justify-center items-center 
-                   text-sm text-neutral cursor-pointer px-3 md:px-12 lg:px-3`, {
-                  'font-bold': getValues('sort') === elem.key,
-                })}
+                className={clsx(
+                  `flex justify-center items-center 
+                   text-sm text-neutral cursor-pointer px-3 md:px-12 lg:px-3`,
+                  {
+                    'font-bold': getValues('sort') === elem.key,
+                  }
+                )}
               >
                 {t(`auction_sort.${elem.label}`)}
               </label>

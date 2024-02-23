@@ -60,6 +60,7 @@ export const OfferToCustomers = () => {
             exceptionally helpful, and I had funds just 3 days after the auction ended. Great
             experience.
           </p>
+          <span className="italic font-bold">...And 100+ another reviews</span>
         </div>
       </div>
     </div>

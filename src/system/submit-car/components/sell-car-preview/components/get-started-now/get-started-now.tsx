@@ -6,7 +6,7 @@ import { button } from '@/shared/components';
 export const GetStartedNow = () => {
   return (
     <div className="text-center my-8">
-      <Link href="/sell-car/submit" className={button({ className: 'btn-lg' })}>
+      <Link href="/sell-car/submit" className={button({ className: 'btn-lg uppercase' })}>
         Get Started Now
       </Link>
     </div>
