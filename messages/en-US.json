@@ -159,6 +159,10 @@
     }
   },
   "Common": {
+    "auth": {
+      "login": "Log in",
+      "choose_login_provider": "Login through suitable provider"
+    },
     "states": {
       "loading": "Loading...",
       "error": "An error has occurred"
