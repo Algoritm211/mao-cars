@@ -1,5 +1,4 @@
 import { clsx } from 'clsx';
-import { className } from 'postcss-selector-parser';
 import React from 'react';
 
 import { BaseInputProps, FormErrors } from '@/shared/components/form';
