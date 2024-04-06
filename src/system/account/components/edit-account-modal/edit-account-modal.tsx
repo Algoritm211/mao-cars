@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { Modal } from '@/shared/components';
+import {button, Modal} from '@/shared/components';
 import { TextArea } from '@/shared/components/form';
 
 interface ProfileInputs {
@@ -73,7 +73,7 @@ export const EditAccountModal: React.FC<Props> = ({ isOpen, onClose }) => {
             registerOptions={{ required: true }}
           />
           <div className="modal-action">
-            <button className="btn btn-primary">{t('save')}</button>
+            <button className={button()}>{t('save')}</button>
           </div>
         </div>
       </form>
