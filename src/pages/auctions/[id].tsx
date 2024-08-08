@@ -8,7 +8,6 @@ import { AuctionDetails } from '@/system/auction-details/auction-details';
 
 import {
   getAuctionById,
-  getAuctions,
   getCommentsByAuctionId,
   getGetAuctionByIdQueryKey,
   getGetCommentsByAuctionIdQueryKey,
