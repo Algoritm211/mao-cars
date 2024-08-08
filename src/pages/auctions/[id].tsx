@@ -22,7 +22,7 @@ export default AuctionCarDetails;
 export const getStaticPaths = (): GetStaticPathsResult => {
   return {
     paths: [],
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 
