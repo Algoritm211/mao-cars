@@ -2,6 +2,8 @@ import { getLocale } from 'next-intl/server';
 
 import { LOCALE_KEY } from '@/core/constants';
 
+import { isClient } from '@/shared/utils';
+
 const createBaseURL = () => {
   return `${process.env.NEXT_PUBLIC_BACKEND_BASE || ''}/api`;
 };
@@ -24,7 +26,7 @@ export const customInstance = async <T>({
   headers?: HeadersInit | undefined;
   signal?: AbortSignal | undefined;
 }): Promise<T> => {
-  const locale = localStorage?.getItem(LOCALE_KEY);
+  const locale = isClient() && window?.localStorage?.getItem(LOCALE_KEY);
   const headersWithLocale = new Headers();
   headersWithLocale.set('content-language', locale || 'en-US');
   const response = await fetch(`${baseURL}${url}?` + new URLSearchParams(params).toString(), {

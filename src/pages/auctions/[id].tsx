@@ -1,11 +1,14 @@
 import { QueryClient, dehydrate } from '@tanstack/react-query';
-import { GetServerSidePropsContext } from 'next';
+import { GetStaticPathsResult, GetStaticPropsContext } from 'next';
 import React from 'react';
+
+import { ONE_MINUTE } from '@/core/constants';
 
 import { AuctionDetails } from '@/system/auction-details/auction-details';
 
 import {
   getAuctionById,
+  getAuctions,
   getCommentsByAuctionId,
   getGetAuctionByIdQueryKey,
   getGetCommentsByAuctionIdQueryKey,
@@ -17,9 +20,22 @@ const AuctionCarDetails = () => {
 
 export default AuctionCarDetails;
 
-export const getServerSideProps = async (ctx: GetServerSidePropsContext<{ id: string }>) => {
+export const getStaticPaths = (): GetStaticPathsResult => {
+  return {
+    paths: [],
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (ctx: GetStaticPropsContext<{ id: string }>) => {
   const auctionId = ctx.params?.id;
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: ONE_MINUTE,
+      },
+    },
+  });
 
   await queryClient.prefetchQuery({
     queryKey: getGetAuctionByIdQueryKey(auctionId!),
@@ -36,5 +52,6 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext<{ id: st
       dehydratedState: dehydrate(queryClient),
       messages: (await import(`../../../messages/${ctx.locale}.json`)).default,
     },
+    revalidate: false,
   };
 };

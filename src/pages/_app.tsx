@@ -15,9 +15,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
 
-  useEffect(() => {
-    localStorage.setItem(LOCALE_KEY, router.locale || 'en-US');
-  }, [router.locale]);
+  // useEffect(() => {
+  //   localStorage.setItem(LOCALE_KEY, router.locale || 'en-US');
+  // }, [router.locale]);
 
   return (
     <NextIntlClientProvider

@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import {button, Modal} from '@/shared/components';
+import { button, Modal } from '@/shared/components';
 import { TextArea } from '@/shared/components/form';
 
 interface ProfileInputs {

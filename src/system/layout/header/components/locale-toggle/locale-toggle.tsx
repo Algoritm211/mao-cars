@@ -17,7 +17,7 @@ export const LocaleToggle = () => {
   const { locale, asPath } = useRouter();
 
   const onChangeLocale = (locale: string) => {
-    localStorage.setItem(LOCALE_KEY, locale);
+    // localStorage?.setItem(LOCALE_KEY, locale);
     void queryClient.clear();
   };
 
